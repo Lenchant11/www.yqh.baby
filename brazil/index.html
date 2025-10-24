@@ -85,7 +85,10 @@
     .btn:focus{outline:none;box-shadow:var(--ring)}
     
     .hero{position:relative;padding:40px 0 20px; overflow: hidden;}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:stretch}
+    .hero-top {text-align: center; max-width: 800px; margin: 0 auto;}
+    .hero-bottom {display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: stretch;}
+    
     .hero-copy h1{font-size:34px;margin:0 0 8px; line-height: 1.2; font-weight: 800;}
     .subtitle{color:var(--muted);max-width:48ch;margin-bottom:12px; font-size: 1.05rem;}
     .hero-points{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px;color:#cfd5dd; font-weight: 500;}
@@ -96,7 +99,7 @@
         linear-gradient(180deg,rgba(11,15,20,.85),rgba(11,15,20,.95)),
         url('https://images.unsplash.com/photo-1483721310020-03392a8b13cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;}
 
-    .logos{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px; align-items: center;}
+    .logos{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px; align-items: center; justify-content: center;}
     .logo{font-size:13px;padding:6px 12px;border:1px dashed rgba(255,255,255,.15);border-radius:8px;color:#cfd5dd;background:rgba(255,255,255,.03); transition: var(--transition);}
     .logo:hover {transform: translateY(-2px); border-color: var(--yellow); color: var(--white);}
 
@@ -266,9 +269,31 @@
       animation: pulse 2s infinite;
     }
     
+    /* User photos section */
+    .user-photos {display: flex; justify-content: center; margin: 20px 0; gap: 12px; flex-wrap: wrap;}
+    .user-photo {width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--yellow);}
+    
+    /* Hero right content */
+    .hero-right-content {display: flex; flex-direction: column; gap: 20px;}
+    .hero-right-card {background: var(--card); border-radius: var(--radius); padding: 16px; border: 1px solid rgba(255,255,255,.08);}
+    .hero-right-card h3 {margin-top: 0; margin-bottom: 12px; font-size: 1.1rem; color: var(--yellow);}
+    
+    /* Registration notifications */
+    .registration-notifications {background: rgba(25, 195, 125, 0.1); border-radius: 8px; padding: 12px; margin-top: 16px;}
+    .notification {display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem;}
+    .notification:last-child {margin-bottom: 0;}
+    .notification-avatar {width: 32px; height: 32px; border-radius: 50%; object-fit: cover;}
+    .notification-text {flex: 1;}
+    .notification-time {color: var(--muted); font-size: 0.8rem;}
+    
+    /* Brazil elements */
+    .brazil-flag {display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px;}
+    .brazil-flag img {width: 20px; height: 14px; border-radius: 2px;}
+    
     /* Mobile responsiveness */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr; gap: 20px;}
+      .hero-bottom {grid-template-columns: 1fr; gap: 20px;}
       .two-col{grid-template-columns:1fr; gap: 14px;}
       .three-col{grid-template-columns:1fr; gap: 14px;}
       .requirements{grid-template-columns:repeat(2,minmax(0,1fr)); gap: 10px;}
@@ -279,6 +304,7 @@
       h2 {font-size: 24px;}
       .section {padding: 32px 0;}
       .section-header {margin-bottom: 24px;}
+      .nav-links .nav-link {display: none;}
     }
     
     @media (max-width: 640px) {
@@ -302,6 +328,8 @@
       .counter {gap: 6px;}
       .counter-item {min-width: 40px; padding: 6px;}
       .counter-number {font-size: 1.2rem;}
+      .user-photos {gap: 8px;}
+      .user-photo {width: 50px; height: 50px;}
     }
     
     @media (max-width: 480px) {
@@ -332,96 +360,141 @@
   <!-- Hero + Form -->
   <section id="top" class="hero">
     <div class="container hero-grid">
-      <div class="hero-copy fade-in">
+      <!-- Top section -->
+      <div class="hero-top fade-in">
         <div class="urgency-badge">VAGAS LIMITADAS - APENAS 5 DISPONÍVEIS!</div>
         <h1>Ganhe R$300+ por dia, trabalhando de onde quiser no Brasil!</h1>
         <p class="subtitle">
           Junte-se a milhares de brasileiros que estão ganhando uma renda extra com trabalhos flexíveis que se adaptam ao seu horário. Sem experiência necessária.
         </p>
-
-        <!-- credibility logos -->
-        <div class="logos" aria-label="Marcas">
-          <span class="logo" aria-label="Magazine Luiza" title="Magazine Luiza">Magalu</span>
-          <span class="logo" aria-label="Americanas" title="Americanas">Americanas</span>
-          <span class="logo" aria-label="Mercado Livre" title="Mercado Livre">Mercado Livre</span>
-          <span class="logo" aria-label="iFood" title="iFood">iFood</span>
-          <span class="logo" aria-label="Nubank" title="Nubank">Nubank</span>
-        </div>
-
-        <ul class="hero-points">
-          <li>Horários flexíveis • Trabalhe de casa</li>
-          <li>Nenhuma taxa de inscrição — nunca</li>
-          <li>Orientações claras, suporte rápido</li>
-          <li>Pagamentos diários • Ideal para iniciantes</li>
-        </ul>
-        
-        <!-- Counter -->
-        <div class="counter">
-          <div class="counter-item">
-            <div class="counter-number" id="hours">12</div>
-            <div class="counter-label">Horas</div>
+      </div>
+      
+      <!-- Bottom section -->
+      <div class="hero-bottom">
+        <!-- Left: Form -->
+        <aside id="apply" class="form-card fade-in delay-1" aria-label="Formulário de Candidatura">
+          <h2 class="form-title">Comece a Ganhar em 24 Horas</h2>
+          <p class="form-note">Complete este breve formulário e entraremos em contato pelo WhatsApp em poucas horas.</p>
+          
+          <div class="progress-bar">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
           </div>
-          <div class="counter-item">
-            <div class="counter-number" id="minutes">45</div>
-            <div class="counter-label">Minutos</div>
+
+          <form id="applicationForm" novalidate>
+            <div class="field">
+              <label for="name">Nome<span class="req">*</span></label>
+              <input id="name" name="name" type="text" placeholder="Seu nome completo" required autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="phone">Telefone WhatsApp<span class="req">*</span></label>
+              <div class="phone-input-group">
+                <div class="country-code">
+                  <img src="https://flagcdn.com/w20/br.png" alt="Bandeira do Brasil" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
+                  +55
+                </div>
+                <input id="phone" name="phone" type="tel" class="phone-input" placeholder="(11) 98765-4321" required inputmode="tel" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="age">Idade<span class="req">*</span></label>
+              <input id="age" name="age" type="text" placeholder="ex. 25" required />
+            </div>
+
+            <div class="field check">
+              <input id="consent" name="consent" type="checkbox" required style="width: auto; margin-top: 4px;" checked />
+              <label for="consent">Aceito a <a href="#privacy">Política de Privacidade</a> e os <a href="#terms">Termos de Serviço</a>.</label>
+            </div>
+
+            <button type="submit" class="btn btn-orange btn-block pulse">Candidate-se Agora & Comece a Ganhar</button>
+            
+            <div class="security-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#19c37d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 12L11 14L15 10" stroke="#19c37d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Suas informações estão seguras e nunca são compartilhadas com terceiros</span>
+            </div>
+            
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </aside>
+
+        <!-- Right: Additional content -->
+        <div class="hero-right-content fade-in delay-2">
+          <!-- User photos -->
+          <div class="hero-right-card">
+            <h3>Junte-se a milhares de brasileiros</h3>
+            <div class="user-photos">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Usuário 1" class="user-photo">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Usuário 2" class="user-photo">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Usuário 3" class="user-photo">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Usuário 4" class="user-photo">
+              <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Usuário 5" class="user-photo">
+            </div>
+            <p class="muted small">Mais de 5.000 brasileiros já se juntaram à nossa plataforma esta semana!</p>
           </div>
-          <div class="counter-item">
-            <div class="counter-number" id="seconds">30</div>
-            <div class="counter-label">Segundos</div>
+          
+          <!-- Benefits points -->
+          <div class="hero-right-card">
+            <h3>Por que escolher o TrabalhoRemotoBR?</h3>
+            <ul class="hero-points">
+              <li>Horários flexíveis • Trabalhe de casa</li>
+              <li>Nenhuma taxa de inscrição — nunca</li>
+              <li>Orientações claras, suporte rápido</li>
+              <li>Pagamentos diários • Ideal para iniciantes</li>
+              <li>Suporte 100% em português</li>
+              <li>Trabalho 100% remoto do Brasil</li>
+            </ul>
+          </div>
+          
+          <!-- Registration notifications -->
+          <div class="hero-right-card">
+            <h3>Últimos cadastros</h3>
+            <div class="registration-notifications">
+              <div class="notification">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=50&q=80" alt="Ana" class="notification-avatar">
+                <div class="notification-text">Ana de São Paulo acabou de se cadastrar</div>
+                <div class="notification-time">2 min</div>
+              </div>
+              <div class="notification">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=50&q=80" alt="Carlos" class="notification-avatar">
+                <div class="notification-text">Carlos do Rio se cadastrou para período integral</div>
+                <div class="notification-time">5 min</div>
+              </div>
+              <div class="notification">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=50&q=80" alt="Maria" class="notification-avatar">
+                <div class="notification-text">Maria de Salvador escolheu meio período</div>
+                <div class="notification-time">8 min</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Counter -->
+          <div class="hero-right-card">
+            <h3>Oferta expira em:</h3>
+            <div class="counter">
+              <div class="counter-item">
+                <div class="counter-number" id="hours">12</div>
+                <div class="counter-label">Horas</div>
+              </div>
+              <div class="counter-item">
+                <div class="counter-number" id="minutes">45</div>
+                <div class="counter-label">Minutos</div>
+              </div>
+              <div class="counter-item">
+                <div class="counter-number" id="seconds">30</div>
+                <div class="counter-label">Segundos</div>
+              </div>
+            </div>
+            <p class="muted small" style="text-align: center; margin-top: 12px;">As vagas são limitadas e se esgotam rapidamente!</p>
+            <a href="#" class="btn btn-orange btn-block pulse open-form-btn" style="margin-top: 12px;">Candidate-se Agora</a>
           </div>
         </div>
       </div>
-
-      <aside id="apply" class="form-card fade-in delay-1" aria-label="Formulário de Candidatura">
-        <h2 class="form-title">Comece a Ganhar em 24 Horas</h2>
-        <p class="form-note">Complete este breve formulário e entraremos em contato pelo WhatsApp em poucas horas.</p>
-        
-        <div class="progress-bar">
-          <div class="progress-step active"></div>
-          <div class="progress-step"></div>
-          <div class="progress-step"></div>
-        </div>
-
-        <form id="applicationForm" novalidate>
-          <div class="field">
-            <label for="name">Nome<span class="req">*</span></label>
-            <input id="name" name="name" type="text" placeholder="Seu nome completo" required autocomplete="name" />
-          </div>
-
-          <div class="field">
-            <label for="phone">Telefone WhatsApp<span class="req">*</span></label>
-            <div class="phone-input-group">
-              <div class="country-code">
-                <img src="https://flagcdn.com/w20/br.png" alt="Bandeira do Brasil" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
-                +55
-              </div>
-              <input id="phone" name="phone" type="tel" class="phone-input" placeholder="(11) 98765-4321" required inputmode="tel" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="age">Idade<span class="req">*</span></label>
-            <input id="age" name="age" type="text" placeholder="ex. 25" required />
-          </div>
-
-          <div class="field check">
-            <input id="consent" name="consent" type="checkbox" required style="width: auto; margin-top: 4px;" checked />
-            <label for="consent">Aceito a <a href="#privacy">Política de Privacidade</a> e os <a href="#terms">Termos de Serviço</a>.</label>
-          </div>
-
-          <button type="submit" class="btn btn-orange btn-block pulse">Candidate-se Agora & Comece a Ganhar</button>
-          
-          <div class="security-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#19c37d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9 12L11 14L15 10" stroke="#19c37d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Suas informações estão seguras e nunca são compartilhadas com terceiros</span>
-          </div>
-          
-          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </aside>
     </div>
 
     <div class="hero-bg" role="img" aria-label="Cena de trabalho remoto: pessoa usando laptop em casa"></div>
@@ -496,6 +569,10 @@
   <section id="roles" class="section">
     <div class="container">
       <div class="section-header fade-in">
+        <div class="brazil-flag">
+          <img src="https://flagcdn.com/w20/br.png" alt="Bandeira do Brasil">
+          <span>OPORTUNIDADES 100% BRASILEIRAS</span>
+        </div>
         <h2>Escolha Seu Estilo de Trabalho Flexível</h2>
         <p class="muted">Os ganhos mostrados são intervalos típicos relatados pelos trabalhadores. Seus resultados dependem do tempo, habilidades e disponibilidade.</p>
       </div>
@@ -732,15 +809,11 @@
       
       // WhatsApp account array (apenas números brasileiros)
       const whatsappAccounts = [
-        "559676012200", 
-        "559576056777",
-        "559576039614",
-        "559576038711",
-        "553498673926", 
-        "553498669100",
-        "553497780266", 
-        "553497660398",
-        "553496961152"
+        "5511999999999",
+        "5511888888888",
+        "5511777777777",
+        "5511666666666",
+        "5511555555555"
       ];
       
       // Função para gerar link WhatsApp
