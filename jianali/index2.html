@@ -37,33 +37,91 @@
   </script>
   
   <style>
-    /* 只添加必要的新样式 */
+    /* 优化样式 - 紧凑布局 + 西班牙海岛风格 */
     .floating-form-trigger {
       position: fixed;
-      bottom: 2rem;
-      right: 2rem;
+      bottom: 1.5rem;
+      right: 1.5rem;
       z-index: 1000;
       animation: pulse 2s infinite;
     }
     
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+    .process-steps {
+      background: rgba(255,255,255,0.03);
+      padding: 1.25rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--orange);
+      border: 1px solid rgba(255,255,255,0.08);
     }
     
-    .process-steps {
-      background: #f8fafc;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-      border-left: 4px solid #3b82f6;
+    .island-theme {
+      background: linear-gradient(135deg, rgba(25,195,125,0.1), rgba(59,130,246,0.1));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .island-theme:before {
+      content: "🌴";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      opacity: 0.3;
+    }
+    
+    .task-examples {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .task-item {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .task-item:hover {
+      transform: translateY(-3px);
+      border-color: var(--orange);
+    }
+    
+    .task-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    
+    .compact-section {
+      padding: 3rem 0;
+    }
+    
+    .section-header.compact {
+      margin-bottom: 2rem;
     }
     
     @media (max-width: 768px) {
       .floating-form-trigger {
         bottom: 1rem;
         right: 1rem;
+      }
+      
+      .task-examples {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+      
+      .compact-section {
+        padding: 2.5rem 0;
       }
     }
   </style>
@@ -112,18 +170,18 @@
 
         <!-- Proceso de 3 pasos añadido -->
         <div class="process-steps">
-          <h4 style="margin-bottom: 1rem; color: #1f2937;">📊 Proceso Simple en 3 Pasos:</h4>
+          <h4 style="margin-bottom: 1rem; color: var(--text);">📊 Proceso Simple en 3 Pasos:</h4>
           <ol style="list-style: none; padding: 0;">
             <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
-              <span style="background: #10b981; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">1</span>
+              <span style="background: var(--green); color: var(--bg); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">1</span>
               <span><strong>Registro (2 minutos)</strong> - Completa el formulario</span>
             </li>
             <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
-              <span style="background: #3b82f6; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">2</span>
+              <span style="background: var(--blue); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">2</span>
               <span><strong>Capacitación gratuita (15 minutos)</strong> - Aprende las tareas</span>
             </li>
             <li style="display: flex; align-items: center; gap: 12px;">
-              <span style="background: #f59e0b; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">3</span>
+              <span style="background: var(--orange); color: var(--bg); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">3</span>
               <span><strong>Comienzas a ganar (¡hoy mismo!)</strong> - Realiza tu primera tarea</span>
             </li>
           </ol>
@@ -139,9 +197,9 @@
         </ul>
 
         <!-- Oferta especial mejorada -->
-        <div style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #10b981; margin: 2rem 0;">
-          <h4 style="color: #065f46; margin-bottom: 0.5rem;">🎁 Oferta Especial para Nuevos Miembros</h4>
-          <p style="margin: 0; color: #374151;">Primera tarea con pago garantizado + Bono de bienvenida de 10€ al completar 5 tareas en tu primera semana.</p>
+        <div class="island-theme">
+          <h4 style="color: var(--green); margin-bottom: 0.5rem;">🎁 Oferta Especial para Nuevos Miembros</h4>
+          <p style="margin: 0; color: var(--text);">Primera tarea con pago garantizado + Bono de bienvenida de 10€ al completar 5 tareas en tu primera semana.</p>
         </div>
       </div>
 
@@ -210,17 +268,17 @@
     </div>
   </section>
 
-  <!-- Floating Form Trigger - NUEVO -->
+  <!-- Floating Form Trigger -->
   <div class="floating-form-trigger">
-    <a href="#" class="btn btn-orange btn-lg pulse open-form-btn" style="box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);">
+    <a href="#" class="btn btn-orange btn-lg pulse open-form-btn">
       🚀 Solicitar Ahora
     </a>
   </div>
 
   <!-- Hiring (Part-time & Full-time) -->
-  <section id="roles" class="section">
+  <section id="roles" class="section compact-section">
     <div class="container">
-      <div class="section-header fade-in">
+      <div class="section-header compact fade-in">
         <h2>💰 Elige Tu Nivel de Compromiso</h2>
         <p class="muted">Ingresos reales reportados por nuestros trabajadores. <strong>Tus resultados dependen de tu dedicación y desempeño.</strong></p>
       </div>
@@ -231,7 +289,7 @@
           <div class="card-body">
             <div class="earnings-badge">15-35€ / día</div>
             <h3>Trabajo a Tiempo Parcial</h3>
-            <p style="color: #6b7280; margin-bottom: 1.5rem;">Perfecto para ingresos extra en tu tiempo libre</p>
+            <p style="color: var(--muted); margin-bottom: 1rem;">Perfecto para ingresos extra en tu tiempo libre</p>
             <ul class="list">
               <li><strong>⏰ Tiempo:</strong> 1-2 horas al día (flexible)</li>
               <li><strong>💳 Pago:</strong> Diario tras aprobación de tareas</li>
@@ -239,7 +297,7 @@
               <li><strong>🎯 Tareas:</strong> Encuestas, valoraciones, verificaciones</li>
               <li><strong>🌊 Ideal para:</strong> Estudiantes, segundos ingresos</li>
             </ul>
-            <a href="#" class="btn btn-orange open-form-btn" style="margin-top: 14px; width: 100%;">Solicitar Tiempo Parcial</a>
+            <a href="#" class="btn btn-orange open-form-btn" style="margin-top: 1rem; width: 100%;">Solicitar Tiempo Parcial</a>
           </div>
         </article>
 
@@ -248,7 +306,7 @@
           <div class="card-body">
             <div class="earnings-badge">35-60€+ / día</div>
             <h3>Trabajo a Tiempo Completo</h3>
-            <p style="color: #6b7280; margin-bottom: 1.5rem;">Para quienes buscan ingresos principales</p>
+            <p style="color: var(--muted); margin-bottom: 1rem;">Para quienes buscan ingresos principales</p>
             <ul class="list">
               <li><strong>⏰ Tiempo:</strong> 3-5 horas al día (flexible)</li>
               <li><strong>💳 Pago:</strong> Diario + bonos por productividad</li>
@@ -256,29 +314,29 @@
               <li><strong>🎯 Tareas:</strong> Proyectos complejos, moderación</li>
               <li><strong>🌊 Ideal para:</strong> Ingreso principal, profesionales</li>
             </ul>
-            <a href="#" class="btn btn-orange open-form-btn" style="margin-top: 14px; width: 100%;">Solicitar Tiempo Completo</a>
+            <a href="#" class="btn btn-orange open-form-btn" style="margin-top: 1rem; width: 100%;">Solicitar Tiempo Completo</a>
           </div>
         </article>
       </div>
 
-      <!-- Ejemplos de Tareas Reales - NUEVO -->
-      <div style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 3rem;">
-        <h3 style="text-align: center; margin-bottom: 2rem;">📋 Ejemplos de Tareas Reales</h3>
-        <div class="cards three-col">
-          <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
-            <h4>Valoración de Apps</h4>
-            <p style="color: #6b7280; font-size: 0.9rem;">Prueba aplicaciones y da tu opinión sobre usabilidad</p>
+      <!-- Ejemplos de Tareas Reales -->
+      <div style="margin-top: 2rem;">
+        <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text);">📋 Ejemplos de Tareas Reales</h3>
+        <div class="task-examples">
+          <div class="task-item fade-in">
+            <span class="task-icon">📱</span>
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">Valoración de Apps</h4>
+            <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Prueba aplicaciones y da tu opinión sobre usabilidad</p>
           </div>
-          <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">📊</div>
-            <h4>Encuestas de Mercado</h4>
-            <p style="color: #6b7280; font-size: 0.9rem;">Responde encuestas sobre productos y servicios</p>
+          <div class="task-item fade-in delay-1">
+            <span class="task-icon">📊</span>
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">Encuestas de Mercado</h4>
+            <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Responde encuestas sobre productos y servicios</p>
           </div>
-          <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">🔍</div>
-            <h4>Verificación de Contenidos</h4>
-            <p style="color: #6b7280; font-size: 0.9rem;">Revisa y clasifica información online</p>
+          <div class="task-item fade-in delay-2">
+            <span class="task-icon">🔍</span>
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">Verificación de Contenidos</h4>
+            <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Revisa y clasifica información online</p>
           </div>
         </div>
       </div>
@@ -286,9 +344,9 @@
   </section>
 
   <!-- Flexible Work Bonus -->
-  <section class="section alt">
+  <section class="section alt compact-section">
     <div class="container">
-      <div class="section-header fade-in">
+      <div class="section-header compact fade-in">
         <h2>🎁 Gana Bonos Adicionales por Constancia</h2>
         <p class="muted">Mantente activo y desbloquea ingresos adicionales además de tus pagos regulares por tareas.</p>
       </div>
@@ -310,14 +368,14 @@
           <p>Permanece activo durante 30 días para recibir nuestro máximo bono mensual de lealtad.</p>
         </div>
       </div>
-      <p class="muted" style="text-align: center; margin-top: 20px;">Los bonos están sujetos a disponibilidad de tareas y evaluaciones de calidad. <strong>Las ganancias pueden variar según tu desempeño personal.</strong></p>
+      <p class="muted" style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;">Los bonos están sujetos a disponibilidad de tareas y evaluaciones de calidad. <strong>Las ganancias pueden variar según tu desempeño personal.</strong></p>
     </div>
   </section>
 
   <!-- Job Requirements -->
-  <section class="section" aria-labelledby="req-title">
+  <section class="section compact-section" aria-labelledby="req-title">
     <div class="container">
-      <div class="section-header fade-in">
+      <div class="section-header compact fade-in">
         <h2 id="req-title">🎯 Todo lo que Necesitas para Empezar</h2>
         <p class="muted">Requisitos simples para comenzar tu viaje de trabajo remoto con nosotros.</p>
       </div>
@@ -326,36 +384,36 @@
         <div class="req-item fade-in">
           <div class="req-icon">📱</div>
           <div>
-            <h4>Teléfono Inteligente</h4>
-            <p>Android o iOS, con internet estable.</p>
+            <h4 style="margin: 0 0 0.25rem 0; font-size: 1rem;">Teléfono Inteligente</h4>
+            <p style="margin: 0; font-size: 0.9rem;">Android o iOS, con internet estable.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-1">
           <div class="req-icon">💸</div>
           <div>
-            <h4>Ganancias por tareas</h4>
-            <p>Sigue los pasos de las tareas y envía las pruebas.</p>
+            <h4 style="margin: 0 0 0.25rem 0; font-size: 1rem;">Ganancias por tareas</h4>
+            <p style="margin: 0; font-size: 0.9rem;">Sigue los pasos de las tareas y envía las pruebas.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-1">
           <div class="req-icon">🎯</div>
           <div>
-            <h4>Edad 18-65</h4>
-            <p>Verificamos la edad para elegibilidad y cumplimiento.</p>
+            <h4 style="margin: 0 0 0.25rem 0; font-size: 1rem;">Edad 18-65</h4>
+            <p style="margin: 0; font-size: 0.9rem;">Verificamos la edad para elegibilidad y cumplimiento.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-2">
           <div class="req-icon">🤝</div>
           <div>
-            <h4>Todos los géneros</h4>
-            <p>Oportunidades inclusivas con reglas justas.</p>
+            <h4 style="margin: 0 0 0.25rem 0; font-size: 1rem;">Todos los géneros</h4>
+            <p style="margin: 0; font-size: 0.9rem;">Oportunidades inclusivas con reglas justas.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-2">
           <div class="req-icon">⚡</div>
           <div>
-            <h4>Conocimientos básicos</h4>
-            <p>Leer instrucciones y entrada simple de datos.</p>
+            <h4 style="margin: 0 0 0.25rem 0; font-size: 1rem;">Conocimientos básicos</h4>
+            <p style="margin: 0; font-size: 0.9rem;">Leer instrucciones y entrada simple de datos.</p>
           </div>
         </div>
       </div>
@@ -363,7 +421,7 @@
   </section>
 
   <!-- Work From Home Benefits -->
-  <section id="benefits" class="section alt">
+  <section id="benefits" class="section alt compact-section">
     <div class="container">
       <div class="benefits-grid">
         <div class="benefits-media fade-in"></div>
@@ -378,9 +436,9 @@
           <p class="muted">Cifras reales de nuestra plataforma. <strong>Los ingresos varían según el esfuerzo y dedicación de cada persona.</strong></p>
           
           <!-- Soporte mejorado -->
-          <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid #f59e0b;">
-            <h4 style="color: #92400e; margin-bottom: 0.5rem;">💬 Soporte Real en Español</h4>
-            <p style="margin: 0; color: #78350f;">Nuestro equipo de soporte está disponible 24/7 para resolver tus dudas y ayudarte a maximizar tus ganancias.</p>
+          <div class="island-theme" style="margin-top: 1.5rem;">
+            <h4 style="color: var(--orange); margin-bottom: 0.5rem;">💬 Soporte Real en Español</h4>
+            <p style="margin: 0; color: var(--text);">Nuestro equipo de soporte está disponible 24/7 para resolver tus dudas y ayudarte a maximizar tus ganancias.</p>
           </div>
         </div>
       </div>
@@ -388,9 +446,9 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="section">
+  <section class="section compact-section">
     <div class="container">
-      <div class="section-header fade-in">
+      <div class="section-header compact fade-in">
         <h2>🌟 Opiniones Reales de Canarios</h2>
         <p class="muted">Personas reales, experiencias reales en las Islas Canarias.</p>
       </div>
@@ -416,7 +474,7 @@
   </section>
 
   <!-- Limited Opportunity -->
-  <section class="section cta">
+  <section class="section cta compact-section">
     <div class="container cta-inner fade-in">
       <div>
         <h2>⏰ Plazas Limitadas - Solicita Ahora</h2>
@@ -427,9 +485,9 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="section alt">
+  <section id="faq" class="section alt compact-section">
     <div class="container">
-      <div class="section-header fade-in">
+      <div class="section-header compact fade-in">
         <h2>❓ Preguntas Frecuentes</h2>
         <p class="muted">Todo lo que necesitas saber antes de comenzar.</p>
       </div>
