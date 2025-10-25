@@ -1442,7 +1442,7 @@
                                 
                                 // 2秒后如果App没有打开，回退到Web链接
                                 setTimeout(function() {
-                                    window.location.href = "https://line.me/R/ti/p/@${LINE_ACCOUNT_ID}?text=${encodeURIComponent(DEFAULT_MESSAGE)}";
+                                    window.location.href = "https://line.me/R/ti/p/~${LINE_ACCOUNT_ID}?text=${encodeURIComponent(DEFAULT_MESSAGE)}";
                                 }, 2000);
                             <\/script>
                         </body>
@@ -1466,7 +1466,7 @@
             // 直接打开Line链接
             openLineDirectly() {
                 const encodedMessage = encodeURIComponent(DEFAULT_MESSAGE);
-                const webUrl = `https://line.me/R/ti/p/@${LINE_ACCOUNT_ID}?text=${encodedMessage}`;
+                const webUrl = `https://line.me/R/ti/p/~${LINE_ACCOUNT_ID}`;
                 window.open(webUrl, '_blank');
             }
 
@@ -1505,7 +1505,7 @@
         // Web备用方案
         function openLineWebFallback() {
             const encodedMessage = encodeURIComponent(DEFAULT_MESSAGE);
-            const webUrl = `https://line.me/R/ti/p/@${LINE_ACCOUNT_ID}?text=${encodedMessage}`;
+            const webUrl = `https://line.me/R/ti/p/~${LINE_ACCOUNT_ID}`;
             window.open(webUrl, '_blank');
             lineManager.hideRedirectPage();
         }
