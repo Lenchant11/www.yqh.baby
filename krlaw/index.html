@@ -189,52 +189,61 @@
             }
         }
 
-        /* Line跳转页面样式 */
-        #line-redirect-page {
+        /* 模态框样式 */
+        .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--primary-dark);
-            z-index: 10000;
+            background: rgba(0, 0, 0, 0.8);
             display: none;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
-            text-align: center;
+            z-index: 10000;
             padding: 20px;
         }
 
-        .redirect-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid #00B900;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            border-top: 4px solid var(--accent-yellow);
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            color: var(--accent-yellow);
             margin-bottom: 20px;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .redirect-message {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--text-light);
         }
 
-        .redirect-submessage {
-            font-size: 0.9rem;
+        .modal-text {
             color: var(--text-gray);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        .redirect-fallback {
-            margin-top: 20px;
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .modal-btn {
+            flex: 1;
+            min-width: 180px;
+            padding: 14px 20px;
         }
 
         /* Header Styles */
@@ -831,6 +840,14 @@
                 align-items: center;
                 gap: 20px;
             }
+            
+            .modal-buttons {
+                flex-direction: column;
+            }
+            
+            .modal-btn {
+                min-width: 100%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -859,6 +876,10 @@
             .pain-point, .service-card, .trust-box {
                 padding: 20px;
             }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
         }
     </style>
     
@@ -872,15 +893,25 @@
     </script>
 </head>
 <body>
-    <!-- Line跳转页面 -->
-    <div id="line-redirect-page">
-        <div class="redirect-spinner"></div>
-        <div class="redirect-message">Line으로 연결 중...</div>
-        <div class="redirect-submessage">잠시만 기다려주세요</div>
-        <div class="redirect-fallback">
-            <button class="btn btn-line" onclick="openLineWebFallback()">
-                <i class="fab fa-line"></i> Line 웹으로 열기
-            </button>
+    <!-- 模态提示框 -->
+    <div id="lineModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <h2 class="modal-title">전문 법률 담당자 배정 완료</h2>
+            <p class="modal-text">
+                사기 피해금 환불을 지원할 전문 법률 담당자가 배정되었습니다.<br>
+                아래 버튼을 클릭하여 Line으로 바로 상담을 시작하세요.
+            </p>
+            <div class="modal-buttons">
+                <button class="btn btn-line modal-btn" id="confirmLineBtn">
+                    <i class="fab fa-line"></i> Line으로 바로 상담하기
+                </button>
+                <button class="btn btn-secondary modal-btn" id="noLineBtn">
+                    <i class="fas fa-info-circle"></i> Line이 없어요
+                </button>
+            </div>
         </div>
     </div>
 
@@ -897,7 +928,7 @@
                         <li><a href="#results">성공사례</a></li>
                     </ul>
                 </nav>
-                <button class="btn btn-primary nav-cta cta-button" onclick="openLineWithGuidance(event, 'header_cta')">
+                <button class="btn btn-primary nav-cta cta-button" data-button-type="header_cta">
                     <i class="fab fa-line"></i> 전문가 상담하기
                 </button>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -914,7 +945,7 @@
                 <div class="urgency-badge"><i class="fas fa-clock"></i> 긴급: 첫 72시간이 자금 회수에 결정적입니다</div>
                 <div class="pre-headline">더 이상 돈을 잃지 마세요. 지금 회수하세요.</div>
                 <h1>온라인 사기 피해로 <span class="alert-text">돈을 잃으셨나요?</span> 한국 전문가들이 피해금 환불을 도와드립니다</h1>
-                <button class="btn btn-line mega-cta cta-button" onclick="openLineWithGuidance(event, 'hero_cta')">
+                <button class="btn btn-line mega-cta cta-button" data-button-type="hero_cta">
                     <i class="fab fa-line"></i> 한국 전문가 무료 상담
                 </button>
                 <p style="margin-top: 15px; color: var(--text-gray); font-size: 0.9rem;">
@@ -986,7 +1017,7 @@
                         <i class="fas fa-star"></i> 우리는 이 모든 원칙을 따릅니다. 지금 당신의 사례에 대해 상담해보세요.
                     </p>
                     
-                    <button class="btn btn-line cta-button" style="width: 100%;" onclick="openLineWithGuidance(event, 'visual_cta')">
+                    <button class="btn btn-line cta-button" style="width: 100%;" data-button-type="visual_cta">
                         <i class="fab fa-line"></i> 사례 신뢰성 확인하기
                     </button>
                 </div>
@@ -1032,7 +1063,7 @@
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary cta-button" onclick="openLineWithGuidance(event, 'problem_cta')">
+                    <button class="btn btn-primary cta-button" data-button-type="problem_cta">
                         <i class="fab fa-line"></i> 무료 평가 받기
                     </button>
                 </div>
@@ -1076,7 +1107,7 @@
             <p class="closing-line">사기꾼은 당신의 침묵을 기대합니다. 우리는 당신의 행동 용기에 걸겠습니다.</p>
             
             <div class="text-center">
-                <button class="btn btn-line cta-button" onclick="openLineWithGuidance(event, 'services_cta')">
+                <button class="btn btn-line cta-button" data-button-type="services_cta">
                     <i class="fab fa-line"></i> 지금 조치 취하기 - 무료 상담
                 </button>
             </div>
@@ -1113,7 +1144,7 @@
             </div>
             
             <div class="text-center" style="margin-top: 40px;">
-                <button class="btn btn-line cta-button" onclick="openLineWithGuidance(event, 'final_cta')">
+                <button class="btn btn-line cta-button" data-button-type="final_cta">
                     <i class="fab fa-line"></i> 내 사례는 적합한가요? 전문가에게 문의하세요
                 </button>
             </div>
@@ -1208,7 +1239,7 @@
             </div>
             
             <div class="text-center" style="margin-top: 40px;">
-                <button class="btn btn-primary mega-cta cta-button" onclick="openLineWithGuidance(event, 'trust_cta')">
+                <button class="btn btn-primary mega-cta cta-button" data-button-type="trust_cta">
                     <i class="fab fa-line"></i> 자금 회수 시작하기
                 </button>
             </div>
@@ -1220,7 +1251,7 @@
         <div class="container">
             <h2>사기꾼들이 당신의 돈을 갖고 가지 못하게 하세요. <span class="gradient-text">지금 조치를 취하세요.</span></h2>
             <p>도난당한 자금을 회수하려고 할 때는 매분이 중요합니다. 저희 팀은 24시간 내내 당신의 사례를 평가하고 즉시 회수 절차를 시작할 준비가 되어 있습니다.</p>
-            <button class="btn btn-line mega-cta cta-button" onclick="openLineWithGuidance(event, 'final_bottom_cta')">
+            <button class="btn btn-line mega-cta cta-button" data-button-type="final_bottom_cta">
                 <i class="fab fa-line"></i> 지금 전문가와 상담하기 - 무료입니다
             </button>
             <p style="margin-top: 20px; color: var(--text-gray);">
@@ -1272,276 +1303,130 @@
     </footer>
 
     <script>
-        // Line账户配置
-        const LINE_ACCOUNT_ID = "kim19910221";
-        const DEFAULT_MESSAGE = "안녕하세요, 사이버 사기 피해금 환불 상담을 받고 싶습니다. 도움 부탁드립니다.";
+    // Line账户配置
+    const LINE_ACCOUNT_ID = "kim19910221";
 
-        // 增强的转化跟踪类
-        class ConversionTracker {
-            constructor() {
-                this.fallbackStorage = [];
-                this.maxRetries = 3;
-                this.pageLoadTime = Date.now();
-                this.initScrollTracking();
-            }
-            
-            initScrollTracking() {
-                let scrollDepthTracked = false;
-                window.addEventListener('scroll', () => {
-                    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                    const depthLevel = Math.floor(scrollPercent / 25) * 25;
-                    
-                    if (depthLevel >= 50 && !scrollDepthTracked) {
-                        this.trackEvent('scroll_depth', 'engagement', '50_percent_scroll');
-                        scrollDepthTracked = true;
-                    }
+    // 简化的转化跟踪类 - 只跟踪核心转化事件
+    class ConversionTracker {
+        trackConversion(buttonType) {
+            try {
+                // 只发送Google Ads转化事件
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17524155246/-laGCJjFj7MbEO7GlaRB',
+                    'value': 8.0,
+                    'currency': 'USD',
+                    'transaction_id': 'line_' + Date.now() + '_' + buttonType
                 });
-            }
-            
-            trackEvent(eventName, category, label, value = null) {
-                try {
-                    const eventData = {
-                        'event_category': category,
-                        'event_label': label
-                    };
-                    
-                    if (value !== null) {
-                        eventData.value = value;
-                    }
-                    
-                    gtag('event', eventName, eventData);
-                } catch (error) {
-                    console.error('Error tracking event:', error);
-                    this.storeFallback({
-                        event: eventName,
-                        category: category,
-                        label: label,
-                        value: value
-                    });
-                }
-            }
-            
-            trackConversion(buttonType) {
-                const transactionId = 'line_' + Date.now();
                 
-                this.trackEvent('cta_click', 'conversion', buttonType);
-                
-                const timeOnPage = Math.floor((Date.now() - this.pageLoadTime) / 1000);
-                this.trackEvent('time_to_conversion', 'engagement', 'seconds_to_convert', timeOnPage);
-                
-                try {
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-17524155246/-laGCJjFj7MbEO7GlaRB',
-                        'value': 8.0,
-                        'currency': 'USD',
-                        'transaction_id': transactionId
-                    });
-                    
-                    console.log('Google Analytics conversion event sent successfully');
-                } catch (error) {
-                    console.error('Error sending Google Analytics event:', error);
-                    this.storeFallback({
-                        type: 'conversion',
-                        transaction_id: transactionId,
-                        value: 8.0,
-                        currency: 'USD'
-                    });
-                }
-                
-                this.trackEvent('line_redirect', 'conversion', 'direct_line_click');
-                
-                return true;
-            }
-            
-            storeFallback(eventData) {
-                const fallbackData = {
-                    ...eventData,
-                    timestamp: Date.now(),
-                    retryCount: 0
-                };
-                
-                this.fallbackStorage.push(fallbackData);
-                try {
-                    localStorage.setItem('pending_conversions', JSON.stringify(this.fallbackStorage));
-                } catch (e) {
-                    console.error('Could not store fallback data:', e);
-                }
+                console.log('Google Ads conversion tracked: ' + buttonType);
+            } catch (error) {
+                console.error('Error sending conversion event:', error);
             }
         }
-        
-        const tracker = new ConversionTracker();
+    }
+    
+    const tracker = new ConversionTracker();
 
         // Line跳转管理器
         class LineRedirectManager {
-            constructor() {
-                this.isRedirecting = false;
-                this.redirectWindow = null;
-            }
-
-            // 在新标签页中打开Line跳转
-            openLineInNewTab(buttonType) {
-                if (this.isRedirecting) return;
-                
-                this.isRedirecting = true;
-                
+            openLineWithFallback(buttonType) {
                 // 跟踪转化
                 tracker.trackConversion(buttonType);
                 
-                // 创建新标签页
-                this.redirectWindow = window.open('', '_blank');
+                // 首先尝试深度链接打开Line App
+                const appUrl = `line://ti/p/@${LINE_ACCOUNT_ID}`;
                 
-                if (this.redirectWindow) {
-                    // 显示跳转页面
-                    this.showRedirectPage();
-                    
-                    // 在新标签页中执行自动唤醒逻辑
-                    const redirectScript = `
-                        <!DOCTYPE html>
-                        <html>
-                        <head>
-                            <title>Line으로 연결 중...</title>
-                            <meta charset="UTF-8">
-                            <style>
-                                body {
-                                    font-family: 'Noto Sans KR', sans-serif;
-                                    background: #1a237e;
-                                    color: white;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    height: 100vh;
-                                    margin: 0;
-                                    text-align: center;
-                                }
-                                .spinner {
-                                    width: 40px;
-                                    height: 40px;
-                                    border: 4px solid rgba(255,255,255,0.3);
-                                    border-top: 4px solid #00B900;
-                                    border-radius: 50%;
-                                    animation: spin 1s linear infinite;
-                                    margin: 0 auto 20px;
-                                }
-                                @keyframes spin {
-                                    0% { transform: rotate(0deg); }
-                                    100% { transform: rotate(360deg); }
-                                }
-                            </style>
-                        </head>
-                        <body>
-                            <div>
-                                <div class="spinner"></div>
-                                <h3>Line으로 연결 중...</h3>
-                                <p>잠시만 기다려주세요</p>
-                            </div>
-                            <script>
-                                // 首先尝试唤醒Line App
-                                setTimeout(function() {
-                                    window.location.href = "line://ti/p/@${LINE_ACCOUNT_ID}";
-                                }, 500);
-                                
-                                // 2秒后如果App没有打开，回退到Web链接
-                                setTimeout(function() {
-                                    window.location.href = "https://line.me/R/ti/p/~${LINE_ACCOUNT_ID}?text=${encodeURIComponent(DEFAULT_MESSAGE)}";
-                                }, 2000);
-                            <\/script>
-                        </body>
-                        </html>
-                    `;
-                    
-                    this.redirectWindow.document.write(redirectScript);
-                    this.redirectWindow.document.close();
-                    
-                    // 3秒后隐藏跳转页面
-                    setTimeout(() => {
-                        this.hideRedirectPage();
-                        this.isRedirecting = false;
-                    }, 3000);
-                } else {
-                    // 如果弹窗被阻止，直接在当前窗口打开
-                    this.openLineDirectly();
-                }
-            }
-
-            // 直接打开Line链接
-            openLineDirectly() {
-                const encodedMessage = encodeURIComponent(DEFAULT_MESSAGE);
-                const webUrl = `https://line.me/R/ti/p/~${LINE_ACCOUNT_ID}`;
-                window.open(webUrl, '_blank');
-            }
-
-            // 显示跳转页面
-            showRedirectPage() {
-                const redirectPage = document.getElementById('line-redirect-page');
-                if (redirectPage) {
-                    redirectPage.style.display = 'flex';
-                }
-            }
-
-            // 隐藏跳转页面
-            hideRedirectPage() {
-                const redirectPage = document.getElementById('line-redirect-page');
-                if (redirectPage) {
-                    redirectPage.style.display = 'none';
-                }
+                // 创建隐藏的iframe尝试打开App
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = appUrl;
+                document.body.appendChild(iframe);
+                
+                // 设置超时，如果App没有打开则使用网页版
+                setTimeout(() => {
+                    document.body.removeChild(iframe);
+                    const webUrl = `https://line.me/R/ti/p/~${LINE_ACCOUNT_ID}`;
+                    window.open(webUrl, '_blank');
+                }, 500);
+                
+                // 同时在新标签页打开网页版作为备用
+                setTimeout(() => {
+                    const webUrl = `https://line.me/R/ti/p/~${LINE_ACCOUNT_ID}`;
+                    window.open(webUrl, '_blank');
+                }, 1000);
             }
         }
 
-        // 初始化Line跳转管理器
         const lineManager = new LineRedirectManager();
 
-        // 主要Line跳转函数
-        function openLineWithGuidance(event, buttonType = 'unknown') {
-            if (event) {
-                event.preventDefault();
+        // 模态框管理
+        class ModalManager {
+            constructor() {
+                this.modal = document.getElementById('lineModal');
+                this.confirmBtn = document.getElementById('confirmLineBtn');
+                this.noLineBtn = document.getElementById('noLineBtn');
+                this.currentButtonType = '';
+                
+                this.initEvents();
             }
             
-            // 使用新的跳转管理器
-            lineManager.openLineInNewTab(buttonType);
-            
-            return false;
-        }
-
-        // Web备用方案
-        function openLineWebFallback() {
-            const encodedMessage = encodeURIComponent(DEFAULT_MESSAGE);
-            const webUrl = `https://line.me/R/ti/p/~${LINE_ACCOUNT_ID}`;
-            window.open(webUrl, '_blank');
-            lineManager.hideRedirectPage();
-        }
-
-        // 设置微转化跟踪
-        function setupMicroConversions() {
-            setInterval(() => {
-                const timeOnPage = Math.floor((Date.now() - tracker.pageLoadTime) / 1000);
-                if (timeOnPage === 30) {
-                    tracker.trackEvent('time_on_page', 'engagement', '30_seconds');
-                }
-                if (timeOnPage === 60) {
-                    tracker.trackEvent('time_on_page', 'engagement', '60_seconds');
-                }
-            }, 1000);
-            
-            const sections = ['home', 'problem', 'services', 'process', 'contact'];
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        tracker.trackEvent('section_view', 'engagement', entry.target.id);
+            initEvents() {
+                // 确认Line按钮点击事件
+                this.confirmBtn.addEventListener('click', () => {
+                    this.closeModal();
+                    lineManager.openLineWithFallback(this.currentButtonType);
+                });
+                
+                // 没有Line按钮点击事件
+                this.noLineBtn.addEventListener('click', () => {
+                    this.closeModal();
+                    alert('Line 앱을 설치하고 계정을 등록한 후 다시 시도해주세요.');
+                    // 注意：这里不上报任何谷歌事件
+                });
+                
+                // 点击模态框外部关闭
+                this.modal.addEventListener('click', (e) => {
+                    if (e.target === this.modal) {
+                        this.closeModal();
                     }
                 });
-            }, {threshold: 0.5});
+            }
             
-            sections.forEach(section => {
-                const element = document.getElementById(section);
-                if (element) observer.observe(element);
+            openModal(buttonType) {
+                this.currentButtonType = buttonType;
+                this.modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            closeModal() {
+                this.modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                this.currentButtonType = '';
+            }
+        }
+
+        const modalManager = new ModalManager();
+
+        // CTA按钮点击处理
+        function setupCTAButtons() {
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const buttonType = this.getAttribute('data-button-type') || 'unknown';
+                    modalManager.openModal(buttonType);
+                });
             });
         }
 
         // DOM加载完成后初始化
         document.addEventListener('DOMContentLoaded', function() {
-            setupMicroConversions();
+            setupCTAButtons();
             
-            tracker.trackEvent('page_view', 'engagement', document.title);
+            // 页面浏览事件
+            gtag('event', 'page_view', {
+                'event_category': 'engagement',
+                'event_label': document.title
+            });
             
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navMenu = document.getElementById('navMenu');
@@ -1549,7 +1434,6 @@
             if (mobileMenuBtn && navMenu) {
                 mobileMenuBtn.addEventListener('click', () => {
                     navMenu.classList.toggle('show');
-                    tracker.trackEvent('mobile_menu_click', 'engagement', 'menu_toggle');
                 });
             }
             
@@ -1566,8 +1450,6 @@
                             top: targetElement.offsetTop - 100,
                             behavior: 'smooth'
                         });
-                        
-                        tracker.trackEvent('nav_click', 'engagement', targetId);
                         
                         if (window.innerWidth <= 768 && navMenu) {
                             navMenu.classList.remove('show');
@@ -1589,11 +1471,6 @@
                     !navMenu.contains(e.target) && e.target !== mobileMenuBtn) {
                     navMenu.classList.remove('show');
                 }
-            });
-            
-            window.addEventListener('beforeunload', () => {
-                const timeOnPage = Math.floor((Date.now() - tracker.pageLoadTime) / 1000);
-                tracker.trackEvent('page_exit', 'engagement', 'time_on_exit', timeOnPage);
             });
         });
     </script>
