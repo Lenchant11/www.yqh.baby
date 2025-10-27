@@ -181,6 +181,21 @@
             }
         }
 
+        /* 新增闪烁动画 */
+        @keyframes flash {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .flash-icon {
+            animation: flash 1.5s infinite;
+            color: var(--accent-green);
+        }
+
         /* 模态框样式 */
         .modal-overlay {
             position: fixed;
@@ -236,6 +251,105 @@
             flex: 1;
             min-width: 180px;
             padding: 14px 20px;
+        }
+
+        /* 表单样式 */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #3a4255;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-yellow);
+        }
+
+        .privacy-notice {
+            background: rgba(255, 214, 0, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            border-left: 4px solid var(--accent-yellow);
+        }
+
+        /* 进度条样式 */
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--gradient-line);
+            border-radius: 5px;
+            transition: width 1s ease-in-out; /* 加快进度条动画 */
+        }
+
+        /* 悬浮CTA按钮样式 */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
+            animation: pulse-green 2s infinite;
+        }
+
+        /* 专家账号显示样式 */
+        .expert-account {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            background: rgba(255, 214, 0, 0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-block;
+        }
+
+        .expert-account:hover {
+            background: rgba(255, 214, 0, 0.2);
+            border-color: var(--accent-yellow);
+            transform: scale(1.05);
+        }
+
+        .expert-account.copied {
+            background: rgba(0, 200, 83, 0.2);
+            border-color: var(--accent-green);
+        }
+
+        .copy-hint {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 10px;
         }
 
         /* Header Styles */
@@ -840,6 +954,17 @@
             .modal-btn {
                 min-width: 100%;
             }
+            
+            .floating-cta {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+            }
+            
+            .expert-account {
+                font-size: 1.2rem;
+                padding: 10px 15px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -873,4 +998,3 @@
                 padding: 30px 20px;
             }
         }
-    
