@@ -38,7 +38,6 @@
             
             <form id="infoForm">
                 <div class="form-group">
-                    <!-- 修改：将Line账号改为Line账号或手机号码 -->
                     <label class="form-label" for="userContact">Line 계정 또는 휴대폰 번호</label>
                     <input type="text" id="userContact" class="form-input" placeholder="Line 계정 또는 휴대폰 번호를 입력해 주세요" required>
                 </div>
@@ -108,7 +107,6 @@
                 귀하의 Line 계정에서 아래 계정을 직접 추가하여 지원을 받으세요.
             </p>
             
-            <!-- 修改：显示专家账号，加大加粗，金黄色，可点击复制 -->
             <div class="expert-account" id="expertAccountDisplay">
                 <i class="fab fa-line"></i> <span id="expertAccountText"></span>
             </div>
@@ -510,25 +508,22 @@
     </footer>
 
     <script>
-        // Line专家账号数组 - 随机分配
         const LINE_EXPERTS = [
-            "kim19910221",
-            "legal_expert_kr",
-            "cyber_recovery_kr",
-            "fraud_refund_kr",
-            "korea_law_support"
+            "kim202501",
+            "kim202502",
+            "kim202503",
+            "kim202504",
+            "kim202505"
         ];
 
-        // 当前选择的专家账号
         let currentExpert = "";
 
-        // 谷歌转化上报函数 - 严格按照官方推荐方式
+        // 谷歌转化上报函数
         function gtag_report_conversion(url) {
             return new Promise((resolve) => {
                 const callback = function () {
                     console.log('Google Ads转化事件上报成功');
                     if (typeof(url) != 'undefined') {
-                        // 延迟300ms确保事件上报完成
                         setTimeout(() => {
                             window.open(url, '_blank');
                             resolve(true);
@@ -538,7 +533,6 @@
                     }
                 };
                 
-                // 上报Google Ads转化事件
                 gtag('event', 'conversion', {
                     'send_to': 'AW-17524155246/-laGCJjFj7MbEO7GlaRB',
                     'event_callback': callback
