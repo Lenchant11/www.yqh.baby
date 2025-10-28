@@ -306,7 +306,7 @@
     .india-flag {display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px;}
     .india-flag img {width: 20px; height: 14px; border-radius: 2px;}
     
-    /* 新增：招聘信息滚动条样式 */
+    /* 新增：招聘信息滚动条样式 - 更新为向上滚动特效 */
     .job-scroll-container {
       background: rgba(25, 195, 125, 0.15);
       border-radius: 10px;
@@ -316,16 +316,17 @@
       overflow: hidden;
       position: relative;
       border: 1px solid rgba(25, 195, 125, 0.3);
+      height: 40px;
     }
     
     .job-scroll {
-      height: 30px;
+      height: 40px;
       overflow: hidden;
       position: relative;
     }
     
     .job-item {
-      height: 30px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -333,12 +334,39 @@
       color: var(--highlight);
       position: absolute;
       width: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease;
+      transform: translateY(100%);
+      transition: transform 0.5s ease;
     }
     
     .job-item.active {
-      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .job-item.exiting {
+      transform: translateY(-100%);
+    }
+    
+    /* 新增：hot和new标签样式 */
+    .job-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    
+    .hot-tag {
+      background-color: #ef4444;
+      color: white;
+    }
+    
+    .new-tag {
+      background-color: var(--primary);
+      color: white;
     }
     
     /* 修改：工作卡片背景图片 */
@@ -395,6 +423,11 @@
       .user-photos {gap: 8px;}
       .user-photo {width: 50px; height: 50px;}
       
+      /* 修改：移动端隐藏导航菜单项 */
+      .nav-link:not(.btn) {
+        display: none;
+      }
+      
       /* Form Modal Mobile Adjustments */
       .form-modal .modal-content {
         padding: 16px;
@@ -443,6 +476,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Home">RemoteEarn India</a>
       <nav class="nav-links">
+        <!-- 修改：移动端隐藏这些菜单项 -->
         <a href="#roles" class="nav-link">Earning Options</a>
         <a href="#benefits" class="nav-link">Benefits</a>
         <a href="#faq" class="nav-link">FAQ</a>
@@ -462,19 +496,19 @@
           Join thousands of Indians who are earning extra income with flexible work that fits your schedule. No experience needed.
         </p>
         
-        <!-- 新增：招聘信息滚动条 -->
+        <!-- 修改：招聘信息滚动条 - 添加hot/new标签 -->
         <div class="job-scroll-container">
           <div class="job-scroll" id="jobScroll">
-            <div class="job-item active">Amazon - Online Customer Support, ₹100/hour</div>
-            <div class="job-item">Flipkart - Data Entry Specialist, ₹90/hour</div>
-            <div class="job-item">Infosys - Remote IT Assistant, ₹120/hour</div>
-            <div class="job-item">TCS - Virtual Assistant, ₹110/hour</div>
-            <div class="job-item">Wipro - Content Moderator, ₹95/hour</div>
-            <div class="job-item">HCL - Social Media Manager, ₹105/hour</div>
-            <div class="job-item">Reliance - E-commerce Support, ₹100/hour</div>
-            <div class="job-item">Byju's - Online Tutor, ₹130/hour</div>
-            <div class="job-item">Zomato - Customer Service Agent, ₹85/hour</div>
-            <div class="job-item">Swiggy - Order Processing Specialist, ₹90/hour</div>
+            <div class="job-item active">Amazon - Online Customer Support, ₹100/hour<span class="job-tag hot-tag">HOT</span></div>
+            <div class="job-item">Flipkart - Data Entry Specialist, ₹90/hour<span class="job-tag new-tag">NEW</span></div>
+            <div class="job-item">Infosys - Remote IT Assistant, ₹120/hour<span class="job-tag hot-tag">HOT</span></div>
+            <div class="job-item">TCS - Virtual Assistant, ₹110/hour<span class="job-tag new-tag">NEW</span></div>
+            <div class="job-item">Wipro - Content Moderator, ₹95/hour<span class="job-tag hot-tag">HOT</span></div>
+            <div class="job-item">HCL - Social Media Manager, ₹105/hour<span class="job-tag new-tag">NEW</span></div>
+            <div class="job-item">Reliance - E-commerce Support, ₹100/hour<span class="job-tag hot-tag">HOT</span></div>
+            <div class="job-item">Byju's - Online Tutor, ₹130/hour<span class="job-tag new-tag">NEW</span></div>
+            <div class="job-item">Zomato - Customer Service Agent, ₹85/hour<span class="job-tag hot-tag">HOT</span></div>
+            <div class="job-item">Swiggy - Order Processing Specialist, ₹90/hour<span class="job-tag new-tag">NEW</span></div>
           </div>
         </div>
       </div>
@@ -1019,15 +1053,29 @@
       updateCountdown();
       setInterval(updateCountdown, 1000);
       
-      // 招聘信息滚动功能
+      // 招聘信息滚动功能 - 更新为向上滚动特效
       function initJobScroll() {
         const jobItems = document.querySelectorAll('.job-item');
         let currentIndex = 0;
         
+        // 设置第一个项目为活动状态
+        jobItems[currentIndex].classList.add('active');
+        
         setInterval(() => {
-          jobItems[currentIndex].classList.remove('active');
-          currentIndex = (currentIndex + 1) % jobItems.length;
-          jobItems[currentIndex].classList.add('active');
+          // 当前项目添加退出动画
+          jobItems[currentIndex].classList.add('exiting');
+          
+          // 计算下一个索引
+          const nextIndex = (currentIndex + 1) % jobItems.length;
+          
+          // 设置下一个项目为活动状态
+          jobItems[nextIndex].classList.add('active');
+          
+          // 动画完成后重置状态
+          setTimeout(() => {
+            jobItems[currentIndex].classList.remove('active', 'exiting');
+            currentIndex = nextIndex;
+          }, 500); // 与CSS过渡时间匹配
         }, 3000); // 每3秒切换一次
       }
       
