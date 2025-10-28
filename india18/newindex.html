@@ -48,6 +48,7 @@
       --ring: 0 0 0 3px rgba(74, 108, 250, 0.25);
       --radius:12px;
       --transition: all 0.3s ease;
+      --highlight: #ffd700; /* 新增：高亮颜色 - 金黄色 */
     }
 
     *{box-sizing:border-box}
@@ -76,7 +77,7 @@
     .hero-top {text-align: center; max-width: 800px; margin: 0 auto;}
     .hero-bottom {display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: stretch;}
     
-    .hero-copy h1{font-size:38px;margin:0 0 10px; line-height: 1.2; font-weight: 800;}
+    .hero-copy h1{font-size:38px;margin:0 0 10px; line-height: 1.2; font-weight: 800; color: var(--highlight); /* 修改：标题使用高亮颜色 */}
     .subtitle{color:var(--muted);max-width:48ch;margin-bottom:14px; font-size: 1.05rem;}
     .hero-points{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;color:#cfd5dd; font-weight: 500;}
     .hero-points li {display: flex; align-items: center; gap: 8px; font-size: 0.95rem;}
@@ -146,6 +147,7 @@
       max-height: 90vh;
       overflow-y: auto;
       padding: 20px;
+      text-align: left; /* 修改：模态框表单内容左对齐 */
     }
     .form-modal .form-card {
       box-shadow: none;
@@ -153,9 +155,14 @@
     }
     .form-modal .form-title {
       font-size: 20px;
+      text-align: left; /* 修改：模态框标题左对齐 */
     }
     .form-modal .form-note {
       font-size: 0.9rem;
+      text-align: left; /* 修改：模态框描述左对齐 */
+    }
+    .form-modal .field label {
+      text-align: left; /* 修改：模态框字段标签左对齐 */
     }
 
     .section{padding:60px 0}
@@ -299,6 +306,54 @@
     .india-flag {display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px;}
     .india-flag img {width: 20px; height: 14px; border-radius: 2px;}
     
+    /* 新增：招聘信息滚动条样式 */
+    .job-scroll-container {
+      background: rgba(25, 195, 125, 0.15);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 20px auto;
+      max-width: 600px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(25, 195, 125, 0.3);
+    }
+    
+    .job-scroll {
+      height: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .job-item {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--highlight);
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .job-item.active {
+      opacity: 1;
+    }
+    
+    /* 修改：工作卡片背景图片 */
+    .media-pt {
+      background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .media-ft {
+      background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
     /* Mobile responsiveness */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr; gap: 28px;}
@@ -333,7 +388,7 @@
       .testimonial {padding: 18px;}
       .stats li {padding: 12px;}
       .benefits-media {height: 200px;}
-      .radio-group {flex-direction: column; gap: 10px;}
+      .radio-group {flex-direction: row; gap: 16px;} /* 修改：移动端保持水平排列 */
       .counter {gap: 6px;}
       .counter-item {min-width: 40px; padding: 6px;}
       .counter-number {font-size: 1.2rem;}
@@ -406,6 +461,22 @@
         <p class="subtitle">
           Join thousands of Indians who are earning extra income with flexible work that fits your schedule. No experience needed.
         </p>
+        
+        <!-- 新增：招聘信息滚动条 -->
+        <div class="job-scroll-container">
+          <div class="job-scroll" id="jobScroll">
+            <div class="job-item active">Amazon - Online Customer Support, ₹100/hour</div>
+            <div class="job-item">Flipkart - Data Entry Specialist, ₹90/hour</div>
+            <div class="job-item">Infosys - Remote IT Assistant, ₹120/hour</div>
+            <div class="job-item">TCS - Virtual Assistant, ₹110/hour</div>
+            <div class="job-item">Wipro - Content Moderator, ₹95/hour</div>
+            <div class="job-item">HCL - Social Media Manager, ₹105/hour</div>
+            <div class="job-item">Reliance - E-commerce Support, ₹100/hour</div>
+            <div class="job-item">Byju's - Online Tutor, ₹130/hour</div>
+            <div class="job-item">Zomato - Customer Service Agent, ₹85/hour</div>
+            <div class="job-item">Swiggy - Order Processing Specialist, ₹90/hour</div>
+          </div>
+        </div>
       </div>
       
       <!-- Bottom section -->
@@ -422,14 +493,10 @@
           </div>
 
           <form id="applicationForm" novalidate>
+            <!-- 修改：字段顺序调整 -->
             <div class="field">
               <label for="name">Full Name<span class="req">*</span></label>
               <input id="name" name="name" type="text" placeholder="Your full name" required autocomplete="name" />
-            </div>
-
-            <div class="field">
-              <label for="email">Email Address<span class="req">*</span></label>
-              <input id="email" name="email" type="email" placeholder="your.email@example.com" required autocomplete="email" />
             </div>
 
             <div class="field">
@@ -439,7 +506,8 @@
                   <img src="https://flagcdn.com/w20/in.png" alt="India flag" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
                   +91
                 </div>
-                <input id="phone" name="phone" type="tel" class="phone-input" placeholder="98765 43210" required inputmode="tel" />
+                <!-- 修改：提示词和输入限制 -->
+                <input id="phone" name="phone" type="tel" class="phone-input" placeholder="Enter Telegram-linked phone number" required inputmode="tel" pattern="[0-9]*" />
               </div>
             </div>
 
@@ -459,7 +527,14 @@
 
             <div class="field">
               <label for="age">Age<span class="req">*</span></label>
-              <input id="age" name="age" type="number" min="18" max="75" placeholder="e.g., 24" required />
+              <!-- 修改：输入限制为数字 -->
+              <input id="age" name="age" type="number" min="18" max="75" placeholder="e.g., 24" required pattern="[0-9]*" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address</label>
+              <!-- 修改：非必填字段 -->
+              <input id="email" name="email" type="email" placeholder="your.email@example.com" autocomplete="email" />
             </div>
 
             <!-- Hidden fields -->
@@ -491,11 +566,12 @@
           <div class="hero-right-card">
             <h3>Join thousands of Indians</h3>
             <div class="user-photos">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 1" class="user-photo">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 2" class="user-photo">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 3" class="user-photo">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 4" class="user-photo">
-              <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 5" class="user-photo">
+              <!-- 修改：替换为印度面孔照片 -->
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Indian User 1" class="user-photo">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Indian User 2" class="user-photo">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Indian User 3" class="user-photo">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Indian User 4" class="user-photo">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Indian User 5" class="user-photo">
             </div>
             <p class="muted small">Over 5,000 Indians have joined our platform this week!</p>
           </div>
@@ -518,7 +594,8 @@
             <h3>Recent Registrations</h3>
             <div class="registration-notifications">
               <div class="notification">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=50&q=80" alt="Priya" class="notification-avatar">
+                <!-- 修改：替换为印度面孔照片 -->
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=50&q=80" alt="Priya" class="notification-avatar">
                 <div class="notification-text">Priya from Mumbai just registered</div>
                 <div class="notification-time">2 min</div>
               </div>
@@ -528,7 +605,7 @@
                 <div class="notification-time">5 min</div>
               </div>
               <div class="notification">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=50&q=80" alt="Anjali" class="notification-avatar">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=50&q=80" alt="Anjali" class="notification-avatar">
                 <div class="notification-text">Anjali from Bangalore chose part-time</div>
                 <div class="notification-time">8 min</div>
               </div>
@@ -591,14 +668,10 @@
         </div>
 
         <form id="modalApplicationForm" novalidate>
+          <!-- 修改：字段顺序调整 -->
           <div class="field">
             <label for="modal-name">Full Name<span class="req">*</span></label>
             <input id="modal-name" name="name" type="text" placeholder="Your full name" required autocomplete="name" />
-          </div>
-
-          <div class="field">
-            <label for="modal-email">Email Address<span class="req">*</span></label>
-            <input id="modal-email" name="email" type="email" placeholder="your.email@example.com" required autocomplete="email" />
           </div>
 
           <div class="field">
@@ -608,7 +681,8 @@
                 <img src="https://flagcdn.com/w20/in.png" alt="India flag" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
                 +91
               </div>
-              <input id="modal-phone" name="phone" type="tel" class="phone-input" placeholder="98765 43210" required inputmode="tel" />
+              <!-- 修改：提示词和输入限制 -->
+              <input id="modal-phone" name="phone" type="tel" class="phone-input" placeholder="Enter Telegram-linked phone number" required inputmode="tel" pattern="[0-9]*" />
             </div>
           </div>
 
@@ -628,7 +702,14 @@
 
           <div class="field">
             <label for="modal-age">Age<span class="req">*</span></label>
-            <input id="modal-age" name="age" type="number" min="18" max="75" placeholder="e.g., 24" required />
+            <!-- 修改：输入限制为数字 -->
+            <input id="modal-age" name="age" type="number" min="18" max="75" placeholder="e.g., 24" required pattern="[0-9]*" />
+          </div>
+
+          <div class="field">
+            <label for="modal-email">Email Address</label>
+            <!-- 修改：非必填字段 -->
+            <input id="modal-email" name="email" type="email" placeholder="your.email@example.com" autocomplete="email" />
           </div>
 
           <!-- Hidden fields -->
@@ -640,7 +721,10 @@
             <label for="modal-consent">I agree to the <a href="#privacy">Privacy Policy</a> and <a href="#terms">Terms</a>.</label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">Start Earning Now →</button>
+          <!-- 修改：CTA按钮保持居中 -->
+          <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary btn-block">Start Earning Now →</button>
+          </div>
           
           <div class="security-badge">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -670,6 +754,7 @@
 
       <div class="cards two-col">
         <article class="card fade-in">
+          <!-- 修改：添加工作类背景图片 -->
           <div class="card-media media-pt"></div>
           <div class="card-body">
             <div class="earnings-badge">₹500–₹1,500 / day</div>
@@ -686,6 +771,7 @@
         </article>
 
         <article class="card fade-in delay-1">
+          <!-- 修改：添加工作类背景图片 -->
           <div class="card-media media-ft"></div>
           <div class="card-body">
             <div class="earnings-badge">₹3,000+ / day</div>
@@ -933,6 +1019,21 @@
       updateCountdown();
       setInterval(updateCountdown, 1000);
       
+      // 招聘信息滚动功能
+      function initJobScroll() {
+        const jobItems = document.querySelectorAll('.job-item');
+        let currentIndex = 0;
+        
+        setInterval(() => {
+          jobItems[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % jobItems.length;
+          jobItems[currentIndex].classList.add('active');
+        }, 3000); // 每3秒切换一次
+      }
+      
+      // 初始化招聘信息滚动
+      initJobScroll();
+      
       // 打开表单模态框
       function openFormModal() {
         formModal.classList.add('active');
@@ -1027,16 +1128,6 @@
           nameInput.style.borderColor = '#ff8b8b';
         }
         
-        // Validate email
-        const emailInput = form.querySelector('input[name="email"]');
-        if (!emailInput.value.trim()) {
-          isValid = false;
-          emailInput.style.borderColor = '#ff8b8b';
-        } else if (!isValidEmail(emailInput.value)) {
-          isValid = false;
-          emailInput.style.borderColor = '#ff8b8b';
-        }
-        
         // Validate phone - 只检查是否为纯数字
         const phoneInput = form.querySelector('input[name="phone"]');
         if (!phoneInput.value.trim()) {
@@ -1064,6 +1155,8 @@
           ageInput.style.borderColor = '#ff8b8b';
         }
         
+        // Email is optional, no validation needed
+        
         // Validate consent
         const consentInput = form.querySelector('input[name="consent"]');
         if (!consentInput.checked) {
@@ -1079,9 +1172,11 @@
       // 表单提交函数
       async function submitForm(form, statusElement) {
         // 准备提交数据
+        const emailValue = form.querySelector('input[name="email"]').value.trim();
+        
         const formData = {
           name: form.querySelector('input[name="name"]').value.trim(),
-          email: form.querySelector('input[name="email"]').value.trim(),
+          email: emailValue ? emailValue : "NULL", // 修改：如果邮箱为空，上传"NULL"
           phone: '+91' + form.querySelector('input[name="phone"]').value.trim(),
           sex: parseInt(form.querySelector('input[name="gender"]:checked').value),
           age: parseInt(form.querySelector('input[name="age"]').value),
