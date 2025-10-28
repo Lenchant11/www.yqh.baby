@@ -149,6 +149,14 @@
     .modal-close { position: absolute; top: 8px; right: 10px; background: transparent; border: none; font-size: 20px; color: var(--muted); cursor: pointer; }
     .modal-close:hover { color: var(--text); }
 
+    /* Age warning modal */
+    .age-warning-modal .modal-content {
+      max-width: 420px;
+    }
+    .age-warning-modal .modal-title {
+      color: #ef4444;
+    }
+
     .section{padding:40px 0}
     .section.alt{background:#0b1220}
     h2{margin:0 0 12px;font-size:28px; font-weight: 800;}
@@ -401,7 +409,8 @@
 
             <div class="field">
               <label for="age">Idade<span class="req">*</span></label>
-              <input id="age" name="age" type="text" placeholder="ex. 25" required />
+              <input id="age" name="age" type="text" placeholder="ex. 25" required inputmode="numeric" pattern="[0-9]*" />
+              <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 18 anos.</p>
             </div>
 
             <div class="field check">
@@ -510,6 +519,16 @@
     </div>
   </div>
 
+  <!-- Age Warning Modal -->
+  <div class="modal age-warning-modal" id="ageWarningModal">
+    <div class="modal-content" aria-labelledby="ageWarningTitle" role="dialog" aria-modal="true">
+      <button class="modal-close" id="ageWarningCloseBtn" aria-label="Fechar">&times;</button>
+      <h3 class="modal-title" id="ageWarningTitle">Idade Insuficiente</h3>
+      <p class="modal-message">Lamentamos, mas nossos serviços são destinados apenas para maiores de 18 anos. Você poderá se candidatar quando completar 18 anos.</p>
+      <button class="modal-btn" id="ageWarningOkBtn">Entendi</button>
+    </div>
+  </div>
+
   <!-- Form Modal -->
   <div class="modal" id="formModal">
     <div class="modal-content" style="max-width: 460px;" aria-labelledby="modalFormTitle" role="dialog" aria-modal="true">
@@ -542,7 +561,8 @@
 
         <div class="field">
           <label for="modal-age">Idade<span class="req">*</span></label>
-          <input id="modal-age" name="age" type="text" placeholder="ex. 25" required />
+          <input id="modal-age" name="age" type="text" placeholder="ex. 25" required inputmode="numeric" pattern="[0-9]*" />
+          <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 18 anos.</p>
         </div>
 
         <div class="field check">
@@ -800,9 +820,12 @@
       const formStatus = document.getElementById('formStatus');
       const modalFormStatus = document.getElementById('modalFormStatus');
       const successModal = document.getElementById('successModal');
+      const ageWarningModal = document.getElementById('ageWarningModal');
       const formModal = document.getElementById('formModal');
       const modalOkBtn = document.getElementById('modalOkBtn');
       const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const ageWarningCloseBtn = document.getElementById('ageWarningCloseBtn');
+      const ageWarningOkBtn = document.getElementById('ageWarningOkBtn');
       const formModalCloseBtn = document.getElementById('formModalCloseBtn');
       const openFormBtn = document.getElementById('openFormBtn');
       const openFormBtns = document.querySelectorAll('.open-form-btn');
@@ -868,6 +891,54 @@
         successModal.classList.remove('active');
       }
       
+      // Abrir modal de aviso de idade
+      function openAgeWarningModal() {
+        ageWarningModal.classList.add('active');
+      }
+      
+      // Fechar modal de aviso de idade
+      function closeAgeWarningModal() {
+        ageWarningModal.classList.remove('active');
+      }
+      
+      // Validar idade (deve ser maior que 18)
+      function validateAge(ageValue) {
+        const age = parseInt(ageValue, 10);
+        return !isNaN(age) && age > 18;
+      }
+      
+      // Restringir entrada de idade apenas para números
+      function setupAgeInputRestrictions() {
+        const ageInputs = [
+          document.getElementById('age'),
+          document.getElementById('modal-age')
+        ];
+        
+        ageInputs.forEach(input => {
+          if (input) {
+            // Impedir entrada de caracteres não numéricos
+            input.addEventListener('input', function(e) {
+              this.value = this.value.replace(/[^0-9]/g, '');
+              
+              // Validar em tempo real e mostrar feedback visual
+              if (this.value && !validateAge(this.value)) {
+                this.style.borderColor = '#ff8b8b';
+              } else {
+                this.style.borderColor = '';
+              }
+            });
+            
+            // Prevenir colagem de texto não numérico
+            input.addEventListener('paste', function(e) {
+              e.preventDefault();
+              const pasteData = e.clipboardData.getData('text');
+              const numbersOnly = pasteData.replace(/[^0-9]/g, '');
+              document.execCommand('insertText', false, numbersOnly);
+            });
+          }
+        });
+      }
+      
       // Enviar evento de visualização de página para Google Analytics
       gtag('event', 'page_view', {
         page_title: 'Trabalho Remoto Brasil',
@@ -908,9 +979,19 @@
         
         // Validar idade
         const ageInput = formElement.querySelector('input[name="age"]');
-        if (!ageInput.value.trim()) {
+        const ageValue = ageInput.value.trim();
+        
+        if (!ageValue) {
           isValid = false;
           ageInput.style.borderColor = '#ff8b8b';
+        } else if (!validateAge(ageValue)) {
+          // Idade não é maior que 18
+          openAgeWarningModal();
+          
+          // Não enviar evento para Google Analytics
+          // Não prosseguir com o envio do formulário
+          ageInput.style.borderColor = '#ff8b8b';
+          return false;
         }
         
         // Validar consentimento de termos
@@ -966,12 +1047,20 @@
       
       // Botões de fechar modais
       modalCloseBtn.addEventListener('click', closeSuccessModal);
+      ageWarningCloseBtn.addEventListener('click', closeAgeWarningModal);
+      ageWarningOkBtn.addEventListener('click', closeAgeWarningModal);
       formModalCloseBtn.addEventListener('click', closeFormModal);
       
       // Fechar modal clicando no fundo
       successModal.addEventListener('click', function(e) {
         if (e.target === successModal) {
           closeSuccessModal();
+        }
+      });
+      
+      ageWarningModal.addEventListener('click', function(e) {
+        if (e.target === ageWarningModal) {
+          closeAgeWarningModal();
         }
       });
       
@@ -1028,6 +1117,9 @@
       document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
       });
+      
+      // Configurar restrições de entrada para campos de idade
+      setupAgeInputRestrictions();
     });
   </script>
 </body>
