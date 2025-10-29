@@ -48,11 +48,11 @@
       --ring: 0 0 0 3px rgba(74, 108, 250, 0.25);
       --radius:12px;
       --transition: all 0.3s ease;
-      --highlight: #ffd700; /* 新增：高亮颜色 - 金黄色 */
-      --cta-primary: #ffd700; /* CTA主色 - 金黄色 */
-      --cta-primary-600: #e6c200; /* CTA主色-深色 */
-      --cta-primary-300: #ffdf33; /* CTA主色-浅色 */
-      --title-glow: #ff6b00; /* 标题发光色 */
+      --highlight: #ffd700;
+      --cta-primary: #ffd700;
+      --cta-primary-600: #e6c200;
+      --cta-primary-300: #ffdf33; 
+      --title-glow: #ff6b00;
     }
 
     *{box-sizing:border-box}
@@ -76,7 +76,6 @@
     .btn-primary:hover{background:var(--cta-primary-600); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);}
     .btn:focus{outline:none;box-shadow:0 0 0 3px rgba(255, 215, 0, 0.5)}
     
-    /* CTA按钮特殊效果 */
     .btn-primary.pulse {
       animation: ctaPulse 2s infinite;
     }
@@ -178,7 +177,7 @@
       max-height: 90vh;
       overflow-y: auto;
       padding: 20px;
-      text-align: left; /* 修改：模态框表单内容左对齐 */
+      text-align: left;
     }
     .form-modal .form-card {
       box-shadow: none;
@@ -186,14 +185,14 @@
     }
     .form-modal .form-title {
       font-size: 20px;
-      text-align: left; /* 修改：模态框标题左对齐 */
+      text-align: left;
     }
     .form-modal .form-note {
       font-size: 0.9rem;
-      text-align: left; /* 修改：模态框描述左对齐 */
+      text-align: left;
     }
     .form-modal .field label {
-      text-align: left; /* 修改：模态框字段标签左对齐 */
+      text-align: left;
     }
 
     .section{padding:60px 0}
@@ -337,7 +336,6 @@
     .india-flag {display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px;}
     .india-flag img {width: 20px; height: 14px; border-radius: 2px;}
     
-    /* 修改：招聘信息滚动条样式 - 使用CSS动画实现无缝滚动 */
     .job-scroll-container {
       background: rgba(25, 195, 125, 0.15);
       border-radius: 10px;
@@ -366,12 +364,19 @@
       height: 36px;
       display: flex;
       align-items: center;
-      justify-content: flex-start; /* 修改：左对齐 */
+      justify-content: flex-start;
       font-weight: 600;
       color: var(--highlight);
       flex-shrink: 0;
-      font-size: 0.85rem; /* 修改：字体缩小 */
+      font-size: 0.85rem;
       padding: 0 8px;
+    }
+
+    .job-salary {
+      font-size: 0.95rem;
+      color: #ff4757;
+      font-weight: 700;
+      margin-left: 4px;
     }
     
     @keyframes scrollUp {
@@ -383,7 +388,6 @@
       }
     }
     
-    /* 新增：hot和new标签样式 */
     .job-tag {
       display: inline-flex;
       align-items: center;
@@ -453,19 +457,17 @@
       .testimonial {padding: 18px;}
       .stats li {padding: 12px;}
       .benefits-media {height: 200px;}
-      .radio-group {flex-direction: row; gap: 16px;} /* 修改：移动端保持水平排列 */
+      .radio-group {flex-direction: row; gap: 16px;}
       .counter {gap: 6px;}
       .counter-item {min-width: 40px; padding: 6px;}
       .counter-number {font-size: 1.2rem;}
       .user-photos {gap: 8px;}
       .user-photo {width: 50px; height: 50px;}
       
-      /* 修改：移动端隐藏导航菜单项 */
       .nav-link:not(.btn) {
         display: none;
       }
       
-      /* Form Modal Mobile Adjustments */
       .form-modal .modal-content {
         padding: 16px;
         max-height: 85vh;
@@ -482,7 +484,6 @@
         font-size: 0.9rem;
       }
       
-      /* 移动端招聘信息滚动条调整 */
       .job-scroll-container {
         padding: 6px 12px;
         height: 32px;
@@ -523,7 +524,6 @@
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Home">RemoteEarn India</a>
       <nav class="nav-links">
-        <!-- 修改：移动端隐藏这些菜单项 -->
         <a href="#roles" class="nav-link">Earning Options</a>
         <a href="#benefits" class="nav-link">Benefits</a>
         <a href="#faq" class="nav-link">FAQ</a>
@@ -543,22 +543,22 @@
           Join thousands of Indians who are earning extra income with flexible work that fits your schedule. No experience needed.
         </p>
         
-        <!-- 修改：招聘信息滚动条 - 使用CSS动画实现无缝滚动 -->
+        <!-- 招聘信息滚动条 -->
         <div class="job-scroll-container">
           <div class="job-scroll">
             <div class="job-scroll-content">
-              <div class="job-item">Amazon - Online Customer Support, ₹100/hour<span class="job-tag hot-tag">HOT</span></div>
-              <div class="job-item">Flipkart - Data Entry Specialist, ₹90/hour<span class="job-tag new-tag">NEW</span></div>
-              <div class="job-item">Infosys - Remote IT Assistant, ₹120/hour<span class="job-tag hot-tag">HOT</span></div>
-              <div class="job-item">TCS - Virtual Assistant, ₹110/hour<span class="job-tag new-tag">NEW</span></div>
-              <div class="job-item">Wipro - Content Moderator, ₹95/hour<span class="job-tag hot-tag">HOT</span></div>
-              <div class="job-item">HCL - Social Media Manager, ₹105/hour<span class="job-tag new-tag">NEW</span></div>
-              <div class="job-item">Reliance - E-commerce Support, ₹100/hour<span class="job-tag hot-tag">HOT</span></div>
-              <div class="job-item">Byju's - Online Tutor, ₹130/hour<span class="job-tag new-tag">NEW</span></div>
-              <div class="job-item">Zomato - Customer Service Agent, ₹85/hour<span class="job-tag hot-tag">HOT</span></div>
-              <div class="job-item">Swiggy - Order Processing Specialist, ₹90/hour<span class="job-tag new-tag">NEW</span></div>
+              <div class="job-item">Amazon - Online Customer Support, <span class="job-salary">₹200/hour</span><span class="job-tag hot-tag">HOT</span></div>
+              <div class="job-item">Flipkart - Data Entry Clerk, <span class="job-salary">₹195/hour</span><span class="job-tag new-tag">NEW</span></div>
+              <div class="job-item">Infosys - Music&Video Reviewer, <span class="job-salary">₹210/hour</span><span class="job-tag hot-tag">HOT</span></div>
+              <div class="job-item">TCS - Virtual Assistant, <span class="job-salary">₹230/hour</span><span class="job-tag new-tag">HOT</span></div>
+              <div class="job-item">Google - Content Moderator, <span class="job-salary">₹190/hour</span><span class="job-tag hot-tag">HOT</span></div>
+              <div class="job-item">HCL - Social Media Manager, <span class="job-salary">₹175/hour</span><span class="job-tag new-tag">NEW</span></div>
+              <div class="job-item">Toluna - Online Survey Taker, <span class="job-salary">₹180/hour</span><span class="job-tag hot-tag">HOT</span></div>
+              <div class="job-item">Byju's - Online Tutor, <span class="job-salary">₹190/hour</span><span class="job-tag new-tag">NEW</span></div>
+              <div class="job-item">Zomato - Customer Service Agent, <span class="job-salary">₹185/hour</span><span class="job-tag hot-tag">HOT</span></div>
+              <div class="job-item">Swiggy - Order Processing Specialist, <span class="job-salary">₹210/hour</span><span class="job-tag new-tag">HOT</span></div>
               <!-- 复制第一项以实现无缝循环 -->
-              <div class="job-item">Amazon - Online Customer Support, ₹100/hour<span class="job-tag hot-tag">HOT</span></div>
+              <div class="job-item">Amazon - Online Customer Support, <span class="job-salary">₹100/hour</span><span class="job-tag hot-tag">HOT</span></div>
             </div>
           </div>
         </div>
