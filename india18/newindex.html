@@ -49,6 +49,10 @@
       --radius:12px;
       --transition: all 0.3s ease;
       --highlight: #ffd700; /* 新增：高亮颜色 - 金黄色 */
+      --cta-primary: #ffd700; /* CTA主色 - 金黄色 */
+      --cta-primary-600: #e6c200; /* CTA主色-深色 */
+      --cta-primary-300: #ffdf33; /* CTA主色-浅色 */
+      --title-glow: #ff6b00; /* 标题发光色 */
     }
 
     *{box-sizing:border-box}
@@ -65,19 +69,46 @@
     .nav-link{opacity:.85; transition: var(--transition); font-size: 0.95rem;}
     .nav-link:hover{opacity:1; color: var(--primary-300);}
 
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:10px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:10px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem; position: relative; overflow: hidden;}
     .btn-lg{padding:12px 28px;font-size:1.05rem;}
     .btn-block{width:100%}
-    .btn-primary{background:var(--primary);color:#ffffff; box-shadow: 0 4px 10px rgba(74, 108, 250, 0.25);}
-    .btn-primary:hover{background:var(--primary-600); transform: translateY(-2px); box-shadow: 0 6px 14px rgba(74, 108, 250, 0.35);}
-    .btn:focus{outline:none;box-shadow:var(--ring)}
+    .btn-primary{background:var(--cta-primary);color:#0c1220 !important; box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4); font-weight: 700;}
+    .btn-primary:hover{background:var(--cta-primary-600); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);}
+    .btn:focus{outline:none;box-shadow:0 0 0 3px rgba(255, 215, 0, 0.5)}
+    
+    /* CTA按钮特殊效果 */
+    .btn-primary.pulse {
+      animation: ctaPulse 2s infinite;
+    }
+    
+    @keyframes ctaPulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(255, 215, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+    }
+    
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+    }
+    
+    .btn-primary:hover::after {
+      transform: rotate(45deg) translate(50%, 50%);
+    }
     
     .hero{position:relative;padding:30px 0 30px; overflow: hidden;}
     .hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:stretch}
     .hero-top {text-align: center; max-width: 800px; margin: 0 auto;}
     .hero-bottom {display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: stretch;}
     
-    .hero-copy h1{font-size:38px;margin:0 0 10px; line-height: 1.2; font-weight: 800; color: var(--highlight); /* 修改：标题使用高亮颜色 */}
+    .hero-copy h1{font-size:38px;margin:0 0 10px; line-height: 1.2; font-weight: 800; color: var(--title-glow); text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);}
     .subtitle{color:var(--muted);max-width:48ch;margin-bottom:14px; font-size: 1.05rem;}
     .hero-points{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;color:#cfd5dd; font-weight: 500;}
     .hero-points li {display: flex; align-items: center; gap: 8px; font-size: 0.95rem;}
@@ -134,8 +165,8 @@
     .modal-content {background: var(--card); border-radius: var(--radius); padding: 24px; max-width: 400px; width: 90%; text-align: center;}
     .modal-title {font-size: 1.5rem; margin-bottom: 16px; color: var(--primary);}
     .modal-message {margin-bottom: 24px; line-height: 1.5;}
-    .modal-btn {background: var(--primary); color: #ffffff; border: none; border-radius: 8px; padding: 10px 20px; font-weight: 600; cursor: pointer; transition: var(--transition);}
-    .modal-btn:hover {background: var(--primary-600);}
+    .modal-btn {background: var(--cta-primary); color: #0c1220 !important; border: none; border-radius: 8px; padding: 10px 20px; font-weight: 700; cursor: pointer; transition: var(--transition); box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);}
+    .modal-btn:hover {background: var(--cta-primary-600); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);}
 
     /* Close button for modal */
     .modal-close { position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 22px; color: var(--muted); cursor: pointer; }
@@ -310,17 +341,17 @@
     .job-scroll-container {
       background: rgba(25, 195, 125, 0.15);
       border-radius: 10px;
-      padding: 12px 16px;
+      padding: 8px 16px;
       margin: 20px auto;
       max-width: 600px;
       overflow: hidden;
       position: relative;
       border: 1px solid rgba(25, 195, 125, 0.3);
-      height: 40px;
+      height: 36px;
     }
     
     .job-scroll {
-      height: 40px;
+      height: 36px;
       overflow: hidden;
       position: relative;
     }
@@ -332,13 +363,15 @@
     }
     
     .job-item {
-      height: 40px;
+      height: 36px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* 修改：左对齐 */
       font-weight: 600;
       color: var(--highlight);
       flex-shrink: 0;
+      font-size: 0.85rem; /* 修改：字体缩小 */
+      padding: 0 8px;
     }
     
     @keyframes scrollUp {
@@ -346,7 +379,7 @@
         transform: translateY(0);
       }
       100% {
-        transform: translateY(calc(-100% + 40px));
+        transform: translateY(calc(-100% + 36px));
       }
     }
     
@@ -447,6 +480,16 @@
       }
       .form-modal label {
         font-size: 0.9rem;
+      }
+      
+      /* 移动端招聘信息滚动条调整 */
+      .job-scroll-container {
+        padding: 6px 12px;
+        height: 32px;
+      }
+      .job-item {
+        height: 32px;
+        font-size: 0.8rem;
       }
     }
     
