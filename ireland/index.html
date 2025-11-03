@@ -99,6 +99,79 @@
         linear-gradient(180deg,rgba(11,15,20,.85),rgba(11,15,20,.95)),
         url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;}
 
+    /* Job listings carousel - 修改后的样式 */
+    .job-carousel {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      overflow: hidden;
+      position: relative;
+      height: 60px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .job-carousel-track {
+      position: absolute;
+      width: 100%;
+      transition: transform 0.8s ease;
+    }
+    
+    .job-listing {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      height: 60px;
+    }
+    
+    .job-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .job-company {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--yellow);
+    }
+    
+    .job-title {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    
+    .job-salary {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--green);
+      background: rgba(0, 184, 148, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    
+    .job-separator {
+      color: var(--muted);
+      margin: 0 8px;
+    }
+    
+    .whatsapp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37, 211, 102, 0.1);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+    
+    .whatsapp-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
     .logos{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px; align-items: center; justify-content: center;}
     .logo{font-size:13px;padding:6px 12px;border:1px dashed rgba(255,255,255,.15);border-radius:8px;color:#cfd5dd;background:rgba(255,255,255,.03); transition: var(--transition);}
     .logo:hover {transform: translateY(-2px); border-color: var(--yellow); color: var(--white);}
@@ -302,15 +375,6 @@
     .whatsapp-badge {display: inline-flex; align-items: center; gap: 6px; background: rgba(37, 211, 102, 0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin-top: 8px;}
     .whatsapp-badge svg {width: 16px; height: 16px;}
     
-    /* Job listings carousel */
-    .job-carousel {background: var(--card); border-radius: 8px; padding: 12px; margin: 16px 0; overflow: hidden; position: relative; height: 160px;}
-    .job-carousel-track {display: flex; flex-direction: column; position: absolute; width: 100%; transition: transform 0.5s ease;}
-    .job-listing {padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);}
-    .job-listing:last-child {border-bottom: none;}
-    .job-company {font-weight: 600; font-size: 0.95rem;}
-    .job-title {color: var(--muted); font-size: 0.9rem; margin-bottom: 4px;}
-    .job-salary {color: var(--yellow); font-weight: 700; font-size: 0.95rem;}
-    
     /* Enhanced CTA effects */
     .btn-cta {
       position: relative;
@@ -382,6 +446,29 @@
       .counter-number {font-size: 1.2rem;}
       .user-photos {gap: 8px;}
       .user-photo {width: 50px; height: 50px;}
+      /* 移动端招聘信息轮播样式 */
+      .job-carousel {
+        height: 50px;
+        padding: 12px;
+      }
+      .job-listing {
+        height: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .job-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .job-separator {
+        display: none;
+      }
+      .job-salary {
+        align-self: flex-end;
+        font-size: 0.9rem;
+      }
     }
     
     @media (max-width: 480px) {
@@ -392,6 +479,9 @@
       .btn {font-size: 0.9rem;}
       .hero-points li {font-size: 0.9rem;}
       .subtitle {font-size: 1rem;}
+      .job-company, .job-title, .job-salary {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -420,33 +510,48 @@
           Join thousands of Irish professionals transforming their lives with flexible remote work that fits your schedule. <strong>No experience needed</strong> and full support to start earning within 24 hours.
         </p>
         
-        <!-- Job Carousel -->
+        <!-- Job Carousel - 修改后的版本 -->
         <div class="job-carousel fade-in">
           <div class="job-carousel-track" id="jobCarousel">
             <div class="job-listing">
-              <div class="job-company">Amazon</div>
-              <div class="job-title">Online Customer Service</div>
-              <div class="job-salary">€50/hour</div>
+              <div class="job-info">
+                <span class="job-company">Amazon</span>
+                <span class="job-separator">-</span>
+                <span class="job-title">Online Customer Service</span>
+              </div>
+              <span class="job-salary">€50/hour</span>
             </div>
             <div class="job-listing">
-              <div class="job-company">Google</div>
-              <div class="job-title">Data Entry Specialist</div>
-              <div class="job-salary">€45/hour</div>
+              <div class="job-info">
+                <span class="job-company">Google</span>
+                <span class="job-separator">-</span>
+                <span class="job-title">Data Entry Specialist</span>
+              </div>
+              <span class="job-salary">€45/hour</span>
             </div>
             <div class="job-listing">
-              <div class="job-company">Microsoft</div>
-              <div class="job-title">Virtual Assistant</div>
-              <div class="job-salary">€42/hour</div>
+              <div class="job-info">
+                <span class="job-company">Microsoft</span>
+                <span class="job-separator">-</span>
+                <span class="job-title">Virtual Assistant</span>
+              </div>
+              <span class="job-salary">€42/hour</span>
             </div>
             <div class="job-listing">
-              <div class="job-company">Accenture</div>
-              <div class="job-title">Content Moderator</div>
-              <div class="job-salary">€38/hour</div>
+              <div class="job-info">
+                <span class="job-company">Accenture</span>
+                <span class="job-separator">-</span>
+                <span class="job-title">Content Moderator</span>
+              </div>
+              <span class="job-salary">€38/hour</span>
             </div>
             <div class="job-listing">
-              <div class="job-company">Salesforce</div>
-              <div class="job-title">Social Media Evaluator</div>
-              <div class="job-salary">€40/hour</div>
+              <div class="job-info">
+                <span class="job-company">Salesforce</span>
+                <span class="job-separator">-</span>
+                <span class="job-title">Social Media Evaluator</span>
+              </div>
+              <span class="job-salary">€40/hour</span>
             </div>
           </div>
         </div>
@@ -917,7 +1022,7 @@
       const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
       const assignedWhatsAppLink = generateWhatsAppLink(randomAccount);
       
-      // Job carousel functionality
+      // Job carousel functionality - 修改后的版本
       function initJobCarousel() {
         const carousel = document.getElementById('jobCarousel');
         const jobs = carousel.querySelectorAll('.job-listing');
@@ -932,6 +1037,9 @@
         // Start rotation
         setInterval(rotateJobs, 3000);
       }
+      
+      // Initialize job carousel
+      initJobCarousel();
       
       // Countdown timer
       function updateCountdown() {
@@ -954,9 +1062,6 @@
       // Initialize countdown
       updateCountdown();
       setInterval(updateCountdown, 1000);
-      
-      // Initialize job carousel
-      initJobCarousel();
       
       // Open form modal
       function openFormModal() {
