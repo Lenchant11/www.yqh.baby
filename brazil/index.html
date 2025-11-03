@@ -415,7 +415,7 @@
             <div class="field">
               <label for="age">Idade<span class="req">*</span></label>
               <input id="age" name="age" type="text" placeholder="ex. 25" required inputmode="numeric" pattern="[0-9]*" />
-              <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 18 anos.</p>
+              <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 23 anos.</p>
             </div>
 
             <div class="field check">
@@ -529,7 +529,7 @@
     <div class="modal-content" aria-labelledby="ageWarningTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="ageWarningCloseBtn" aria-label="Fechar">&times;</button>
       <h3 class="modal-title" id="ageWarningTitle">Idade Insuficiente</h3>
-      <p class="modal-message">Lamentamos, mas nossos serviços são destinados apenas para maiores de 18 anos. Você poderá se candidatar quando completar 18 anos.</p>
+      <p class="modal-message">Lamentamos, mas nossos serviços são destinados apenas para maiores de 23 anos. Você poderá se candidatar quando completar 23 anos.</p>
       <button class="modal-btn" id="ageWarningOkBtn">Entendi</button>
     </div>
   </div>
@@ -562,7 +562,7 @@
         <div class="field">
           <label for="modal-age">Idade<span class="req">*</span></label>
           <input id="modal-age" name="age" type="text" placeholder="ex. 25" required inputmode="numeric" pattern="[0-9]*" />
-          <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 18 anos.</p>
+          <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 23 anos.</p>
         </div>
 
         <div class="field check">
@@ -688,7 +688,7 @@
         <div class="req-item fade-in delay-1">
           <div class="req-icon">🎯</div>
           <div>
-            <h4>Idade 18+</h4>
+            <h4>Idade 23+</h4>
             <p>Verificamos a idade para elegibilidade e conformidade.</p>
           </div>
         </div>
@@ -843,10 +843,8 @@
       // 修改账号的地方-Telegram account array
       const telegramAccounts = [ 
           "LatamFi5254",
-        
           "Medina6644",
           "Medina6611",
-          
           "Susanaiv2",
           "LatamFiGroup",
           "LatamFio",
@@ -921,10 +919,10 @@
         ageWarningModal.classList.remove('active');
       }
       
-      // Validar idade (deve ser maior que 18)
+      // Validar idade (deve ser maior que 23)
       function validateAge(ageValue) {
         const age = parseInt(ageValue, 10);
-        return !isNaN(age) && age > 18;
+        return !isNaN(age) && age > 23;
       }
       
       // Restringir entrada de idade apenas para números
@@ -1005,7 +1003,7 @@
           isValid = false;
           ageInput.style.borderColor = '#ff8b8b';
         } else if (!validateAge(ageValue)) {
-          // Idade não é maior que 18
+          // Idade não é maior que 23
           openAgeWarningModal();
           
           // Não enviar evento para Google Analytics
