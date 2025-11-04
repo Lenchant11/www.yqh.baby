@@ -7,6 +7,17 @@
   <meta name="description" content="¡Comience a ganar en 24 horas! Trabajo remoto flexible con pagos diarios. No se necesita experiencia. Únase a más de 50,000 colombianos que trabajan remotamente hoy." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17524155246"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17524155246');
+  </script>
+  
   <style>
   /* style.css */
     :root{
@@ -979,6 +990,22 @@
     </div>
   </footer>
 
+  <!-- Event snippet for 哥伦比亚 conversion page -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17524155246/gTJDCJyA2LkbEO7GlaRB',
+          'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Telegram负载均衡系统
@@ -1100,9 +1127,10 @@
         }
       });
       
-      // 成功模态框事件
+      // 成功模态框事件 - 修改为使用谷歌转化跟踪
       modalOkBtn.addEventListener('click', function() {
-        window.location.href = telegramLink;
+        // 触发谷歌转化事件，同时跳转到Telegram
+        gtag_report_conversion(telegramLink);
       });
       
       modalCloseBtn.addEventListener('click', closeSuccessModal);
