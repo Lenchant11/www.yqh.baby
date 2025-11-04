@@ -548,7 +548,7 @@
         <!-- Left: Form -->
         <aside id="apply" class="form-card fade-in delay-1" aria-label="Formulario de Aplicación">
           <h2 class="form-title">Comience a Ganar en 24 Horas</h2>
-          <p class="form-note">Solo aceptamos verificación por WhatsApp. Complete este breve formulario y contacte por WhatsApp.</p>
+          <p class="form-note">Solo aceptamos verificación por Telegram. Complete este breve formulario y contacte por Telegram.</p>
           
           <div class="progress-bar">
             <div class="progress-step active"></div>
@@ -569,13 +569,13 @@
             </div>
 
             <div class="field">
-              <label for="phone">Número de WhatsApp<span class="req">*</span></label>
+              <label for="phone">Número de Telegram<span class="req">*</span></label>
               <div class="phone-input-group">
                 <div class="country-code">
                   <img src="https://flagcdn.com/w20/co.png" alt="Bandera de Colombia" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
                   +57
                 </div>
-                <input id="phone" name="phone" type="tel" class="phone-input" placeholder="Ingrese su número de WhatsApp" required inputmode="tel" pattern="[0-9]*" />
+                <input id="phone" name="phone" type="tel" class="phone-input" placeholder="Ingrese su número de Telegram" required inputmode="tel" pattern="[0-9]*" />
               </div>
             </div>
 
@@ -681,11 +681,11 @@
       <button class="modal-close" id="modalCloseBtn" aria-label="Cerrar">&times;</button>
       <h3 class="modal-title" id="modalTitle">¡Éxito!</h3>
       <p class="modal-message" id="successMessage">
-        Información enviada exitosamente. A continuación, siga las instrucciones de nuestro agente de servicio al cliente en WhatsApp para comenzar a ganar.
+        Información enviada exitosamente. A continuación, siga las instrucciones de nuestro agente de servicio al cliente en Telegram para comenzar a ganar.
         <br><br>
-        <strong style="color: var(--accent);">Importante:</strong> Asegúrese de que el número de WhatsApp que proporcionó coincida con el vinculado a su cuenta para la verificación.
+        <strong style="color: var(--accent);">Importante:</strong> Asegúrese de que el número de Telegram que proporcionó coincida con el vinculado a su cuenta para la verificación.
       </p>
-      <button class="modal-btn" id="modalOkBtn">Continuar a WhatsApp</button>
+      <button class="modal-btn" id="modalOkBtn">Continuar a Telegram</button>
     </div>
   </div>
 
@@ -695,7 +695,7 @@
       <button class="modal-close" id="formModalCloseBtn" aria-label="Cerrar">&times;</button>
       <div class="form-card" aria-label="Formulario de Aplicación">
         <h2 class="form-title">Comience a Ganar Ahora</h2>
-        <p class="form-note">Solo aceptamos verificación por WhatsApp. Complete este breve formulario y contacte por WhatsApp.</p>
+        <p class="form-note">Solo aceptamos verificación por Telegram. Complete este breve formulario y contacte por Telegram.</p>
         
         <div class="progress-bar">
           <div class="progress-step active"></div>
@@ -716,13 +716,13 @@
           </div>
 
           <div class="field">
-            <label for="modal-phone">Número de WhatsApp<span class="req">*</span></label>
+            <label for="modal-phone">Número de Telegram<span class="req">*</span></label>
             <div class="phone-input-group">
               <div class="country-code">
                 <img src="https://flagcdn.com/w20/co.png" alt="Bandera de Colombia" width="20" height="14" style="display:inline-block;vertical-align:middle;margin-right:8px;border-radius:2px;">
                 +57
               </div>
-              <input id="modal-phone" name="phone" type="tel" class="phone-input" placeholder="Ingrese su número de WhatsApp" required inputmode="tel" pattern="[0-9]*" />
+              <input id="modal-phone" name="phone" type="tel" class="phone-input" placeholder="Ingrese su número de Telegram" required inputmode="tel" pattern="[0-9]*" />
             </div>
           </div>
 
@@ -957,7 +957,7 @@
       </details>
       <details class="faq fade-in">
         <summary>¿Cómo me contactarán?</summary>
-        <div>Contactamos principalmente por WhatsApp. Recibirá instrucciones paso a paso una vez que aplique.</div>
+        <div>Contactamos principalmente por Telegram. Recibirá instrucciones paso a paso una vez que aplique.</div>
       </details>
     </div>
   </section>
@@ -981,18 +981,16 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // WhatsApp负载均衡系统
-      const whatsappAccounts = [
-        "573001234567",
-        "573007894561", 
-        "573002345678"
+      // Telegram负载均衡系统
+      const telegramAccounts = [
+        "trabajoremotoco1",
+        "trabajoremotoco2", 
+        "trabajoremotoco3"
       ];
       
-      const predefinedMessage = "Hola, vi la oportunidad de trabajo remoto y quiero aplicar";
-      
-      // 随机选择一个WhatsApp账号
-      const selectedWhatsApp = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
-      const whatsappLink = `https://wa.me/${selectedWhatsApp}?text=${encodeURIComponent(predefinedMessage)}`;
+      // 随机选择一个Telegram账号
+      const selectedTelegram = telegramAccounts[Math.floor(Math.random() * telegramAccounts.length)];
+      const telegramLink = `https://t.me/${selectedTelegram}`;
       
       const form = document.getElementById('applicationForm');
       const modalForm = document.getElementById('modalApplicationForm');
@@ -1066,7 +1064,7 @@
         }
         
         autoRedirectTimer = setTimeout(function() {
-          window.location.href = whatsappLink;
+          window.location.href = telegramLink;
         }, 5000);
       }
       
@@ -1104,7 +1102,7 @@
       
       // 成功模态框事件
       modalOkBtn.addEventListener('click', function() {
-        window.location.href = whatsappLink;
+        window.location.href = telegramLink;
       });
       
       modalCloseBtn.addEventListener('click', closeSuccessModal);
