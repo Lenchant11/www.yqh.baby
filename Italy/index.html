@@ -1018,7 +1018,8 @@
       
       // 随机选择一个WhatsApp账号
       const selectedWhatsapp = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
-      const whatsappLink = `https://wa.me/${selectedWhatsapp}`;
+      const message = encodeURIComponent("Ciao, vorrei ottenere questo lavoro e guadagnare. Come posso iniziare?");
+      const whatsappLink = `https://wa.me/${selectedWhatsapp}?text=${message}`;
       
       const form = document.getElementById('applicationForm');
       const modalForm = document.getElementById('modalApplicationForm');
