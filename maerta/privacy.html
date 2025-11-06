@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="mt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy / Politika tal-Privatezza | XogħolRemoteMalta</title>
+  <meta name="description" content="Privacy Policy of XogħolRemoteMalta. We respect your privacy and protect your personal data." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root{
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --muted: #64748b;
+      --text: #1e293b;
+      --white: #ffffff;
+      --primary: #CF142B;
+      --primary-600: #a01021;
+      --primary-300: #e88d99;
+      --accent: #E5A900;
+      --accent-light: #f5d780;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --ring: 0 0 0 3px rgba(207, 20, 43, 0.25);
+      --radius: 10px;
+      --transition: all 0.3s ease;
+      --shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 8px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.6; font-size: 16px;}
+    img{max-width:100%;display:block}
+    a{color:var(--text);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1120px,94%);margin-inline:auto}
+
+    .nav{position:sticky;top:0;z-index:50;background:rgba(248, 250, 252, 0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06); box-shadow: 0 1px 3px rgba(0,0,0,0.05);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:800;letter-spacing:.3px;font-size:1.3rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .nav-links{display:flex;gap:16px;align-items:center}
+    .nav-link{opacity:.85; transition: var(--transition); font-size: 0.95rem; font-weight: 500;}
+    .nav-link:hover{opacity:1; color: var(--primary);}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:8px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
+    .btn-primary{background: var(--primary);color:white; box-shadow: var(--shadow);}
+    .btn-primary:hover{background:var(--primary-600); transform: translateY(-2px); box-shadow: var(--shadow-lg);}
+    
+    .btn-language {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .btn-language:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .hero{position:relative;padding:50px 0 30px; overflow: hidden; background: linear-gradient(135deg, #fde8e8 0%, #fef7f0 50%, #fff9e6 100%);}
+    .hero-content{text-align:center;max-width:800px;margin:0 auto}
+    .hero h1{font-size:38px;margin:0 0 12px; line-height: 1.2; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .subtitle{color:var(--muted);max-width:48ch;margin-bottom:12px; font-size: 1.1rem; line-height: 1.6;}
+    
+    .content-section{padding:50px 0}
+    .content-card{background:var(--card);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);padding:30px; box-shadow: var(--shadow);}
+    
+    h2{margin:30px 0 16px;font-size:30px; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    h3{margin:24px 0 12px;font-size:22px; font-weight: 700; color: var(--primary);}
+    h4{margin:20px 0 10px;font-size:18px; font-weight: 600; color: var(--text);}
+    
+    .muted{color:var(--muted); line-height: 1.6;}
+    .small{font-size:0.88rem}
+    
+    .footer{border-top:1px solid rgba(0,0,0,.08);padding:32px 0 20px;background:#f1f5f9}
+    .footer-grid{display:flex;justify-content:space-between;gap:16px;align-items:flex-start; margin-bottom: 20px;}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+    
+    /* Language content */
+    .language-content {
+      display: none;
+    }
+    
+    .language-content.active {
+      display: block;
+    }
+    
+    /* Malta elements */
+    .malta-flag {display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; padding: 6px 12px; background: rgba(0,0,0,0.05); border-radius: 20px;}
+    .malta-flag img {width: 24px; height: 14px; border-radius: 2px;}
+    
+    /* Content styling */
+    .privacy-content ul, .privacy-content ol {
+      padding-left: 24px;
+      margin: 16px 0;
+    }
+    
+    .privacy-content li {
+      margin-bottom: 8px;
+    }
+    
+    .privacy-content p {
+      margin-bottom: 16px;
+    }
+    
+    .highlight-box {
+      background: rgba(207, 20, 43, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .last-updated {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin: 20px 0;
+      border: 1px solid rgba(0,0,0,.08);
+      font-weight: 600;
+    }
+    
+    /* Language toggle */
+    .language-toggle {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 10px;
+    }
+    
+    .language-btn {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .language-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 980px){
+      .hero h1 {font-size: 32px;}
+      h2 {font-size: 28px;}
+      .content-section {padding: 40px 0;}
+      .nav-links .nav-link {display: none;}
+    }
+    
+    @media (max-width: 640px) {
+      .nav-links {gap: 8px;}
+      .btn {padding: 8px 16px; font-size: 0.92rem;}
+      .footer-grid {flex-direction: column; gap: 16px;}
+      .footer-links {flex-direction: column; gap: 8px;}
+      .hero {padding: 40px 0 20px;}
+      .hero h1 {font-size: 28px;}
+      h2 {font-size: 26px;}
+      .content-section {padding: 32px 0;}
+      .content-card {padding: 20px;}
+      .language-toggle {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {font-size: 24px;}
+      h2 {font-size: 22px;}
+      .brand {font-size: 1.2rem;}
+      .nav-link {font-size: 0.9rem;}
+      .btn {font-size: 0.9rem;}
+      .subtitle {font-size: 1rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">XogħolRemoteMalta</a>
+      <nav class="nav-links">
+        <a href="index.html#roles" class="nav-link">Jobs / Xogħolijiet</a>
+        <a href="index.html#benefits" class="nav-link">Benefits / Vantaġġi</a>
+        <a href="index.html#faq" class="nav-link">FAQ / Mistoqsijiet</a>
+        <button class="btn-language" id="languageToggle">
+          <span id="currentLang">EN</span>
+          <span>🌐</span>
+        </button>
+        <a href="index.html" class="btn btn-primary">Back to Home / Lura għad-Dar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="malta-flag">
+        <img src="https://flagcdn.com/w20/mt.png" alt="Malta Flag">
+        <span>XogħolRemoteMalta</span>
+      </div>
+      <h1 id="heroTitle">Privacy Policy</h1>
+      <p class="subtitle" id="heroSubtitle">We respect your privacy and protect your personal data. Read about how we collect, use and protect your personal information.</p>
+      
+      <div class="language-toggle">
+        <button class="language-btn active" data-lang="en">English</button>
+        <button class="language-btn" data-lang="mt">Malti</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-card privacy-content">
+        <!-- English Content -->
+        <div class="language-content active" id="content-en">
+          <div class="last-updated">
+            📅 Last Updated: January 1, 2024
+          </div>
+          
+          <div class="highlight-box">
+            <strong>Important Note:</strong> This Privacy Policy explains how we collect, use, store and protect your personal information when you use our website and services.
+          </div>
+
+          <h2>1. Introduction</h2>
+          <p>XogħolRemoteMalta ("we", "our", "us") takes the privacy of its users ("you", "your") seriously. This Privacy Policy explains our practices regarding the collection, use and disclosure of your personal information when you use our website and services.</p>
+          
+          <p>By using our website, you consent to your personal information being processed as described in this Privacy Policy.</p>
+
+          <h2>2. Information We Collect</h2>
+          
+          <h3>2.1 Direct Information</h3>
+          <p>When you apply for our services, we collect personal information such as:</p>
+          <ul>
+            <li><strong>Full name</strong> - To identify and contact you</li>
+            <li><strong>Phone number</strong> - To contact you via WhatsApp about job opportunities</li>
+            <li><strong>Age</strong> - To ensure you are 18 years or older</li>
+            <li><strong>Consent</strong> - To ensure you accepted our policy</li>
+          </ul>
+          
+          <h3>2.2 Automatic Information</h3>
+          <p>We also automatically collect information when you visit our site:</p>
+          <ul>
+            <li><strong>Technical data</strong> - IP address, browser type, internet provider</li>
+            <li><strong>Usage information</strong> - Pages visited, visit times, clicks</li>
+            <li><strong>Cookies</strong> - We use cookies to personalize your experience</li>
+          </ul>
+
+          <h2>3. How We Use Your Information</h2>
+          <p>We use your personal information for these purposes:</p>
+          <ul>
+            <li><strong>To contact you</strong> - To contact you about remote work opportunities</li>
+            <li><strong>To provide services</strong> - To connect you with remote work</li>
+            <li><strong>To operate the site</strong> - To provide and improve our services</li>
+            <li><strong>To communicate with you</strong> - To send you updates and important information</li>
+            <li><strong>To analyze usage</strong> - To understand how our site is used</li>
+          </ul>
+
+          <h2>4. Information Sharing</h2>
+          <p>We do not sell, trade, or disclose your personal information to third parties without your consent, except in these cases:</p>
+          <ul>
+            <li><strong>Work partners</strong> - To connect you with remote work opportunities</li>
+            <li><strong>Legal requests</strong> - If we need to comply with a legal request</li>
+            <li><strong>Rights protection</strong> - To protect our rights, property or safety</li>
+          </ul>
+
+          <h2>5. Data Protection</h2>
+          <p>We take appropriate security measures to protect your personal information from unauthorized access, use or disclosure. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+
+          <h2>6. Your Rights</h2>
+          <p>Under GDPR regulations, you have the right to:</p>
+          <ul>
+            <li><strong>Access</strong> - Request a copy of your personal information we hold</li>
+            <li><strong>Correction</strong> - Request that we correct inaccurate information</li>
+            <li><strong>Deletion</strong> - Request that we delete your personal information</li>
+            <li><strong>Restriction</strong> - Request that we restrict processing of your information</li>
+            <li><strong>Objection</strong> - Object to the processing of your information</li>
+            <li><strong>Portability</strong> - Request that we provide your information in a structured format</li>
+          </ul>
+          
+          <p>To exercise your rights, you can contact us at <a href="mailto:privacy@xogholremotemalta.com">privacy@xogholremotemalta.com</a>.</p>
+
+          <h2>7. Cookies</h2>
+          <p>We use cookies and similar technologies to personalize your experience on our site. Cookies are small files sent to your computer that store preferences and activities.</p>
+          
+          <p>You can control the use of cookies through your browser settings. However, if you choose to disable cookies, some features of our site may not work properly.</p>
+
+          <h2>8. Links to Other Sites</h2>
+          <p>Our site may include links to third-party websites. We are not responsible for the privacy practices of these sites. We encourage you to review their privacy policies.</p>
+
+          <h2>9. Changes to Privacy Policy</h2>
+          <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through a prominent notice on our site or directly to you.</p>
+
+          <h2>10. Contact</h2>
+          <p>If you have any questions about this Privacy Policy, please contact us:</p>
+          <ul>
+            <li><strong>Email:</strong> privacy@xogholremotemalta.com</li>
+            <li><strong>Address:</strong> XogħolRemoteMalta, Triq il-Kbira, Valletta, Malta</li>
+            <li><strong>Data Protection Officer:</strong> dpo@xogholremotemalta.com</li>
+          </ul>
+          
+          <div class="highlight-box">
+            <strong>Data Protection Authority Contact:</strong><br>
+            Maltese Data Protection Authority (IDPC)<br>
+            Triq il-Kbira, Valletta VLT 1200, Malta<br>
+            Tel: +356 2328 7100 | Email: idpc.info@idpc.org.mt
+          </div>
+        </div>
+
+        <!-- Maltese Content -->
+        <div class="language-content" id="content-mt">
+          <div class="last-updated">
+            📅 L-aħħar aġġornament: 1 ta' Jannar, 2024
+          </div>
+          
+          <div class="highlight-box">
+            <strong>Nota importanti:</strong> Din il-Politika tal-Privatezza tispjega kif niġbru, nużaw, naħżnu u nħarsu l-informazzjoni personali tiegħek meta tuża s-sit web tagħna u s-servizzi tagħna.
+          </div>
+
+          <h2>1. Introduzzjoni</h2>
+          <p>XogħolRemoteMalta ("aħna", "tagħna", "tiegħna") tħares il-privatezza tal-utenti tagħha ("inti", "tiegħek") b'serjetà. Din il-Politika tal-Privatezza tispjega l-prattiki tagħna dwar il-ġbir, l-użu u x-xandir tal-informazzjoni personali tiegħek meta tuża s-sit web tagħna u s-servizzi tagħna.</p>
+          
+          <p>Billi tuża s-sit web tagħna, inti qed tikkonsenti li l-informazzjoni personali tiegħek tiġi pproċessata kif deskritt f'din il-Politika tal-Privatezza.</p>
+
+          <h2>2. Informazzjoni Li Niġbru</h2>
+          
+          <h3>2.1 Informazzjoni Diretta</h3>
+          <p>Meta tapplika għas-servizzi tagħna, niġbru informazzjoni personali bħal:</p>
+          <ul>
+            <li><strong>Isem u kunjom</strong> - Biex nidentifikawk u nikkuntattjawk</li>
+            <li><strong>Numru tat-telefown</strong> - Biex nikkuntattjawk permezz ta' WhatsApp dwar opportunitajiet tax-xogħol</li>
+            <li><strong>Età</strong> - Biex niżguraw li inti ta' 18-il sena jew aktar</li>
+            <li><strong>Konsens</strong> - Biex niżguraw li aċċettajt il-politika tagħna</li>
+          </ul>
+          
+          <h3>2.2 Informazzjoni Awtomátika</h3>
+          <p>Niġbru wkoll informazzjoni awtomatikament meta żżur is-sit tagħna:</p>
+          <ul>
+            <li><strong>Data teknikali</strong> - Indirizz IP, tip ta' browser, provider tal-internet</li>
+            <li><strong>Informazzjoni tal-użu</strong> - Paġni li żżur, ħinijiet ta' żjara, klikks</li>
+            <li><strong>Cookies</strong> - Nużaw cookies biex nippersonalizzaw l-esperjenza tiegħek</li>
+          </ul>
+
+          <h2>3. Kif Nużaw L-Informazzjoni Tiegħek</h2>
+          <p>Nużaw l-informazzjoni personali tiegħek għal dawn l-iskopijiet:</p>
+          <ul>
+            <li><strong>Biex nikkuntattjawk</strong> - Biex nikkuntattjawk dwar opportunitajiet tax-xogħol</li>
+            <li><strong>Biex nipprovdu s-servizzi</strong> - Biex nikkollegawniek ma' xogħol remot</li>
+            <li><strong>Biex innaġixxu s-sit</strong> - Biex nipprovdu u ntejbu s-servizzi tagħna</li>
+            <li><strong>Biex nikkumunikaw miegħek</strong> - Biex nibgħatlek aġġornamenti u informazzjoni importanti</li>
+            <li><strong>Biex nanalizzaw l-użu</strong> - Biex nifhmu kif intuża s-sit tagħna</li>
+          </ul>
+
+          <h2>4. Xandir tal-Informazzjoni</h2>
+          <p>Ma nbigħux, ninnegozjawx, jew inxandru l-informazzjoni personali tiegħek lil terzi partijiet mingħajr il-kunsens tiegħek, ħlief f'dawn il-każijiet:</p>
+          <ul>
+            <li><strong>Partner tax-xogħol</strong> - Biex nikkollegawniek ma' opportunitajiet tax-xogħol remot</li>
+            <li><strong>Rikjisti legali</strong> - Jekk ikollna nħarsu rikjist legali</li>
+            <li><strong>Protezzjoni tad-drittijiet</strong> - Biex nħarsu d-drittijiet, il-proprjetà jew is-sigurtà tagħna</li>
+          </ul>
+
+          <h2>5. Ħarsien tal-Data</h2>
+          <p>Nieħdu miżuri xierqa ta' sigurtà biex nħarsu l-informazzjoni personali tiegħek mill-aċċess, l-użu jew ix-xandir mhux awtorizzat. Madankollu, ebda metodu ta' trażmissjoni fuq l-internet jew metodu ta' ħażna elettronika huwa 100% sigur.</p>
+
+          <h2>6. Drittijiet Tiegħek</h2>
+          <p>Skont ir-regolamenti tal-GDPR, għandek id-dritt li:</p>
+          <ul>
+            <li><strong>Aċċess</strong> - Titlob kopja tal-informazzjoni personali tiegħek li għandna</li>
+            <li><strong>Korrezzjoni</strong> - Titlob li nikkoreġu informazzjoni li hija żbaljata</li>
+            <li><strong>Tħassir</strong> - Titlob li nħassru l-informazzjoni personali tiegħek</li>
+            <li><strong>Restrizzjoni</strong> - Titlob li nirrestrinġu l-ipproċessar tal-informazzjoni tiegħek</li>
+            <li><strong>Oġġezzjoni</strong> - Toġġezzjona għall-ipproċessar tal-informazzjoni tiegħek</li>
+            <li><strong>Portabbiltà</strong> - Titlob li nġibu l-informazzjoni tiegħek f'format strutturat</li>
+          </ul>
+          
+          <p>Biex tesegwixxi d-drittijiet tiegħek, tista' tikkuntattjana fuq <a href="mailto:privacy@xogholremotemalta.com">privacy@xogholremotemalta.com</a>.</p>
+
+          <h2>7. Cookies</h2>
+          <p>Nużaw cookies u teknoloġiji simili biex nippersonalizzaw l-esperjenza tiegħek fuq is-sit tagħna. Cookies huma fajls żgħar li jintbagħtu għall-kompjuter tiegħek u jħarsu preferenzi u attivitajiet.</p>
+          
+          <p>Tista' tikkontrolla l-użu tal-cookies permezz tal-impostazzjonijiet tal-browser tiegħek. Madankollu, jekk tagħżel li titfi l-cookies, xi karatteristiċi tas-sit tagħna jistgħu ma jkunux jaħdmu kif suppost.</p>
+
+          <h2>8. Links għal Siti Oħra</h2>
+          <p>Is-sit tagħna jista' jinkludi links għal siti web ta' terzi. Aħna mhux responsabbli għall-prattiki tal-privatezza ta' dawn is-siti. Nappellaw biex tirrevedi l-politiki tal-privatezza tagħhom.</p>
+
+          <h2>9. Bidliet fil-Politika tal-Privatezza</h2>
+          <p>Nistgħu naġġornaw din il-Politika tal-Privatezza mill-ħin għall-ieħor. Meta nagħmlu bidliet sinifikanti, se nnotifikawk permezz ta' avviż prominenti fuq is-sit tagħna jew direttament lilek.</p>
+
+          <h2>10. Kuntatt</h2>
+          <p>Jekk għandek xi mistoqsijiet dwar din il-Politika tal-Privatezza, jekk jogħġbok ikkuntattjana:</p>
+          <ul>
+            <li><strong>Email:</strong> privacy@xogholremotemalta.com</li>
+            <li><strong>Indirizz:</strong> XogħolRemoteMalta, Triq il-Kbira, Valletta, Malta</li>
+            <li><strong>Data Protection Officer:</strong> dpo@xogholremotemalta.com</li>
+          </ul>
+          
+          <div class="highlight-box">
+            <strong>Kuntatt tal-Awtorità tal-Protezzjoni tad-Data:</strong><br>
+            L-Awtorità Maltija għall-Protezzjoni tad-Data (IDPC)<br>
+            Triq il-Kbira, Valletta VLT 1200, Malta<br>
+            Tel: +356 2328 7100 | Email: idpc.info@idpc.org.mt
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">XogħolRemoteMalta</a>
+        <p class="muted small" id="footerText">Real opportunities. Zero fees. Start earning today.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="privacy.html" rel="nofollow">Privacy Policy / Politika tal-Privatezza</a>
+        <a href="userterms.html" rel="nofollow">Terms of Service / Termini tas-Servizz</a>
+        <a href="index.html">Home / Dar</a>
+      </nav>
+    </div>
+    <div class="container">
+      <p class="muted small" id="copyrightText">© 2024 XogħolRemoteMalta. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Language switching functionality
+      const languageBtns = document.querySelectorAll('.language-btn');
+      const languageContents = document.querySelectorAll('.language-content');
+      const currentLangSpan = document.getElementById('currentLang');
+      const heroTitle = document.getElementById('heroTitle');
+      const heroSubtitle = document.getElementById('heroSubtitle');
+      const footerText = document.getElementById('footerText');
+      const copyrightText = document.getElementById('copyrightText');
+      
+      // Check for saved language preference or default to English
+      const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+      setLanguage(savedLanguage);
+      
+      // Language button click handlers
+      languageBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          setLanguage(lang);
+          localStorage.setItem('preferredLanguage', lang);
+        });
+      });
+      
+      // Language toggle button in nav
+      document.getElementById('languageToggle').addEventListener('click', function() {
+        const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
+        const newLang = currentLang === 'en' ? 'mt' : 'en';
+        setLanguage(newLang);
+        localStorage.setItem('preferredLanguage', newLang);
+      });
+      
+      function setLanguage(lang) {
+        // Update active language buttons
+        languageBtns.forEach(btn => {
+          if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+        
+        // Show/hide language content
+        languageContents.forEach(content => {
+          if (content.id === `content-${lang}`) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+        
+        // Update UI text based on language
+        if (lang === 'en') {
+          currentLangSpan.textContent = 'EN';
+          heroTitle.textContent = 'Privacy Policy';
+          heroSubtitle.textContent = 'We respect your privacy and protect your personal data. Read about how we collect, use and protect your personal information.';
+          footerText.textContent = 'Real opportunities. Zero fees. Start earning today.';
+          copyrightText.textContent = '© 2024 XogħolRemoteMalta. All rights reserved.';
+        } else {
+          currentLangSpan.textContent = 'MT';
+          heroTitle.textContent = 'Politika tal-Privatezza';
+          heroSubtitle.textContent = 'Aħna nirrispettaw il-privatezza tiegħek u nħarsu d-data personali tiegħek. Aqra dwar kif niġbru, nużaw u nħarsu l-informazzjoni personali tiegħek.';
+          footerText.textContent = 'Opportunitajiet reali. Zero ħlas. Ibda taqla\' illum.';
+          copyrightText.textContent = '© 2024 XogħolRemoteMalta. Id-drittijiet kollha riżervati.';
+        }
+      }
+      
+      // Add smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
