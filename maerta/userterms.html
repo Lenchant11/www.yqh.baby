@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="mt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terms of Service / Termini tas-Servizz | XogħolRemoteMalta</title>
+  <meta name="description" content="Terms of Service for XogħolRemoteMalta. Please read these terms carefully before using our services." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root{
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --muted: #64748b;
+      --text: #1e293b;
+      --white: #ffffff;
+      --primary: #CF142B;
+      --primary-600: #a01021;
+      --primary-300: #e88d99;
+      --accent: #E5A900;
+      --accent-light: #f5d780;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --ring: 0 0 0 3px rgba(207, 20, 43, 0.25);
+      --radius: 10px;
+      --transition: all 0.3s ease;
+      --shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 8px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.6; font-size: 16px;}
+    img{max-width:100%;display:block}
+    a{color:var(--text);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1120px,94%);margin-inline:auto}
+
+    .nav{position:sticky;top:0;z-index:50;background:rgba(248, 250, 252, 0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06); box-shadow: 0 1px 3px rgba(0,0,0,0.05);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:800;letter-spacing:.3px;font-size:1.3rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .nav-links{display:flex;gap:16px;align-items:center}
+    .nav-link{opacity:.85; transition: var(--transition); font-size: 0.95rem; font-weight: 500;}
+    .nav-link:hover{opacity:1; color: var(--primary);}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:8px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
+    .btn-primary{background: var(--primary);color:white; box-shadow: var(--shadow);}
+    .btn-primary:hover{background:var(--primary-600); transform: translateY(-2px); box-shadow: var(--shadow-lg);}
+    
+    .btn-language {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .btn-language:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .hero{position:relative;padding:50px 0 30px; overflow: hidden; background: linear-gradient(135deg, #fde8e8 0%, #fef7f0 50%, #fff9e6 100%);}
+    .hero-content{text-align:center;max-width:800px;margin:0 auto}
+    .hero h1{font-size:38px;margin:0 0 12px; line-height: 1.2; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .subtitle{color:var(--muted);max-width:48ch;margin-bottom:12px; font-size: 1.1rem; line-height: 1.6;}
+    
+    .content-section{padding:50px 0}
+    .content-card{background:var(--card);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);padding:30px; box-shadow: var(--shadow);}
+    
+    h2{margin:30px 0 16px;font-size:30px; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    h3{margin:24px 0 12px;font-size:22px; font-weight: 700; color: var(--primary);}
+    h4{margin:20px 0 10px;font-size:18px; font-weight: 600; color: var(--text);}
+    
+    .muted{color:var(--muted); line-height: 1.6;}
+    .small{font-size:0.88rem}
+    
+    .footer{border-top:1px solid rgba(0,0,0,.08);padding:32px 0 20px;background:#f1f5f9}
+    .footer-grid{display:flex;justify-content:space-between;gap:16px;align-items:flex-start; margin-bottom: 20px;}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+    
+    /* Language content */
+    .language-content {
+      display: none;
+    }
+    
+    .language-content.active {
+      display: block;
+    }
+    
+    /* Malta elements */
+    .malta-flag {display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; padding: 6px 12px; background: rgba(0,0,0,0.05); border-radius: 20px;}
+    .malta-flag img {width: 24px; height: 14px; border-radius: 2px;}
+    
+    /* Content styling */
+    .terms-content ul, .terms-content ol {
+      padding-left: 24px;
+      margin: 16px 0;
+    }
+    
+    .terms-content li {
+      margin-bottom: 8px;
+    }
+    
+    .terms-content p {
+      margin-bottom: 16px;
+    }
+    
+    .highlight-box {
+      background: rgba(207, 20, 43, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .warning-box {
+      background: rgba(245, 158, 11, 0.1);
+      border-left: 4px solid var(--yellow);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .last-updated {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin: 20px 0;
+      border: 1px solid rgba(0,0,0,.08);
+      font-weight: 600;
+    }
+    
+    /* Language toggle */
+    .language-toggle {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 10px;
+    }
+    
+    .language-btn {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .language-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 980px){
+      .hero h1 {font-size: 32px;}
+      h2 {font-size: 28px;}
+      .content-section {padding: 40px 0;}
+      .nav-links .nav-link {display: none;}
+    }
+    
+    @media (max-width: 640px) {
+      .nav-links {gap: 8px;}
+      .btn {padding: 8px 16px; font-size: 0.92rem;}
+      .footer-grid {flex-direction: column; gap: 16px;}
+      .footer-links {flex-direction: column; gap: 8px;}
+      .hero {padding: 40px 0 20px;}
+      .hero h1 {font-size: 28px;}
+      h2 {font-size: 26px;}
+      .content-section {padding: 32px 0;}
+      .content-card {padding: 20px;}
+      .language-toggle {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {font-size: 24px;}
+      h2 {font-size: 22px;}
+      .brand {font-size: 1.2rem;}
+      .nav-link {font-size: 0.9rem;}
+      .btn {font-size: 0.9rem;}
+      .subtitle {font-size: 1rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">XogħolRemoteMalta</a>
+      <nav class="nav-links">
+        <a href="index.html#roles" class="nav-link">Jobs / Xogħolijiet</a>
+        <a href="index.html#benefits" class="nav-link">Benefits / Vantaġġi</a>
+        <a href="index.html#faq" class="nav-link">FAQ / Mistoqsijiet</a>
+        <button class="btn-language" id="languageToggle">
+          <span id="currentLang">EN</span>
+          <span>🌐</span>
+        </button>
+        <a href="index.html" class="btn btn-primary">Back to Home / Lura għad-Dar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="malta-flag">
+        <img src="https://flagcdn.com/w20/mt.png" alt="Malta Flag">
+        <span>XogħolRemoteMalta</span>
+      </div>
+      <h1 id="heroTitle">Terms of Service</h1>
+      <p class="subtitle" id="heroSubtitle">Please read these terms carefully before using our services. By accessing or using XogħolRemoteMalta, you agree to be bound by these terms.</p>
+      
+      <div class="language-toggle">
+        <button class="language-btn active" data-lang="en">English</button>
+        <button class="language-btn" data-lang="mt">Malti</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-card terms-content">
+        <!-- English Content -->
+        <div class="language-content active" id="content-en">
+          <div class="last-updated">
+            📅 Last Updated: January 1, 2024
+          </div>
+          
+          <div class="highlight-box">
+            <strong>Important:</strong> These Terms of Service govern your use of XogħolRemoteMalta. By accessing or using our services, you agree to be bound by these terms.
+          </div>
+
+          <h2>1. Acceptance of Terms</h2>
+          <p>By accessing and using XogħolRemoteMalta ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by these terms, please do not use this Service.</p>
+
+          <h2>2. Description of Service</h2>
+          <p>XogħolRemoteMalta provides a platform that connects individuals with remote work opportunities. Our services include:</p>
+          <ul>
+            <li>Matching users with remote job opportunities</li>
+            <li>Providing information about remote work</li>
+            <li>Facilitating communication between users and employers</li>
+            <li>Offering resources and support for remote workers</li>
+          </ul>
+
+          <h2>3. User Eligibility</h2>
+          <p>To use our Service, you must:</p>
+          <ul>
+            <li>Be at least 18 years of age</li>
+            <li>Have the legal capacity to enter into binding contracts</li>
+            <li>Provide accurate and complete registration information</li>
+            <li>Be a resident of Malta or have legal right to work in Malta</li>
+          </ul>
+
+          <h2>4. User Responsibilities</h2>
+          <p>As a user of our Service, you agree to:</p>
+          <ul>
+            <li>Provide accurate and truthful information in your profile</li>
+            <li>Maintain the security of your account credentials</li>
+            <li>Use the Service only for lawful purposes</li>
+            <li>Not engage in any fraudulent or misleading activities</li>
+            <li>Respect the intellectual property rights of others</li>
+          </ul>
+
+          <h2>5. Job Opportunities</h2>
+          <p>XogħolRemoteMalta acts as an intermediary platform between job seekers and employers. We:</p>
+          <ul>
+            <li>Do not guarantee employment or specific earnings</li>
+            <li>Are not responsible for the quality or nature of work offered</li>
+            <li>Do not verify all information provided by employers</li>
+            <li>Recommend that users conduct their own due diligence</li>
+          </ul>
+
+          <div class="warning-box">
+            <strong>Note:</strong> Actual earnings may vary based on individual performance, task availability, and other factors. The earnings examples shown on our platform are for illustrative purposes only.
+          </div>
+
+          <h2>6. Payment and Fees</h2>
+          <p>Our platform is free for job seekers. We never charge:</p>
+          <ul>
+            <li>Registration or application fees</li>
+            <li>Membership or subscription fees</li>
+            <li>Commission on your earnings</li>
+          </ul>
+          <p>Payment for work completed is arranged directly between you and the employer according to their payment terms.</p>
+
+          <h2>7. Privacy and Data Protection</h2>
+          <p>We are committed to protecting your privacy. Our collection and use of personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference.</p>
+
+          <h2>8. Intellectual Property</h2>
+          <p>All content on the XogħolRemoteMalta platform, including text, graphics, logos, and software, is the property of XogħolRemoteMalta and protected by copyright and intellectual property laws.</p>
+
+          <h2>9. Limitation of Liability</h2>
+          <p>To the fullest extent permitted by law, XogħolRemoteMalta shall not be liable for any indirect, incidental, special, consequential or punitive damages, including but not limited to loss of profits, data, or use.</p>
+
+          <h2>10. Termination</h2>
+          <p>We may terminate or suspend your account and access to the Service immediately, without prior notice, for conduct that we believe violates these Terms or is harmful to other users, us, or third parties, or for any other reason.</p>
+
+          <h2>11. Changes to Terms</h2>
+          <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes through the Service or by email. Continued use after changes constitutes acceptance of the modified Terms.</p>
+
+          <h2>12. Governing Law</h2>
+          <p>These Terms shall be governed by and construed in accordance with the laws of Malta. Any disputes relating to these Terms shall be subject to the exclusive jurisdiction of the courts of Malta.</p>
+
+          <h2>13. Contact Information</h2>
+          <p>If you have any questions about these Terms of Service, please contact us:</p>
+          <ul>
+            <li><strong>Email:</strong> service@yqh.baby</li>
+            <li><strong>Address:</strong> XogħolRemoteMalta, Triq il-Kbira, Valletta, Malta</li>
+            <li><strong>Phone:</strong> +356 2123 4567</li>
+          </ul>
+        </div>
+
+        <!-- Maltese Content -->
+        <div class="language-content" id="content-mt">
+          <div class="last-updated">
+            📅 L-aħħar aġġornament: 1 ta' Jannar, 2024
+          </div>
+          
+          <div class="highlight-box">
+            <strong>Importanti:</strong> Dawn it-Termini tas-Servizz jirregolaw l-użu tiegħek ta' XogħolRemoteMalta. Billi taċċessa jew tuża s-servizzi tagħna, inti qed taqbel li tkun marbut b'dawn it-termini.
+          </div>
+
+          <h2>1. Aċċettazzjoni tat-Termini</h2>
+          <p>Billi taċċessa u tuża XogħolRemoteMalta ("is-Servizz"), inti taċċetta u taqbel li tkun marbut bit-termini u d-dispożizzjonijiet ta' dan il-ftehim. Jekk ma taqbilx li timxi mad-dispożizzjonijiet ta' dawn it-termini, jekk jogħġbok tużax dan is-Servizz.</p>
+
+          <h2>2. Deskrizzjoni tas-Servizz</h2>
+          <p>XogħolRemoteMalta tipprovdi pjattaforma li tgħaqqad individwi ma' opportunitajiet tax-xogħol remot. Is-servizzi tagħna jinkludu:</p>
+          <ul>
+            <li>Tqabbil ta' utenti ma' opportunitajiet tax-xogħol remot</li>
+            <li>Provvista ta' informazzjoni dwar ix-xogħol remot</li>
+            <li>Faċilitar tal-komunikazzjoni bejn utenti u min iħaddem</li>
+            <li>Offerta ta' riżorsi u appoġġ għal ħaddiema remoti</li>
+          </ul>
+
+          <h2>3. Eliġibbiltà tal-Utent</h2>
+          <p>Biex tuża s-Servizz tagħna, trid:</p>
+          <ul>
+            <li>Kun ta' mill-inqas 18-il sena</li>
+            <li>Ikollok il-kapaċità legali li tidħol f'kuntratti legali</li>
+            <li>Tipprovdi informazzjoni ta' reġistrazzjoni preċiża u kompluta</li>
+            <li>Kun resident f'Malta jew ikollok id-dritt legali li taħdem f'Malta</li>
+          </ul>
+
+          <h2>4. Responsabbiltajiet tal-Utent</h2>
+          <p>Bħala utent tas-Servizz tagħna, inti taqbel li:</p>
+          <ul>
+            <li>Tipprovdi informazzjoni preċiża u veritiera fil-profil tiegħek</li>
+            <li>Iżżomm is-sigurtà tal-kredenzjali tal-kont tiegħek</li>
+            <li>Tuża s-Servizz biss għal skopijiet legali</li>
+            <li>Ma tidħolx f'attivitajiet frodi jew qarrieqa</li>
+            <li>Tirrispetta d-drittijiet tal-proprjetà intellettwali ta' oħrajn</li>
+          </ul>
+
+          <h2>5. Opportunitajiet tax-Xogħol</h2>
+          <p>XogħolRemoteMalta taġixxi bħala pjattaforma intermedijarja bejn min ifittex xogħol u min iħaddem. Aħna:</p>
+          <ul>
+            <li>Ma ngurawx impjieg jew ħlasijiet speċifiċi</li>
+            <li>M'aħniex responsabbli għall-kwalità jew in-natura tax-xogħol offrut</li>
+            <li>Ma nverifikawx l-informazzjoni kollha pprovduta minn min iħaddem</li>
+            <li>Nirrakkomandaw li l-utenti jagħmlu d-diliġenza tagħhom stess</li>
+          </ul>
+
+          <div class="warning-box">
+            <strong>Nota:</strong> Il-ħlasijiet attwali jistgħu jvarjaw skont il-prestazzjoni individwali, id-disponibbiltà tax-xogħol, u fatturi oħra. L-eżempji ta' ħlasijiet murija fuq il-pjattaforma tagħna huma biss għal skopijiet ta' eżempju.
+          </div>
+
+          <h2>6. Ħlas u Ħlasijiet</h2>
+          <p>Il-pjattaforma tagħna hija b'xejn għal min ifittex xogħol. Aħna qatt ma nħaqslu:</p>
+          <ul>
+            <li>Ħlasijiet ta' reġistrazzjoni jew applikazzjoni</li>
+            <li>Ħlasijiet ta' membru jew abbonament</li>
+            <li>Kummisjoni fuq il-ħlasijiet tiegħek</li>
+          </ul>
+          <p>Il-ħlas għax-xogħol imlesti huwa arrangjat direttament bejn inti u min iħaddem skont it-termini tal-ħlas tagħhom.</p>
+
+          <h2>7. Privatezza u Protezzjoni tad-Data</h2>
+          <p>Aħna impenjati li nħarsu l-privatezza tiegħek. Il-ġbir u l-użu tagħna ta' informazzjoni personali huwa rregolat mill-Politika tal-Privatezza tagħna, li hija inkluża f'dawn it-Termini b'referenza.</p>
+
+          <h2>8. Proprjetà Intellettwali</h2>
+          <p>Il-kontent kollu fuq il-pjattaforma XogħolRemoteMalta, inkluż it-test, grafika, logos, u software, huwa l-proprjetà ta' XogħolRemoteMalta u protett mid-drittijiet tal-awtur u liġijiet tal-proprjetà intellettwali.</p>
+
+          <h2>9. Limitu tar-Responsabbiltà</h2>
+          <p>Sal-akbar livell permess mill-liġi, XogħolRemoteMalta mhix se tkun responsabbli għal ebda ħsara indiretta, inċidentali, speċjali, konsegwenzjali jew punitiva, inklużi iżda mhux limitati għal telf ta' profitti, data, jew użu.</p>
+
+          <h2>10. Terminazzjoni</h2>
+          <p>Nistgħu nieqfu jew nissospendu l-kont tiegħek u l-aċċess għas-Servizz immedjatament, mingħajr avviż preċedenti, għal kondotta li nemmnu li tivjola dawn it-Termini jew li hija ta' ħsara lil utenti oħra, lilna, jew lil terzi partijiet, jew għal kull raġuni oħra.</p>
+
+          <h2>11. Bidliet tat-Termini</h2>
+          <p>Nżommu d-dritt li nmodifikaw dawn it-Termini fi kwalunkwe ħin. Se ninnotifikaw lill-utenti ta' bidliet sinifikanti permezz tas-Servizz jew bl-email. L-użu kontinwu wara bidliet jikkostitwixxi aċċettazzjoni tat-Termini modifikati.</p>
+
+          <h2>12. Liġi Applikabbli</h2>
+          <p>Dawn it-Termini għandhom jiġu governati u interpretati skont il-liġijiet ta' Malta. Kwalunkwe tilwim relatat ma' dawn it-Termini għandu jkun suġġett għall-ġurisdizzjoni esklussiva tal-qrati ta' Malta.</p>
+
+          <h2>13. Informazzjoni ta' Kuntatt</h2>
+          <p>Jekk għandek xi mistoqsijiet dwar dawn it-Termini tas-Servizz, jekk jogħġbok ikkuntattjana:</p>
+          <ul>
+            <li><strong>Email:</strong> service@yqh.baby</li>
+            <li><strong>Indirizz:</strong> XogħolRemoteMalta, Triq il-Kbira, Valletta, Malta</li>
+            <li><strong>Telefown:</strong> +356 2123 4567</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">XogħolRemoteMalta</a>
+        <p class="muted small" id="footerText">Real opportunities. Zero fees. Start earning today.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="privacy.html" rel="nofollow">Privacy Policy / Politika tal-Privatezza</a>
+        <a href="userterms.html" rel="nofollow">Terms of Service / Termini tas-Servizz</a>
+        <a href="index.html">Home / Dar</a>
+      </nav>
+    </div>
+    <div class="container">
+      <p class="muted small" id="copyrightText">© 2024 XogħolRemoteMalta. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Language switching functionality
+      const languageBtns = document.querySelectorAll('.language-btn');
+      const languageContents = document.querySelectorAll('.language-content');
+      const currentLangSpan = document.getElementById('currentLang');
+      const heroTitle = document.getElementById('heroTitle');
+      const heroSubtitle = document.getElementById('heroSubtitle');
+      const footerText = document.getElementById('footerText');
+      const copyrightText = document.getElementById('copyrightText');
+      
+      // Check for saved language preference or default to English
+      const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+      setLanguage(savedLanguage);
+      
+      // Language button click handlers
+      languageBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          setLanguage(lang);
+          localStorage.setItem('preferredLanguage', lang);
+        });
+      });
+      
+      // Language toggle button in nav
+      document.getElementById('languageToggle').addEventListener('click', function() {
+        const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
+        const newLang = currentLang === 'en' ? 'mt' : 'en';
+        setLanguage(newLang);
+        localStorage.setItem('preferredLanguage', newLang);
+      });
+      
+      function setLanguage(lang) {
+        // Update active language buttons
+        languageBtns.forEach(btn => {
+          if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+        
+        // Show/hide language content
+        languageContents.forEach(content => {
+          if (content.id === `content-${lang}`) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+        
+        // Update UI text based on language
+        if (lang === 'en') {
+          currentLangSpan.textContent = 'EN';
+          heroTitle.textContent = 'Terms of Service';
+          heroSubtitle.textContent = 'Please read these terms carefully before using our services. By accessing or using XogħolRemoteMalta, you agree to be bound by these terms.';
+          footerText.textContent = 'Real opportunities. Zero fees. Start earning today.';
+          copyrightText.textContent = '© 2024 XogħolRemoteMalta. All rights reserved.';
+        } else {
+          currentLangSpan.textContent = 'MT';
+          heroTitle.textContent = 'Termini tas-Servizz';
+          heroSubtitle.textContent = 'Jekk jogħġbok aqra dawn it-termini b'attenzjoni qabel ma tuża s-servizzi tagħna. Billi taċċessa jew tuża XogħolRemoteMalta, inti qed taqbel li tkun marbut b\'dawn it-termini.';
+          footerText.textContent = 'Opportunitajiet reali. Zero ħlas. Ibda taqla\' illum.';
+          copyrightText.textContent = '© 2024 XogħolRemoteMalta. Id-drittijiet kollha riżervati.';
+        }
+      }
+      
+      // Add smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
