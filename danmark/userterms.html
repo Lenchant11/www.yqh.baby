@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="da-DK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Servicevilkår - FjernjobDanmark</title>
+  <meta name="description" content="Læs vores servicevilkår for brug af FjernjobDanmarks platform og tjenester. Vilkår og betingelser for jobansøgere." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root{
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --muted: #4a5568;
+      --text: #2d3748;
+      --white: #ffffff;
+      --primary: #3182ce;
+      --primary-600: #2b6cb0;
+      --primary-300: #90cdf4;
+      --accent: #805ad5;
+      --accent-light: #b794f4;
+      --green: #38a169;
+      --yellow: #d69e2e;
+      --red: #e53e3e;
+      --ring: 0 0 0 3px rgba(49, 130, 206, 0.25);
+      --radius: 8px;
+      --transition: all 0.3s ease;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.6; font-size: 16px;}
+    img{max-width:100%;display:block}
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1120px,94%);margin-inline:auto}
+
+    .nav{position:sticky;top:0;z-index:50;background:rgba(245, 247, 250, 0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06); box-shadow: 0 1px 3px rgba(0,0,0,0.05);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:800;letter-spacing:.3px;font-size:1.3rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .nav-links{display:flex;gap:16px;align-items:center}
+    .nav-link{opacity:.85; transition: var(--transition); font-size: 0.95rem; font-weight: 500;}
+    .nav-link:hover{opacity:1; color: var(--primary);}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:8px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
+    .btn-primary{background: var(--primary);color:white; box-shadow: var(--shadow);}
+    .btn-primary:hover{background:var(--primary-600); transform: translateY(-2px); box-shadow: var(--shadow-lg);}
+
+    .section{padding:60px 0}
+    .section-header {text-align: center; max-width: 800px; margin: 0 auto 40px;}
+    h1{margin:0 0 16px;font-size:42px; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;}
+    h2{margin:32px 0 16px;font-size:28px; font-weight: 700; color: var(--primary);}
+    h3{margin:24px 0 12px;font-size:22px; font-weight: 600; color: var(--text);}
+    .muted{color:var(--muted); line-height: 1.6;}
+    .small{font-size:0.88rem}
+    
+    .content-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    
+    .info-box {
+      background: rgba(49, 130, 206, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    
+    .warning-box {
+      background: rgba(214, 158, 46, 0.1);
+      border-left: 4px solid var(--yellow);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    
+    .highlight {
+      background: linear-gradient(120deg, rgba(56, 161, 105, 0.15) 0%, rgba(56, 161, 105, 0.15) 100%);
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    
+    .warning {
+      background: linear-gradient(120deg, rgba(214, 158, 46, 0.15) 0%, rgba(214, 158, 46, 0.15) 100%);
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    
+    ul, ol {
+      padding-left: 24px;
+      margin: 16px 0;
+    }
+    
+    li {
+      margin-bottom: 8px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    
+    th {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background: rgba(0,0,0,0.02);
+    }
+    
+    .footer{border-top:1px solid rgba(0,0,0,.08);padding:32px 0 20px;background:#e2e8f0}
+    .footer-grid{display:flex;justify-content:space-between;gap:16px;align-items:flex-start; margin-bottom: 20px;}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+    
+    /* Mobile responsiveness */
+    @media (max-width: 980px){
+      h1 {font-size: 32px;}
+      h2 {font-size: 26px;}
+      .section {padding: 40px 0;}
+      .section-header {margin-bottom: 30px;}
+      .nav-links .nav-link {display: none;}
+      .content-card {padding: 30px;}
+    }
+    
+    @media (max-width: 640px) {
+      .nav-links {gap: 8px;}
+      .btn {padding: 8px 16px; font-size: 0.92rem;}
+      .footer-grid {flex-direction: column; gap: 16px;}
+      .footer-links {flex-direction: column; gap: 8px;}
+      .section {padding: 32px 0;}
+      h1 {font-size: 28px;}
+      h2 {font-size: 24px;}
+      h3 {font-size: 20px;}
+      .content-card {padding: 20px;}
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {font-size: 24px;}
+      h2 {font-size: 22px;}
+      .brand {font-size: 1.2rem;}
+      .nav-link {font-size: 0.9rem;}
+      .btn {font-size: 0.9rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Hjem">FjernjobDanmark</a>
+      <nav class="nav-links">
+        <a href="index.html#roles" class="nav-link">Jobtyper</a>
+        <a href="index.html#benefits" class="nav-link">Fordele</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="index.html" class="btn btn-primary">Tilbage til Forsiden</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- User Terms Content -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h1>Servicevilkår</h1>
+        <p class="muted">Sidst opdateret: 15. november 2024</p>
+      </div>
+      
+      <div class="content-card">
+        <div class="info-box">
+          <p><strong>Vigtigt:</strong> Ved at bruge FjernjobDanmarks platform accepterer du disse servicevilkår. Læs dem omhyggeligt før du bruger vores tjenester.</p>
+        </div>
+        
+        <h2>1. Generelle vilkår</h2>
+        <p>Disse servicevilkår ("Vilkårene") regulerer din brug af FjernjobDanmarks platform, tjenester og website (samlet "Tjenesterne"). Ved at tilgå eller bruge vores Tjenester accepterer du at være bundet af disse Vilkår.</p>
+        
+        <h3>1.1 Ændringer i Vilkårene</h3>
+        <p>Vi forbeholder os retten til at ændre disse Vilkår til enhver tid. Ændringer træder i kraft, når de offentliggøres på vores platform. Din fortsatte brug af Tjenesterne efter sådanne ændringer udgør din accept af de reviderede Vilkår.</p>
+        
+        <h3>1.2 Berettigelse</h3>
+        <p>For at bruge vores Tjenester skal du:</p>
+        <ul>
+          <li>Være mindst 18 år gammel</li>
+          <li>Have lovligt ophold i Danmark eller EU/EØS</li>
+          <li>Beskikke over en gyldig e-mailadresse og telefonnummer</li>
+          <li>Indsende korrekte og komplette oplysninger</li>
+        </ul>
+        
+        <h2>2. Platformens formål</h2>
+        <p>FjernjobDanmark fungerer som en mæglerplatform, der forbinder jobansøgere med virksomheder, der tilbyder fjernarbejde og online opgaver.</p>
+        
+        <h3>2.1 Vores rolle</h3>
+        <ul>
+          <li>Vi formidler kontakt mellem jobansøgere og arbejdsgivere</li>
+          <li>Vi faciliterer kommunikation via vores platform</li>
+          <li>Vi tilbyder support og vejledning til brugere</li>
+          <li>Vi verificerer og kvalitetssikrer arbejdsmuligheder</li>
+        </ul>
+        
+        <h3>2.2 Begrænsninger</h3>
+        <div class="warning-box">
+          <p><strong>Vigtig bemærkning:</strong> FjernjobDanmark er ikke direkte arbejdsgiver for de fleste jobmuligheder på platformen. Vi formidler kun kontakt mellem parter.</p>
+        </div>
+        
+        <h2>3. Brugerkonti og registrering</h2>
+        
+        <h3>3.1 Kontooprettelse</h3>
+        <p>For at få adgang til visse Tjenester skal du oprette en brugerkonto. Ved registrering accepterer du at:</p>
+        <ul>
+          <li>Angive sandfærdige, nøjagtige og komplette oplysninger</li>
+          <li>Opdatere dine oplysninger for at holde dem aktuelle</li>
+          <li>Beskytte din konto og adgangsoplysninger</li>
+          <li>Acceptere ansvaret for alle aktiviteter under din konto</li>
+        </ul>
+        
+        <h3>3.2 Kontosikkerhed</h3>
+        <p>Du er selv ansvarlig for at opbevare dine login-oplysninger sikkert og fortroligt. Kontakt os omgående, hvis du mistænker uautoriseret brug af din konto.</p>
+        
+        <h2>4. Jobformidling og matchning</h2>
+        
+        <h3>4.1 Matchningsproces</h3>
+        <p>Vores platform bruger algoritmer og manuel gennemgang til at matche jobansøgere med relevante arbejdsmuligheder baseret på:</p>
+        <ul>
+          <li>Dine kvalifikationer og erfaringer</li>
+          <li>Dine præferencer og interesser</li>
+          <li>Geografiske overvejelser</li>
+          <li>Tilgængelighed og arbejdstid</li>
+        </ul>
+        
+        <h3>4.2 Ingen garantier</h3>
+        <div class="warning-box">
+          <p><strong>Ingen jobgaranti:</strong> Vi garanterer ikke, at du vil blive matchet med jobmuligheder eller modtage jobtilbud. Matchning afhænger af flere faktorer uden for vores kontrol.</p>
+        </div>
+        
+        <h2>5. Betalinger og indtjening</h2>
+        
+        <h3>5.1 Udbetalingsmodeller</h3>
+        <p>Udbetalinger for udførte opgaver håndteres typisk på følgende måder:</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Betalingstype</th>
+              <th>Beskrivelse</th>
+              <th>Udbetalingsfrekvens</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Opgavebaseret betaling</td>
+              <td>Betaling pr. fuldført opgave eller projekt</td>
+              <td>Efter godkendelse (typisk 1-7 dage)</td>
+            </tr>
+            <tr>
+              <td>Tidsbaseret betaling</td>
+              <td>Betaling baseret på dokumenteret arbejdstid</td>
+              <td>Ugentlig eller månedlig</td>
+            </tr>
+            <tr>
+              <td>Bonusordninger</td>
+              <td>Ekstra belønning for præstation eller loyalitet</td>
+              <td>Ifølge specifikke vilkår</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>5.2 Skatte- og juridisk ansvar</h3>
+        <p>Du er selv ansvarlig for at:</p>
+        <ul>
+          <li>Indberette din indkomst til skattemyndighederne</li>
+          <li>Opfylde eventuelle registreringskrav</li>
+          <li>Forstå og overholde relevant lovgivning</li>
+          <li>Søge professionel rådgivning ved behov</li>
+        </ul>
+        
+        <h2>6. Forventet adfærd og pligter</h2>
+        
+        <h3>6.1 Brugerens forpligtelser</h3>
+        <p>Som bruger af vores platform forpligter du dig til at:</p>
+        <ul>
+          <li>Udføre arbejde professionelt og til tiden</li>
+          <li>Kommunikere ærligt og åbent</li>
+          <li>Overholde aftalte deadlines</li>
+          <li>Levere arbejde af god kvalitet</li>
+          <li>Respektere fortrolige oplysninger</li>
+        </ul>
+        
+        <h3>6.2 Forbudt adfærd</h3>
+        <p>Du må ikke:</p>
+        <ul>
+          <li>Udgive dig for at være en anden person eller virksomhed</li>
+          <li>Udføre ulovlige aktiviteter gennem vores platform</li>
+          <li>Overtræde intellektuelle ejendomsrettigheder</li>
+          <li>Sprede skadeligt indhold eller malware</li>
+          <li>Misbruge vores systemer eller tjenester</li>
+        </ul>
+        
+        <h2>7. Fortrolighed og databeskyttelse</h2>
+        
+        <h3>7.1 Ansvarsfordeling</h3>
+        <p>Vi behandler dine personoplysninger i henhold til vores <a href="privacy.html">Privatlivspolitik</a>. Du accepterer, at:</p>
+        <ul>
+          <li>Vi kan dele nødvendige oplysninger med arbejdsgivere for matchning</li>
+          <li>Vi behandler dine data i henhold til gældende lovgivning</li>
+          <li>Du kan tilbagetrække dit samtykke til databehandling</li>
+        </ul>
+        
+        <h3>7.2 Fortrolige oplysninger</h3>
+        <p>Du forpligter dig til at behandle fortrolige oplysninger, du modtager gennem platformen, sikkert og i overensstemmelse med gældende aftaler.</p>
+        
+        <h2>8. Ophør og suspending</h2>
+        
+        <h3>8.1 Ophør af Tjenester</h3>
+        <p>Vi forbeholder os retten til at suspendere eller ophære din adgang til Tjenesterne med øjeblikkelig virkning, hvis du:</p>
+        <ul>
+          <li>Overtræder disse Vilkår</li>
+          <li>Misbruger platformen eller dens brugere</li>
+          <li>Udfører ulovlige aktiviteter</li>
+          <li>Skader vores omdømme eller forretning</li>
+        </ul>
+        
+        <h3>8.2 Frivilligt ophør</h3>
+        <p>Du kan til enhver tid opsige din konto ved at kontakte os. Ved opsigelse:</p>
+        <ul>
+          <li>Ophører din adgang til platformen</li>
+          <li>Bevarer vi data i henhold til lovgivning og vores privatlivspolitik</li>
+          <li>Forfalder udestående betalinger fortsat</li>
+        </ul>
+        
+        <h2>9. Ansvarsbegrænsning</h2>
+        
+        <h3>9.1 Generelt ansvar</h3>
+        <div class="warning-box">
+          <p><strong>Ansvarsfraskrivelse:</strong> FjernjobDanmark ydes "som det er" og "som tilgængeligt". Vi giver ingen garantier, hverken udtrykkelige eller underforståede, om Tjenesternes funktionalitet eller egnethed til specifikke formål.</p>
+        </div>
+        
+        <h3>9.2 Specifikke ansvarsbegrænsninger</h3>
+        <p>Vi er ikke ansvarlige for:</p>
+        <ul>
+          <li>Jobresultater eller indtjeningsniveau</li>
+          <li>Handlinger fra arbejdsgivere eller andre brugere</li>
+          <li>Tekniske fejl eller afbrydelser uden for vores kontrol</li>
+          <li>Tab af data, indtægter eller muligheder</li>
+          <li>Indirekte eller følgeskader</li>
+        </ul>
+        
+        <h2>10. Vederlagsfri tjeneste</h2>
+        
+        <h3>10.1 Ingen ansøgningsgebyrer</h3>
+        <p>FjernjobDanmark opkræver <span class="highlight">ingen gebyrer</span> for at:</p>
+        <ul>
+          <li>Oprette en brugerkonto</li>
+          <li>Ansøge om jobmuligheder</li>
+          <li>Få adgang til grundlæggende platformfunktioner</li>
+          <li>Modtage jobmatchning og formidling</li>
+        </ul>
+        
+        <h3>10.2 Eventuelle fremtidige ændringer</h3>
+        <p>Hvis vi i fremtiden indfører betalte tjenester, vil:</p>
+        <ul>
+          <li>Ændringer kommunikeres klart og i god tid</li>
+          <li>Eksisterende gratis funktioner forblive tilgængelige</li>
+          <li>Betalingsvilkaar fremgå tydeligt</li>
+        </ul>
+        
+        <h2>11. Intellektuel ejendomsret</h2>
+        
+        <h3>11.1 Vores rettigheder</h3>
+        <p>Alle rettigheder til platformen, dens indhold og vores brand tilhører FjernjobDanmark. Dette inkluderer:</p>
+        <ul>
+          <li>Software og teknologier</li>
+          <li>Design og brugergrænseflade</li>
+          <li>Branding og logoer</li>
+          <li>Dokumentation og materialer</li>
+        </ul>
+        
+        <h3>11.2 Dine rettigheder</h3>
+        <p>Du bevarer rettighederne til det indhold, du opretter og indsender gennem platformen. Ved at indsende indhold giver du os en licens til at bruge det til at levere vores Tjenester.</p>
+        
+        <h2>12. Klager og tvistløsning</h2>
+        
+        <h3>12.1 Klageprocedure</h3>
+        <p>Hvis du har en klage eller bekymring, bedes du:</p>
+        <ol>
+          <li>Kontakte vores kundeservice først</li>
+          <li>Give os rimelig tid til at undersøge og løse problemet</li>
+          <li>Samarbejde om at finde en løsning</li>
+        </ol>
+        
+        <h3>12.2 Tvistløsning</h3>
+        <p>Eventuelle tvister vil primært løses gennem forhandlinger. Hvis forhandlinger ikke lykkes, kan tvister indbringes for danske domstole i overensstemmelse med dansk lov.</p>
+        
+        <h2>13. Forskelligt</h2>
+        
+        <h3>13.1 Uoprettelighed</h3>
+        <p>Hvis en bestemmelse i disse Vilkår findes ugyldig eller håndhævelig, påvirker dette ikke gyldigheden og håndhæveligheden af de øvrige bestemmelser.</p>
+        
+        <h3>13.2 Fuldstændig aftale</h3>
+        <p>Disse Vilkår udgør den fulde aftale mellem dig og FjernjobDanmark vedrørende Tjenesterne og erstatter alle tidligere aftaler eller forståelser.</p>
+        
+        <h3>13.3 Tilståelse</h3>
+        <p>Vores undladelse af at håndhæve en bestemmelse i disse Vilkår udgør ikke en tilståelse af denne bestemmelse.</p>
+        
+        <h2>14. Kontaktoplysninger</h2>
+        <p>Hvis du har spørgsmål til disse Servicevilkår, kan du kontakte os på:</p>
+        
+        <div class="info-box">
+          <p><strong>FjernjobDanmark</strong><br>
+          E-mail: <a href="mailto:support@yqh.baby">support@yqh.baby</a><br>
+          Telefon: +45 12 34 56 78<br>
+          Adresse: Digitalt firma med base i København, Danmark</p>
+        </div>
+        
+        <p>For spørgsmål vedrørende databeskyttelse, henvises til vores <a href="privacy.html">Privatlivspolitik</a>.</p>
+        
+        <div class="info-box">
+          <p><strong>Bemærk:</strong> Disse Servicevilkår skal læses sammen med vores <a href="privacy.html">Privatlivspolitik</a>, som udgør en integreret del af din aftale med os.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">FjernjobDanmark</a>
+        <p class="muted small">Gennemsigtige muligheder. Ingen indkomst garanteret. Ingen ansøgningsgebyrer.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="privacy.html" rel="nofollow">Privatlivspolitik</a>
+        <a href="userterms.html" rel="nofollow">Servicevilkår</a>
+        <a href="index.html#contact">Kontakt</a>
+      </nav>
+    </div>
+    <div class="container">
+      <p class="muted small">© 2024 FjernjobDanmark. Alle rettigheder forbeholdes.</p>
+    </div>
+  </footer>
+</body>
+</html>
