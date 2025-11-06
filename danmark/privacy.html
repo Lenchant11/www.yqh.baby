@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="da-DK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privatlivspolitik - FjernjobDanmark</title>
+  <meta name="description" content="Læs om hvordan FjernjobDanmark beskytter og håndterer dine personoplysninger i henhold til dansk og EU-lovgivning." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root{
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --muted: #4a5568;
+      --text: #2d3748;
+      --white: #ffffff;
+      --primary: #3182ce;
+      --primary-600: #2b6cb0;
+      --primary-300: #90cdf4;
+      --accent: #805ad5;
+      --accent-light: #b794f4;
+      --green: #38a169;
+      --yellow: #d69e2e;
+      --red: #e53e3e;
+      --ring: 0 0 0 3px rgba(49, 130, 206, 0.25);
+      --radius: 8px;
+      --transition: all 0.3s ease;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.6; font-size: 16px;}
+    img{max-width:100%;display:block}
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1120px,94%);margin-inline:auto}
+
+    .nav{position:sticky;top:0;z-index:50;background:rgba(245, 247, 250, 0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06); box-shadow: 0 1px 3px rgba(0,0,0,0.05);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:800;letter-spacing:.3px;font-size:1.3rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .nav-links{display:flex;gap:16px;align-items:center}
+    .nav-link{opacity:.85; transition: var(--transition); font-size: 0.95rem; font-weight: 500;}
+    .nav-link:hover{opacity:1; color: var(--primary);}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:8px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
+    .btn-primary{background: var(--primary);color:white; box-shadow: var(--shadow);}
+    .btn-primary:hover{background:var(--primary-600); transform: translateY(-2px); box-shadow: var(--shadow-lg);}
+
+    .section{padding:60px 0}
+    .section-header {text-align: center; max-width: 800px; margin: 0 auto 40px;}
+    h1{margin:0 0 16px;font-size:42px; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;}
+    h2{margin:32px 0 16px;font-size:28px; font-weight: 700; color: var(--primary);}
+    h3{margin:24px 0 12px;font-size:22px; font-weight: 600; color: var(--text);}
+    .muted{color:var(--muted); line-height: 1.6;}
+    .small{font-size:0.88rem}
+    
+    .content-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    
+    .info-box {
+      background: rgba(49, 130, 206, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    
+    .highlight {
+      background: linear-gradient(120deg, rgba(56, 161, 105, 0.15) 0%, rgba(56, 161, 105, 0.15) 100%);
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    
+    ul, ol {
+      padding-left: 24px;
+      margin: 16px 0;
+    }
+    
+    li {
+      margin-bottom: 8px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    
+    th {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background: rgba(0,0,0,0.02);
+    }
+    
+    .footer{border-top:1px solid rgba(0,0,0,.08);padding:32px 0 20px;background:#e2e8f0}
+    .footer-grid{display:flex;justify-content:space-between;gap:16px;align-items:flex-start; margin-bottom: 20px;}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+    
+    /* Mobile responsiveness */
+    @media (max-width: 980px){
+      h1 {font-size: 32px;}
+      h2 {font-size: 26px;}
+      .section {padding: 40px 0;}
+      .section-header {margin-bottom: 30px;}
+      .nav-links .nav-link {display: none;}
+      .content-card {padding: 30px;}
+    }
+    
+    @media (max-width: 640px) {
+      .nav-links {gap: 8px;}
+      .btn {padding: 8px 16px; font-size: 0.92rem;}
+      .footer-grid {flex-direction: column; gap: 16px;}
+      .footer-links {flex-direction: column; gap: 8px;}
+      .section {padding: 32px 0;}
+      h1 {font-size: 28px;}
+      h2 {font-size: 24px;}
+      h3 {font-size: 20px;}
+      .content-card {padding: 20px;}
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {font-size: 24px;}
+      h2 {font-size: 22px;}
+      .brand {font-size: 1.2rem;}
+      .nav-link {font-size: 0.9rem;}
+      .btn {font-size: 0.9rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Hjem">FjernjobDanmark</a>
+      <nav class="nav-links">
+        <a href="index.html#roles" class="nav-link">Jobtyper</a>
+        <a href="index.html#benefits" class="nav-link">Fordele</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="index.html" class="btn btn-primary">Tilbage til Forsiden</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Privacy Policy Content -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h1>Privatlivspolitik</h1>
+        <p class="muted">Sidst opdateret: 15. november 2024</p>
+      </div>
+      
+      <div class="content-card">
+        <div class="info-box">
+          <p><strong>Vigtigt:</strong> Denne privatlivspolitik beskriver, hvordan FjernjobDanmark indsamler, bruger og beskytter dine personoplysninger i henhold til gældende dansk og EU-lovgivning, herunder persondataforordningen (GDPR).</p>
+        </div>
+        
+        <h2>1. Introduktion</h2>
+        <p>Vi på FjernjobDanmark værdsætter dit privatliv og forpligter os til at beskytte dine personoplysninger. Denne privatlivspolitik forklarer, hvordan vi håndterer oplysninger, når du bruger vores platform og tjenester.</p>
+        
+        <h2>2. Dataindsamling</h2>
+        <p>Vi indsamler følgende oplysninger for at kunne tilbyde dig vores tjenester:</p>
+        
+        <h3>2.1 Oplysninger du giver os</h3>
+        <ul>
+          <li><span class="highlight">Kontaktoplysninger:</span> Fulde navn, telefonnummer (WhatsApp), alder</li>
+          <li><span class="highlight">Kommunikation:</span> Beskeder og forespørgsler via vores platform</li>
+          <li><span class="highlight">Præferencer:</span> Jobpræferencer og interesser</li>
+        </ul>
+        
+        <h3>2.2 Automatisk indsamlede oplysninger</h3>
+        <ul>
+          <li><span class="highlight">Tekniske oplysninger:</span> IP-adresse, enhedstype, browser, operativsystem</li>
+          <li><span class="highlight">Brugsdata:</span> Sider besøgt, tid brugt, klik- og visningsdata</li>
+          <li><span class="highlight">Cookies:</span> Vi bruger cookies til at forbedre brugeroplevelsen</li>
+        </ul>
+        
+        <h2>3. Formål med databehandling</h2>
+        <p>Vi behandler dine oplysninger til følgende formål:</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Formål</th>
+              <th>Retlig grundlag</th>
+              <th>Oplysningstyper</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>At levere vores tjenester og matche dig med relevante jobmuligheder</td>
+              <td>Udførelse af aftale</td>
+              <td>Kontaktoplysninger, præferencer</td>
+            </tr>
+            <tr>
+              <td>At kommunikere med dig om jobmuligheder og platformopdateringer</td>
+              <td>Berettiget interesse</td>
+              <td>Kontaktoplysninger, kommunikationsdata</td>
+            </tr>
+            <tr>
+              <td>At forbedre vores platform og tjenester</td>
+              <td>Berettiget interesse</td>
+              <td>Brugsdata, tekniske oplysninger</td>
+            </tr>
+            <tr>
+              <td>At opfylde juridiske forpligtelser</td>
+              <td>Juridisk forpligtelse</td>
+              <td>Alle relevante oplysninger</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h2>4. Deling af oplysninger</h2>
+        <p>Vi deler kun dine oplysninger under følgende omstændigheder:</p>
+        
+        <h3>4.1 Tredjepartsudbydere</h3>
+        <p>Vi arbejder med pålidelige tredjeparter, der hjælper os med at levere vores tjenester:</p>
+        <ul>
+          <li>Hosting- og infrastrukturudbydere</li>
+          <li>Kommunikationsplatforme (WhatsApp)</li>
+          <li>Analyseredskaber (Google Analytics)</li>
+        </ul>
+        
+        <h3>4.2 Juridiske krav</h3>
+        <p>Vi kan afsløre oplysninger, hvis det er påkrævet ved lov eller for at beskytte vores rettigheder, ejendom eller sikkerhed.</p>
+        
+        <h3>4.3 Forretningspartnere</h3>
+        <p>Vi kan dele begrænsede oplysninger med arbejdsgivere og virksomheder, der tilbyder fjernjobs, for at matche dig med relevante muligheder. Dette sker kun med dit samtykke.</p>
+        
+        <h2>5. Dataopbevaring</h2>
+        <p>Vi opbevarer dine personoplysninger kun så længe, som det er nødvendigt for at opfylde de formål, de er indsamlet til, medmindre længere opbevaring er påkrævet eller tilladt ved lov.</p>
+        
+        <ul>
+          <li><span class="highlight">Aktive brugere:</span> Oplysninger opbevares, mens du er aktiv bruger af vores platform</li>
+          <li><span class="highlight">Inaktive brugere:</span> Oplysninger slettes efter 2 års inaktivitet</li>
+          <li><span class="highlight">Juridiske krav:</span> Visse oplysninger kan opbevares længere for at opfylde juridiske forpligtelser</li>
+        </ul>
+        
+        <h2>6. Dine rettigheder</h2>
+        <p>Ifølge persondataforordningen har du følgende rettigheder:</p>
+        
+        <div class="info-box">
+          <ul>
+            <li><strong>Ret til indsigt:</strong> Du har ret til at få oplysning om, hvilke oplysninger vi behandler om dig</li>
+            <li><strong>Ret til rettelse:</strong> Du kan bede om at få rettet unøjagtige oplysninger</li>
+            <li><strong>Ret til sletning:</strong> Under visse betingelser kan du bede om at få slettet dine oplysninger</li>
+            <li><strong>Ret til begrænsning:</strong> Du kan bede om begrænsning af behandlingen af dine oplysninger</li>
+            <li><strong>Ret til dataportabilitet:</strong> Du kan bede om at modtage dine oplysninger i et struktureret format</li>
+            <li><strong>Ret til indsigelse:</strong> Du kan gøre indsigelse mod visse typer af behandling</li>
+          </ul>
+        </div>
+        
+        <p>For at udøve dine rettigheder kan du kontakte os på <a href="mailto:privatliv@fjernjobdanmark.dk">privatliv@fjernjobdanmark.dk</a>.</p>
+        
+        <h2>7. Cookies og sporings-teknologier</h2>
+        <p>Vi bruger cookies og lignende teknologier til at forbedre din brugeroplevelse, analysere trafik og til målrettet markedsføring.</p>
+        
+        <h3>7.1 Typer af cookies vi bruger</h3>
+        <ul>
+          <li><span class="highlight">Nødvendige cookies:</span> Kræves for, at websitet kan fungere korrekt</li>
+          <li><span class="highlight">Præference-cookies:</span> Huskere dine indstillinger og præferencer</li>
+          <li><span class="highlight">Statistiske cookies:</span> Hjælper os med at forstå, hvordan besøgende bruger websitet</li>
+          <li><span class="highlight">Marketing-cookies:</span> Bruges til at spore besøgende på tværs af websider</li>
+        </ul>
+        
+        <h3>7.2 Kontrol over cookies</h3>
+        <p>Du kan administrere dine cookie-indstillinger i din browser. Bemærk, at deaktivering af cookies kan påvirke funktionaliteten på vores website.</p>
+        
+        <h2>8. Datasikkerhed</h2>
+        <p>Vi implementerer passende tekniske og organisatoriske foranstaltninger for at beskytte dine personoplysninger mod uautoriseret adgang, ændring, offentliggørelse eller ødelæggelse.</p>
+        
+        <ul>
+          <li>Kryptering af følsomme data under transmission og lagring</li>
+          <li>Regelmæssige sikkerhedsgennemgange og vurderinger</li>
+          <li>Begrænset adgang til personoplysninger til autoriseret personale</li>
+          <li>Uddannelse af medarbejdere i databeskyttelse</li>
+        </ul>
+        
+        <h2>9. International datoverførsler</h2>
+        <p>Da vi opererer i Danmark og EU, behandles dine oplysninger primært inden for EU/EØS-området. Hvis data overføres til tredjelande, sikrer vi, at der er passende beskyttelsesforanstaltninger på plads.</p>
+        
+        <h2>10. Børns privatliv</h2>
+        <p>Vores tjenester er ikke målrettet personer under 18 år. Vi indsamler bevidst ikke oplysninger om børn. Hvis du er forælder eller værge og tror, at dit barn har givet os personoplysninger, bedes du kontakte os, så vi kan slette disse oplysninger.</p>
+        
+        <h2>11. Ændringer i privatlivspolitikken</h2>
+        <p>Vi kan opdatere denne privatlivspolitik fra tid til anden for at afspejle ændringer i vores praksis eller juridiske krav. Vi vil informere dig om væsentlige ændringer via e-mail eller gennem en meddelelse på vores website.</p>
+        
+        <h2>12. Kontaktoplysninger</h2>
+        <p>Hvis du har spørgsmål til denne privatlivspolitik eller vores behandling af dine personoplysninger, kan du kontakte os på:</p>
+        
+        <div class="info-box">
+          <p><strong>FjernjobDanmark</strong><br>
+          E-mail: <a href="mailto:support@yqh.baby">support@yqh.baby</a><br>
+          Telefon: +45 12 34 56 78<br>
+          Adresse: Digitalt firma med base i København, Danmark</p>
+        </div>
+        
+        <p>Du har også ret til at indgive klage til Datatilsynet, hvis du mener, at vores behandling af dine personoplysninger overtræder gældende lovgivning.</p>
+        
+        <div class="info-box">
+          <p><strong>Datatilsynet</strong><br>
+          Carl Jacobsens Vej 35<br>
+          2500 Valby<br>
+          Telefon: +45 33 19 32 00<br>
+          E-mail: <a href="mailto:support@yqh.baby">support@yqh.baby</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">FjernjobDanmark</a>
+        <p class="muted small">Gennemsigtige muligheder. Ingen indkomst garanteret. Ingen ansøgningsgebyrer.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="privacy.html" rel="nofollow">Privatlivspolitik</a>
+        <a href="userterms.html" rel="nofollow">Servicevilkår</a>
+        <a href="index.html#contact">Kontakt</a>
+      </nav>
+    </div>
+    <div class="container">
+      <p class="muted small">© 2024 FjernjobDanmark. Alle rettigheder forbeholdes.</p>
+    </div>
+  </footer>
+</body>
+</html>
