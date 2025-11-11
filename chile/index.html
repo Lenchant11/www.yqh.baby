@@ -9,12 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17462482672"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17524155246"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-17462482672');
+    gtag('config', 'AW-17524155246');
   </script>
 
   <style>
@@ -641,7 +641,7 @@
     // Simplified conversion function (no callback-based redirect) — we will call analytics separately and open telegram separately
     function gtag_report_conversion_simple() {
       // For compatibility with existing snippet names, we keep a function but it only sends analytics.
-      sendAnalyticsEvent('conversion', {'send_to': 'AW-17462482672/YhS9COSw0ZIbEPCt4YZB'});
+      sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
     }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -654,7 +654,8 @@
       
       // Telegram link for Chile - account pool
       const telegramAccounts = [
-        "https://t.me/MicaelaTG12","https://t.me/shi9912"
+        "https://t.me/MicaelaTG12",
+		"https://t.me/shi9912"
       ];
       
       // Assign a Telegram account on page load (random)
@@ -689,7 +690,7 @@
           });
 
           // Also send standard conversion event for Google Ads (non-blocking)
-          sendAnalyticsEvent('conversion', {'send_to': 'AW-17462482672/YhS9COSw0ZIbEPCt4YZB'});
+          sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
 
           // Open Telegram in new tab (non-blocking relative to analytics)
           openTelegram(assignedTelegram);
@@ -773,7 +774,7 @@
         });
 
         // Also send Google Ads conversion event (non-blocking)
-        sendAnalyticsEvent('conversion', {'send_to': 'AW-17462482672/YhS9COSw0ZIbEPCt4YZB'});
+        sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
 
         // Optionally show modal briefly (we still show but don't rely on modal click to redirect)
         successModal.classList.add('active');
