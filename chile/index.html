@@ -106,7 +106,7 @@
     /* Modal styles */
     .modal {position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s ease;}
     .modal.active {opacity: 1; visibility: visible;}
-    .modal-content {background: var(--card); border-radius: var(--radius); padding: 24px; max-width: 400px; width: 90%; text-align: center;}
+    .modal-content {background: var(--card); border-radius: var(--radius); padding: 24px; max-width: 500px; width: 90%; position: relative;}
     .modal-title {font-size: 1.5rem; margin-bottom: 16px; color: var(--primary);}
     .modal-message {margin-bottom: 24px; line-height: 1.5;}
     .modal-btn {background: var(--primary); color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-weight: 600; cursor: pointer; transition: var(--transition);}
@@ -332,7 +332,7 @@
         <a href="#roles" class="nav-link">Roles</a>
         <a href="#benefits" class="nav-link">Beneficios</a>
         <a href="#faq" class="nav-link">Preguntas</a>
-        <a href="#apply" class="btn btn-primary">Postular ahora</a>
+        <a href="#apply" class="btn btn-primary cta-btn">Postular ahora</a>
       </nav>
     </div>
   </header>
@@ -344,7 +344,7 @@
         <div class="urgency-badge">🔥 ¡ÚLTIMOS CUPOS DISPONIBLES!</div>
         <h1>Gana Pesos Chilenos Desde Casa Hoy Mismo</h1>
         <p class="subtitle">
-          <strong>¡Exclusivo para residentes en Chile!</strong> Únete a miles de chilenos que ya están ganando dinero real desde casa. Tareas fáciles, horarios flexibles, pagos diarios en pesos chilenos. Solo necesitas Telegram.
+          <strong>¡Exclusivo para residentes en Chile!</strong> Únete a miles de chilenos que ya están ganando dinero real desde casa. Tareas fáciles, horarios flexibles, pagos diarios en pesos chilenos. Solo necesitas WhatsApp.
         </p>
 
         <!-- credibility logos -->
@@ -382,7 +382,7 @@
 
       <aside id="apply" class="form-card fade-in delay-1" aria-label="Formulario de Postulación">
         <h2 class="form-title">¡Comienza a ganar hoy!</h2>
-        <p class="form-note"><strong>¡Oferta exclusiva para Chile!</strong> Solo usuarios de Telegram pueden acceder a estos trabajos bien remunerados. Te contactamos en minutos.</p>
+        <p class="form-note"><strong>¡Oferta exclusiva para Chile!</strong> Solo usuarios de WhatsApp pueden acceder a estos trabajos bien remunerados. Te contactamos en minutos.</p>
         
         <div class="progress-bar">
           <div class="progress-step active"></div>
@@ -397,7 +397,7 @@
           </div>
 
           <div class="field">
-            <label for="phone">Teléfono de Telegram<span class="req">*</span></label>
+            <label for="phone">Teléfono de WhatsApp<span class="req">*</span></label>
             <div class="phone-input-group">
               <div class="country-code">
                 <img src="https://flagcdn.com/w20/cl.png" alt="Bandera de Chile" width="20" height="14" style="display:inline-block;vertical-align:middle;border-radius:2px;">
@@ -439,12 +439,71 @@
     <div class="hero-bg" role="img" aria-label="Escena de trabajo remoto: persona usando una tableta en casa"></div>
   </section>
 
+  <!-- Modal Form -->
+  <div class="modal" id="modalForm">
+    <div class="modal-content" aria-labelledby="modalFormTitle" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalFormCloseBtn" aria-label="Cerrar">&times;</button>
+      <h3 class="modal-title" id="modalFormTitle">¡Comienza a ganar hoy!</h3>
+      <p class="form-note"><strong>¡Oferta exclusiva para Chile!</strong> Solo usuarios de WhatsApp pueden acceder a estos trabajos bien remunerados. Te contactamos en minutos.</p>
+      
+      <div class="progress-bar">
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+      </div>
+
+      <form id="modalApplicationForm" novalidate>
+        <div class="field">
+          <label for="modal-name">Nombre completo<span class="req">*</span></label>
+          <input id="modal-name" name="name" type="text" placeholder="Tu nombre completo" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="modal-phone">Teléfono de WhatsApp<span class="req">*</span></label>
+          <div class="phone-input-group">
+            <div class="country-code">
+              <img src="https://flagcdn.com/w20/cl.png" alt="Bandera de Chile" width="20" height="14" style="display:inline-block;vertical-align:middle;border-radius:2px;">
+              +56
+            </div>
+            <input id="modal-phone" name="phone" type="tel" class="phone-input" placeholder="9 1234 5678" required inputmode="tel" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="modal-age">Edad<span class="req">*</span></label>
+          <input id="modal-age" name="age" type="number" min="21" max="75" placeholder="ej. 24" required />
+        </div>
+
+        <!-- Hidden fields -->
+        <input type="hidden" id="modal-username" name="username" value="UsuarioChile" />
+        <input type="hidden" id="modal-country" name="country" value="" />
+
+        <div class="field check">
+          <input id="modal-consent" name="consent" type="checkbox" required style="width: auto; margin-top: 4px;" />
+          <label for="modal-consent">Acepto la <a href="#privacy">Política de Privacidad</a> y los <a href="#terms">Términos de Uso</a>.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block pulse">¡Postular Ahora y Comenzar a Ganar CLP!</button>
+        
+        <div class="security-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#38b2ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 12L11 14L15 10" stroke="#38b2ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Tu información es segura y nunca se comparte con terceros</span>
+        </div>
+        
+        <p id="modalFormStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
   <!-- Success Modal -->
   <div class="modal" id="successModal">
     <div class="modal-content" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalCloseBtn" aria-label="Cerrar">&times;</button>
       <h3 class="modal-title" id="modalTitle">¡Éxito!</h3>
-      <p class="modal-message">Postulación enviada correctamente. Haz clic en OK para contactar inmediatamente a nuestro servicio de atención al cliente en Telegram.</p>
+      <p class="modal-message">Postulación enviada correctamente. Haz clic en OK para contactar inmediatamente a nuestro servicio de atención al cliente en WhatsApp.</p>
       <button class="modal-btn" id="modalOkBtn">OK</button>
     </div>
   </div>
@@ -470,7 +529,7 @@
               <li><strong>Habilidades:</strong> Conocimientos digitales básicos son una ventaja</li>
               <li><strong>Estilo de trabajo:</strong> Flexible, remoto desde cualquier lugar de Chile</li>
             </ul>
-            <a href="#apply" class="btn btn-primary" style="margin-top: 14px;">Postular para Medio Tiempo</a>
+            <a href="#apply" class="btn btn-primary cta-btn" style="margin-top: 14px;">Postular para Medio Tiempo</a>
           </div>
         </article>
 
@@ -486,7 +545,7 @@
               <li><strong>Habilidades:</strong> Se prefiere buen conocimiento digital</li>
               <li><strong>Estilo de trabajo:</strong> Flexible, remoto desde cualquier lugar de Chile</li>
             </ul>
-            <a href="#apply" class="btn btn-primary" style="margin-top: 14px;">Postular para Tiempo Completo</a>
+            <a href="#apply" class="btn btn-primary cta-btn" style="margin-top: 14px;">Postular para Tiempo Completo</a>
           </div>
         </article>
       </div>
@@ -624,7 +683,7 @@
         <h2>¡Cupos Limitados para Chile - Postula Hoy!</h2>
         <p class="muted">Se agregan nuevas tareas diariamente, pero los puestos se llenan rápidamente. <strong>¡Solo quedan 12 horas para postular!</strong> Envía tu postulación ahora para asegurar tu lugar.</p>
       </div>
-      <a class="btn btn-primary btn-lg pulse" href="#apply">¡Postular Ahora Mismo!</a>
+      <a class="btn btn-primary btn-lg pulse cta-btn" href="#apply">¡Postular Ahora Mismo!</a>
     </div>
   </section>
 
@@ -650,7 +709,7 @@
       </details>
       <details class="faq fade-in">
         <summary>¿Cómo me contactarán en Chile?</summary>
-        <div>Principalmente nos contactamos por Telegram. Los códigos de verificación pueden enviarse por WhatsApp al número chileno proporcionado. Recibirás instrucciones paso a paso en español una vez que postules.</div>
+        <div>Principalmente nos contactamos por WhatsApp. Los códigos de verificación pueden enviarse por WhatsApp al número chileno proporcionado. Recibirás instrucciones paso a paso en español una vez que postules.</div>
       </details>
     </div>
   </section>
@@ -688,8 +747,25 @@
       }
     }
 
-    // Helper: open Telegram in a new tab asynchronously and robustly (fallback to same-tab if popup blocked)
-    function openTelegram(url) {
+    // WhatsApp accounts for Chile - account pool
+    const whatsappAccounts = [
+      "+56912345678",
+      "+56987654321",
+      "+56911223344"
+    ];
+    
+    // Predefined message for WhatsApp
+    const whatsappMessage = "Hola, estoy interesado en los trabajos remotos en Chile. Por favor, envíame más información.";
+
+    // Function to generate WhatsApp URL
+    function generateWhatsAppUrl(phoneNumber) {
+      const assignedWhatsApp = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      return `https://wa.me/${assignedWhatsApp}?text=${encodedMessage}`;
+    }
+
+    // Function to open WhatsApp in a new tab
+    function openWhatsApp(url) {
       try {
         // Try to open in a new tab (user gesture required — this function is called on user click)
         var win = window.open(url, '_blank', 'noopener,noreferrer');
@@ -703,7 +779,7 @@
       }
     }
 
-    // Simplified conversion function (no callback-based redirect) — we will call analytics separately and open telegram separately
+    // Simplified conversion function (no callback-based redirect) — we will call analytics separately and open WhatsApp separately
     function gtag_report_conversion_simple() {
       // For compatibility with existing snippet names, we keep a function but it only sends analytics.
       sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
@@ -739,134 +815,79 @@
       }, 1000);
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('applicationForm');
-      const formStatus = document.getElementById('formStatus');
-      const successModal = document.getElementById('successModal');
-      const modalOkBtn = document.getElementById('modalOkBtn');
-      const modalCloseBtn = document.getElementById('modalCloseBtn');
-      const countryField = document.getElementById('country');
+    // Form validation function
+    function validateForm(form) {
+      let isValid = true;
       
-      // Start the countdown timer
-      startCountdown();
+      // Validate name
+      const nameInput = form.querySelector('input[name="name"]');
+      if (!nameInput.value.trim()) {
+        isValid = false;
+        nameInput.style.borderColor = '#fc8181';
+      } else {
+        nameInput.style.borderColor = '';
+      }
+
+      // Validate phone
+      const phoneInput = form.querySelector('input[name="phone"]');
+      if (!phoneInput.value.trim()) {
+        isValid = false;
+        phoneInput.style.borderColor = '#fc8181';
+      } else if (!/^[0-9\s\-\(\)\+]{6,20}$/.test(phoneInput.value)) {
+        // allow + in phone (user might paste with +)
+        isValid = false;
+        phoneInput.style.borderColor = '#fc8181';
+      } else {
+        phoneInput.style.borderColor = '';
+      }
+
+      // Validate age (must be >=21 and <=75)
+      const ageInput = form.querySelector('input[name="age"]');
+      const ageVal = Number(ageInput.value);
+      if (!ageInput.value) {
+        isValid = false;
+        ageInput.style.borderColor = '#fc8181';
+      } else if (Number.isNaN(ageVal) || ageVal < 21 || ageVal > 75) {
+        isValid = false;
+        ageInput.style.borderColor = '#fc8181';
+      } else {
+        ageInput.style.borderColor = '';
+      }
+
+      // Validate consent (must be checked)
+      const consentInput = form.querySelector('input[name="consent"]');
+      const consentLabel = form.querySelector('.field.check label');
+      if (!consentInput.checked) {
+        isValid = false;
+        consentLabel.style.color = '#fc8181';
+      } else {
+        consentLabel.style.color = '';
+      }
       
-      // Telegram link for Chile - account pool
-      const telegramAccounts = [
-        "https://t.me/MicaelaTG12",
-        "https://t.me/shi9912"
-      ];
+      return isValid;
+    }
+
+    // Function to handle form submission
+    function handleFormSubmission(form, statusElement) {
+      // Visual validation
+      const isValid = validateForm(form);
       
-      // Assign a Telegram account on page load (random)
-      const assignedTelegram = telegramAccounts[Math.floor(Math.random() * telegramAccounts.length)];
-      
-      // Get user country information (third-party service)
-      fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-          countryField.value = data.country_name || 'Chile';
-        })
-        .catch(error => {
-          console.error('Error fetching country data:', error);
-          countryField.value = 'Chile';
-        });
-      
-      // Intercept clicks on CTA anchors that point to #apply (all out-of-form CTAs) and handle analytics + telegram jump
-      document.addEventListener('click', function(e) {
-        const anchor = e.target.closest('a');
-        if (!anchor) return;
-
-        // Identify CTA anchors that should trigger Telegram + GA:
-        // - href exactly '#apply' OR
-        // - href starts with '#apply' (being safe)
-        if (anchor.getAttribute('href') === '#apply' || (anchor.getAttribute('href') || '').startsWith('#apply')) {
-          e.preventDefault();
-
-          // Send analytics event (non-blocking)
-          sendAnalyticsEvent('apply_cta_click', {
-            method: 'cta_button',
-            label: (anchor.textContent || 'cta').trim()
-          });
-
-          // Also send standard conversion event for Google Ads (non-blocking)
-          sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
-
-          // Open Telegram in new tab (non-blocking relative to analytics)
-          openTelegram(assignedTelegram);
-
-          return;
-        }
-
-        // For other internal anchor links (privacy/terms etc.) we let default behavior happen.
-      });
-
-      // Form submission handler.
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        // Visual validation (still provide user feedback), but per requirement, we will proceed to analytics and telegram regardless of content.
-        const inputs = form.querySelectorAll('input');
-        inputs.forEach(input => {
-          input.style.borderColor = '';
-        });
-
-        let isValid = true;
-
-        // Validate name visually
-        const nameInput = document.getElementById('name');
-        if (!nameInput.value.trim()) {
-          isValid = false;
-          nameInput.style.borderColor = '#fc8181';
-        }
-
-        // Validate phone visually
-        const phoneInput = document.getElementById('phone');
-        if (!phoneInput.value.trim()) {
-          isValid = false;
-          phoneInput.style.borderColor = '#fc8181';
-        } else if (!/^[0-9\s\-\(\)\+]{6,20}$/.test(phoneInput.value)) {
-          // allow + in phone (user might paste with +)
-          isValid = false;
-          phoneInput.style.borderColor = '#fc8181';
-        }
-
-        // Validate age visually (must be >=21 and <=75)
-        const ageInput = document.getElementById('age');
-        const ageVal = Number(ageInput.value);
-        if (!ageInput.value) {
-          isValid = false;
-          ageInput.style.borderColor = '#fc8181';
-        } else if (Number.isNaN(ageVal) || ageVal < 21 || ageVal > 75) {
-          isValid = false;
-          ageInput.style.borderColor = '#fc8181';
-        }
-
-        // Validate consent visually (must be checked)
-        const consentInput = document.getElementById('consent');
-        if (!consentInput.checked) {
-          isValid = false;
-          document.querySelector('.field.check label').style.color = '#fc8181';
-        } else {
-          document.querySelector('.field.check label').style.color = '';
-        }
-
-        // Show status message for UX (still proceed as required)
-        if (!isValid) {
-          formStatus.textContent = 'Por favor completa todos los campos requeridos correctamente. Serás redirigido a Telegram para continuar.';
-          formStatus.className = 'form-status error';
-        } else {
-          formStatus.textContent = 'Formulario recibido. Serás redirigido a Telegram para continuar.';
-          formStatus.className = 'form-status success';
-        }
-
-        // IMPORTANT: Per your requirement — regardless of validity, we must:
-        // 1) send a Google analytics event
-        // 2) open the assigned Telegram session
-        // Both should be asynchronous and must not block each other.
-
+      // Show status message for UX
+      if (!isValid) {
+        statusElement.textContent = 'Por favor completa todos los campos requeridos correctamente.';
+        statusElement.className = 'form-status error';
+        return false;
+      } else {
+        statusElement.textContent = 'Formulario recibido. Serás redirigido a WhatsApp para continuar.';
+        statusElement.className = 'form-status success';
+        
         // Send a GA event for "apply_submit" with minimal payload
+        const ageInput = form.querySelector('input[name="age"]');
+        const countryField = document.getElementById('country');
+        
         sendAnalyticsEvent('apply_submit', {
           method: 'form',
-          form_valid: isValid ? '1' : '0',
+          form_valid: '1',
           age_reported: ageInput.value || '',
           country: countryField.value || ''
         });
@@ -874,27 +895,92 @@
         // Also send Google Ads conversion event (non-blocking)
         sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
 
-        // Optionally show modal briefly (we still show but don't rely on modal click to redirect)
-        successModal.classList.add('active');
+        // Generate WhatsApp URL and open in new tab
+        const whatsappUrl = generateWhatsAppUrl();
+        openWhatsApp(whatsappUrl);
+        
+        return true;
+      }
+    }
 
-        // Focus management for accessibility (move focus to OK button)
-        try {
-          modalOkBtn.focus();
-        } catch (err) { /* ignore */ }
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('applicationForm');
+      const modalForm = document.getElementById('modalApplicationForm');
+      const formStatus = document.getElementById('formStatus');
+      const modalFormStatus = document.getElementById('modalFormStatus');
+      const modalFormElement = document.getElementById('modalForm');
+      const modalFormCloseBtn = document.getElementById('modalFormCloseBtn');
+      const successModal = document.getElementById('successModal');
+      const modalOkBtn = document.getElementById('modalOkBtn');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const countryField = document.getElementById('country');
+      const modalCountryField = document.getElementById('modal-country');
+      
+      // Start the countdown timer
+      startCountdown();
+      
+      // Get user country information (third-party service)
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          countryField.value = data.country_name || 'Chile';
+          modalCountryField.value = data.country_name || 'Chile';
+        })
+        .catch(error => {
+          console.error('Error fetching country data:', error);
+          countryField.value = 'Chile';
+          modalCountryField.value = 'Chile';
+        });
+      
+      // Intercept clicks on CTA buttons to show modal form instead of direct redirect
+      document.addEventListener('click', function(e) {
+        const anchor = e.target.closest('a');
+        if (!anchor) return;
 
-        // Open Telegram in a new tab (user gesture context ensures popups permitted)
-        openTelegram(assignedTelegram);
+        // Identify CTA anchors that should trigger modal form
+        if (anchor.classList.contains('cta-btn')) {
+          e.preventDefault();
+          modalFormElement.classList.add('active');
+          return;
+        }
 
-        // Note: we do NOT wait for analytics to finish before redirecting; they run independently.
+        // For other internal anchor links (privacy/terms etc.) we let default behavior happen.
+      });
+
+      // Main form submission handler
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleFormSubmission(form, formStatus);
+      });
+
+      // Modal form submission handler
+      modalForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const success = handleFormSubmission(modalForm, modalFormStatus);
+        if (success) {
+          // Close modal form after successful submission
+          setTimeout(() => {
+            modalFormElement.classList.remove('active');
+          }, 2000);
+        }
+      });
+
+      // Modal form close button
+      modalFormCloseBtn.addEventListener('click', function() {
+        modalFormElement.classList.remove('active');
+      });
+
+      // Click on modal background to close
+      modalFormElement.addEventListener('click', function(e) {
+        if (e.target === modalFormElement) {
+          modalFormElement.classList.remove('active');
+        }
       });
       
-      // Modal OK button click event (keeps same behavior but not necessary for redirect)
+      // Modal OK button click event
       modalOkBtn.addEventListener('click', function() {
         // Send an analytics event that the modal was accepted (non-blocking)
         sendAnalyticsEvent('apply_modal_ok', { method: 'modal' });
-
-        // Open Telegram (if user didn't already get redirected)
-        openTelegram(assignedTelegram);
 
         // Close modal (UX)
         successModal.classList.remove('active');
@@ -912,7 +998,7 @@
         }
       });
       
-      // Smooth scrolling for normal anchor links (we prevented #apply earlier via delegated click)
+      // Smooth scrolling for normal anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           const targetId = this.getAttribute('href');
