@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Oportunidades de Trabajo Remoto | Postula en Línea</title>
-  <meta name="description" content="Postula para tareas y roles remotos flexibles. Trabaja desde casa o cualquier lugar. Sin tarifas de postulación. Términos transparentes y privacidad primero." />
+  <title>Trabajos Remotos en Chile | Gana Dinero Desde Casa Hoy</title>
+  <meta name="description" content="Postula para trabajos remotos flexibles en Chile. Gana pesos chilenos desde casa. Sin tarifas de postulación. Oportunidades exclusivas para chilenos." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
@@ -204,6 +204,54 @@
     .security-badge {display: flex; align-items: center; gap: 8px; margin-top: 14px; padding: 10px; background: rgba(56, 178, 172, 0.1); border-radius: 8px; font-size: 0.86rem;}
     .security-badge svg {flex-shrink: 0; width: 18px; height: 18px;}
     
+    /* Urgency elements */
+    .urgency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      animation: pulse 2s infinite;
+    }
+    
+    .counter {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    .counter-item {
+      background: rgba(245, 101, 101, 0.2);
+      border-radius: 8px;
+      padding: 10px;
+      min-width: 60px;
+      text-align: center;
+    }
+    
+    .counter-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .counter-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    
+    .chile-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+    }
+    
     /* Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
@@ -279,7 +327,7 @@
   <!-- Top Nav -->
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Inicio">TrabajoRemoto</a>
+      <a class="brand" href="#top" aria-label="Inicio">TrabajoRemoto<span class="chile-flag">🇨🇱</span></a>
       <nav class="nav-links">
         <a href="#roles" class="nav-link">Roles</a>
         <a href="#benefits" class="nav-link">Beneficios</a>
@@ -293,14 +341,15 @@
   <section id="top" class="hero">
     <div class="container hero-grid">
       <div class="hero-copy fade-in">
-        <h1>Trabaja Desde Cualquier Lugar, Gana Cada Día</h1>
+        <div class="urgency-badge">🔥 ¡ÚLTIMOS CUPOS DISPONIBLES!</div>
+        <h1>Gana Pesos Chilenos Desde Casa Hoy Mismo</h1>
         <p class="subtitle">
-          Únete a miles de personas que ganan dinero real desde casa.Tareas fáciles, horarios flexibles, ingresos atractivos. Solo Telegram.
+          <strong>¡Exclusivo para residentes en Chile!</strong> Únete a miles de chilenos que ya están ganando dinero real desde casa. Tareas fáciles, horarios flexibles, pagos diarios en pesos chilenos. Solo necesitas Telegram.
         </p>
 
         <!-- credibility logos -->
         <div class="logos" aria-label="Marcas">
-          <span class="logo" aria-label="Amazon" title="Amazon">Amazon</span>
+          <span class="logo" aria-label="TikTok" title="TikTok">TikTok</span>
           <span class="logo" aria-label="Mercado Libre" title="Mercado Libre">Mercado Libre</span>
           <span class="logo" aria-label="Falabella" title="Falabella">Falabella</span>
           <span class="logo" aria-label="Ripley" title="Ripley">Ripley</span>
@@ -308,16 +357,32 @@
         </div>
 
         <ul class="hero-points">
-          <li>Horarios flexibles • Trabaja desde casa</li>
-          <li>Sin tarifas de postulación — nunca</li>
-          <li>Pautas claras, soporte rápido</li>
-          <li>Pagos diarios • Ideal para principiantes</li>
+          <li>¡Pagos diarios en pesos chilenos! • Gana desde $2.000 CLP al día</li>
+          <li>Horarios 100% flexibles • Trabaja desde cualquier lugar de Chile</li>
+          <li>Sin tarifas de postulación — ¡Nunca!</li>
+          <li>Soporte en español • Ideal para chilenos</li>
         </ul>
+        
+        <!-- Counter for urgency -->
+        <div class="counter">
+          <div class="counter-item">
+            <div class="counter-value" id="hours">12</div>
+            <div class="counter-label">Horas</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-value" id="minutes">45</div>
+            <div class="counter-label">Minutos</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-value" id="seconds">30</div>
+            <div class="counter-label">Segundos</div>
+          </div>
+        </div>
       </div>
 
       <aside id="apply" class="form-card fade-in delay-1" aria-label="Formulario de Postulación">
-        <h2 class="form-title">¡Gana dinero desde hoy!</h2>
-        <p class="form-note">Solo usuarios de Telegram pueden acceder a trabajos bien remunerados. Te contactamos en minutos.</p>
+        <h2 class="form-title">¡Comienza a ganar hoy!</h2>
+        <p class="form-note"><strong>¡Oferta exclusiva para Chile!</strong> Solo usuarios de Telegram pueden acceder a estos trabajos bien remunerados. Te contactamos en minutos.</p>
         
         <div class="progress-bar">
           <div class="progress-step active"></div>
@@ -327,7 +392,7 @@
 
         <form id="applicationForm" novalidate>
           <div class="field">
-            <label for="name">Nombre<span class="req">*</span></label>
+            <label for="name">Nombre completo<span class="req">*</span></label>
             <input id="name" name="name" type="text" placeholder="Tu nombre completo" required autocomplete="name" />
           </div>
 
@@ -356,7 +421,7 @@
             <label for="consent">Acepto la <a href="#privacy">Política de Privacidad</a> y los <a href="#terms">Términos de Uso</a>.</label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block pulse">Postular Ahora y Comenzar a Ganar</button>
+          <button type="submit" class="btn btn-primary btn-block pulse">¡Postular Ahora y Comenzar a Ganar CLP!</button>
           
           <div class="security-badge">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -389,21 +454,21 @@
     <div class="container">
       <div class="section-header fade-in">
         <h2>Elige Tu Estilo de Trabajo Flexible</h2>
-        <p class="muted">Los ingresos mostrados son rangos típicos reportados por trabajadores. Tus resultados dependen del tiempo, habilidades y disponibilidad.</p>
+        <p class="muted">Los ingresos mostrados son rangos típicos reportados por trabajadores chilenos. Tus resultados dependen del tiempo, habilidades y disponibilidad.</p>
       </div>
 
       <div class="cards two-col">
         <article class="card fade-in">
           <div class="card-media media-pt"></div>
           <div class="card-body">
-            <div class="earnings-badge">$2.000–$15.000 / día</div>
+            <div class="earnings-badge">$2.000–$15.000 CLP / día</div>
             <h3>Trabajo de medio tiempo</h3>
             <ul class="list">
               <li><strong>Horarios flexibles:</strong> 1–3 horas/día</li>
-              <li><strong>Pago:</strong> Diario después de completar la tarea exitosamente</li>
+              <li><strong>Pago:</strong> Diario en pesos chilenos después de completar la tarea</li>
               <li><strong>Herramientas:</strong> Solo smartphone</li>
               <li><strong>Habilidades:</strong> Conocimientos digitales básicos son una ventaja</li>
-              <li><strong>Estilo de trabajo:</strong> Flexible, remoto</li>
+              <li><strong>Estilo de trabajo:</strong> Flexible, remoto desde cualquier lugar de Chile</li>
             </ul>
             <a href="#apply" class="btn btn-primary" style="margin-top: 14px;">Postular para Medio Tiempo</a>
           </div>
@@ -412,14 +477,14 @@
         <article class="card fade-in delay-1">
           <div class="card-media media-ft"></div>
           <div class="card-body">
-            <div class="earnings-badge">$30.000+ / día</div>
+            <div class="earnings-badge">$30.000+ CLP / día</div>
             <h3>Trabajo de tiempo completo</h3>
             <ul class="list">
               <li><strong>Horarios flexibles:</strong> 3–6 horas/día</li>
-              <li><strong>Pago:</strong> Diario después de completar la tarea exitosamente</li>
+              <li><strong>Pago:</strong> Diario en pesos chilenos después de completar la tarea</li>
               <li><strong>Herramientas:</strong> Smartphone (PC opcional)</li>
               <li><strong>Habilidades:</strong> Se prefiere buen conocimiento digital</li>
-              <li><strong>Estilo de trabajo:</strong> Flexible, remoto</li>
+              <li><strong>Estilo de trabajo:</strong> Flexible, remoto desde cualquier lugar de Chile</li>
             </ul>
             <a href="#apply" class="btn btn-primary" style="margin-top: 14px;">Postular para Tiempo Completo</a>
           </div>
@@ -433,24 +498,24 @@
     <div class="container">
       <div class="section-header fade-in">
         <h2>Gana Recompensas por tu Constancia</h2>
-        <p class="muted">Mantente activo y desbloquea ganancias adicionales además de tus pagos regulares por tareas.</p>
+        <p class="muted">Mantente activo y desbloquea ganancias adicionales en pesos chilenos además de tus pagos regulares por tareas.</p>
       </div>
       
       <div class="cards three-col">
         <div class="card bonus fade-in">
           <div class="bonus-icon" aria-hidden="true">🎁</div>
           <h3>5 días</h3>
-          <p>Completa tareas durante 5 días activos este mes para desbloquear un bono de primer hito.</p>
+          <p>Completa tareas durante 5 días activos este mes para desbloquear un bono de primer hito de hasta $5.000 CLP.</p>
         </div>
         <div class="card bonus fade-in delay-1">
           <div class="bonus-icon" aria-hidden="true">🏆</div>
           <h3>15 días</h3>
-          <p>Mantén una actividad constante durante 15 días para calificar para un bono mejorado.</p>
+          <p>Mantén una actividad constante durante 15 días para calificar para un bono mejorado de hasta $15.000 CLP.</p>
         </div>
         <div class="card bonus fade-in delay-2">
           <div class="bonus-icon" aria-hidden="true">⭐</div>
           <h3>30 días</h3>
-          <p>Permanece activo durante 30 días para recibir nuestro bono mensual de lealtad más alto.</p>
+          <p>Permanece activo durante 30 días para recibir nuestro bono mensual de lealtad más alto de hasta $30.000 CLP.</p>
         </div>
       </div>
       <p class="muted" style="text-align: center; margin-top: 20px;">Los bonos dependen de la disponibilidad de tareas y la revisión de calidad. Aplican términos y condiciones.</p>
@@ -462,7 +527,7 @@
     <div class="container">
       <div class="section-header fade-in">
         <h2 id="req-title">Todo lo que Necesitas para Comenzar</h2>
-        <p class="muted">Requisitos simples para iniciar tu viaje de trabajo remoto con nosotros.</p>
+        <p class="muted">Requisitos simples para iniciar tu viaje de trabajo remoto con nosotros desde Chile.</p>
       </div>
       
       <div class="requirements">
@@ -470,7 +535,7 @@
           <div class="req-icon">📱</div>
           <div>
             <h4>Smartphone</h4>
-            <p>Android or iOS con internet estable.</p>
+            <p>Android o iOS con internet estable en Chile.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-1">
@@ -484,14 +549,14 @@
           <div class="req-icon">🎯</div>
           <div>
             <h4>Edad 21+</h4>
-            <p>Verificamos la edad para elegibilidad y cumplimiento.</p>
+            <p>Verificamos la edad para elegibilidad y cumplimiento en Chile.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-2">
           <div class="req-icon">🤝</div>
           <div>
             <h4>Todos los géneros son bienvenidos</h4>
-            <p>Oportunidades inclusivas con reglas justas.</p>
+            <p>Oportunidades inclusivas con reglas justas para chilenos.</p>
           </div>
         </div>
         <div class="req-item fade-in delay-2">
@@ -511,12 +576,12 @@
       <div class="benefits-grid">
         <div class="benefits-media fade-in"></div>
         <div class="benefits-copy fade-in delay-1">
-          <h2>Trabaja verdaderamente desde casa (o donde quieras)</h2>
+          <h2>Trabaja verdaderamente desde casa en Chile</h2>
           <ul class="stats">
-            <li><strong>50.000+</strong> postulantes</li>
+            <li><strong>50.000+</strong> chilenos postulantes</li>
             <li><strong>100.000+</strong> tareas ofrecidas</li>
-            <li><strong>500+</strong> personal de soporte</li>
-            <li><strong>95%</strong> satisfacción</li>
+            <li><strong>500+</strong> personal de soporte en español</li>
+            <li><strong>95%</strong> satisfacción en Chile</li>
           </ul>
           <p class="muted">Las cifras son agregados internos actualizados periódicamente y se proporcionan para transparencia, no como garantías.</p>
         </div>
@@ -528,25 +593,25 @@
   <section class="section">
     <div class="container">
       <div class="section-header fade-in">
-        <h2>Escucha a Nuestros Trabajadores Remotos</h2>
-        <p class="muted">Personas reales, experiencias reales trabajando con nuestra plataforma.</p>
+        <h2>Chilenos que ya están Ganando desde Casa</h2>
+        <p class="muted">Personas reales de Chile, experiencias reales trabajando con nuestra plataforma.</p>
       </div>
       
       <div class="cards three-col">
         <blockquote class="testimonial fade-in">
           <div class="avatar">C</div>
-          <p>"Tareas claras y respuestas rápidas. Recibí mi primer pago el mismo día."</p>
-          <footer>— C., Santiago</footer>
+          <p>"Tareas claras y respuestas rápidas. Recibí mi primer pago en pesos chilenos el mismo día."</p>
+          <footer>— Carlos, Santiago</footer>
         </blockquote>
         <blockquote class="testimonial fade-in delay-1">
           <div class="avatar">M</div>
-          <p>"Hago esto después del trabajo. La flexibilidad realmente ayuda con los ingresos extras."</p>
-          <footer>— M., Valparaíso</footer>
+          <p>"Hago esto después del trabajo. La flexibilidad realmente ayuda con los ingresos extras en CLP."</p>
+          <footer>— María, Valparaíso</footer>
         </blockquote>
         <blockquote class="testimonial fade-in delay-2">
           <div class="avatar">J</div>
-          <p>"Pasos simples con expectativas honestas. Sin tarifas para postular ni cargos ocultos."</p>
-          <footer>— J., Concepción</footer>
+          <p>"Pasos simples con expectativas honestas. Sin tarifas para postular ni cargos ocultos. ¡100% recomendado para chilenos!"</p>
+          <footer>— Javier, Concepción</footer>
         </blockquote>
       </div>
     </div>
@@ -556,10 +621,10 @@
   <section class="section cta">
     <div class="container cta-inner fade-in">
       <div>
-        <h2>Cupos Limitados Disponibles - Postula Hoy</h2>
-        <p class="muted">Se agregan nuevas tareas diariamente, pero los puestos se llenan rápidamente. Envía tu postulación ahora para asegurar tu lugar.</p>
+        <h2>¡Cupos Limitados para Chile - Postula Hoy!</h2>
+        <p class="muted">Se agregan nuevas tareas diariamente, pero los puestos se llenan rápidamente. <strong>¡Solo quedan 12 horas para postular!</strong> Envía tu postulación ahora para asegurar tu lugar.</p>
       </div>
-      <a class="btn btn-primary btn-lg pulse" href="#apply">Postular Ahora</a>
+      <a class="btn btn-primary btn-lg pulse" href="#apply">¡Postular Ahora Mismo!</a>
     </div>
   </section>
 
@@ -568,24 +633,24 @@
     <div class="container">
       <div class="section-header fade-in">
         <h2>Preguntas Frecuentes</h2>
-        <p class="muted">Todo lo que necesitas saber antes de comenzar.</p>
+        <p class="muted">Todo lo que necesitas saber antes de comenzar a ganar desde Chile.</p>
       </div>
       
       <details class="faq fade-in">
         <summary>¿Hay algún costo para postular?</summary>
-        <div>No. Nunca cobramos tarifas de postulación o registro. Nuestra plataforma es completamente gratuita para unirse y usar.</div>
+        <div>No. Nunca cobramos tarifas de postulación o registro. Nuestra plataforma es completamente gratuita para unirse y usar para residentes en Chile.</div>
       </details>
       <details class="faq fade-in">
-        <summary>¿Cómo funcionan los pagos?</summary>
-        <div>Los pagos se procesan después de que las tareas pasan los controles de calidad. El tiempo puede variar según el método y la región, pero la mayoría de los trabajadores reciben el pago dentro de las 24 horas posteriores a la finalización de la tarea.</div>
+        <summary>¿Cómo funcionan los pagos en Chile?</summary>
+        <div>Los pagos se procesan en pesos chilenos después de que las tareas pasan los controles de calidad. El tiempo puede variar según el método, pero la mayoría de los trabajadores chilenos reciben el pago dentro de las 24 horas posteriores a la finalización de la tarea.</div>
       </details>
       <details class="faq fade-in">
-        <summary>¿Qué equipo necesito?</summary>
-        <div>Un smartphone y conexión a Internet son suficientes para la mayoría de las tareas. Algunos roles pueden preferir una computadora, pero no es obligatorio para la mayoría de nuestras tareas.</div>
+        <summary>¿Qué equipo necesito en Chile?</summary>
+        <div>Un smartphone y conexión a Internet son suficientes para la mayoría de las tareas. Algunos roles pueden preferir una computadora, pero no es obligatorio para la mayoría de nuestras tareas disponibles en Chile.</div>
       </details>
       <details class="faq fade-in">
-        <summary>¿Cómo me contactarán?</summary>
-        <div>Principalmente nos contactamos por Telegram. Los códigos de verificación pueden enviarse por WhatsApp al número proporcionado. Recibirás instrucciones paso a paso una vez que postules.</div>
+        <summary>¿Cómo me contactarán en Chile?</summary>
+        <div>Principalmente nos contactamos por Telegram. Los códigos de verificación pueden enviarse por WhatsApp al número chileno proporcionado. Recibirás instrucciones paso a paso en español una vez que postules.</div>
       </details>
     </div>
   </section>
@@ -594,8 +659,8 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="#top">TrabajoRemoto</a>
-        <p class="muted small">Oportunidades transparentes. Sin ingresos garantizados. Sin tarifas de postulación.</p>
+        <a class="brand" href="#top">TrabajoRemoto<span class="chile-flag">🇨🇱</span></a>
+        <p class="muted small">Oportunidades transparentes para chilenos. Sin ingresos garantizados. Sin tarifas de postulación.</p>
       </div>
       <nav class="footer-links">
         <a id="privacy" href="privacy.html" rel="nofollow">Política de Privacidad</a>
@@ -603,7 +668,7 @@
       </nav>
     </div>
     <div class="container">
-      <p class="muted small">© 2023 TrabajoRemoto. Todos los derechos reservados. Los ingresos mostrados son solo ejemplos y no garantías. Tus ganancias reales dependen de tus habilidades, tiempo y disponibilidad de tareas.</p>
+      <p class="muted small">© 2023 TrabajoRemoto. Todos los derechos reservados. Los ingresos mostrados son solo ejemplos y no garantías. Tus ganancias reales dependen de tus habilidades, tiempo y disponibilidad de tareas. Servicio disponible exclusivamente para residentes en Chile.</p>
     </div>
   </footer>
 
@@ -644,6 +709,36 @@
       sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
     }
 
+    // Countdown timer for urgency
+    function startCountdown() {
+      let hours = 12;
+      let minutes = 45;
+      let seconds = 30;
+      
+      const countdown = setInterval(function() {
+        seconds--;
+        if (seconds < 0) {
+          seconds = 59;
+          minutes--;
+          if (minutes < 0) {
+            minutes = 59;
+            hours--;
+            if (hours < 0) {
+              clearInterval(countdown);
+              // Reset the countdown when it reaches zero
+              hours = 12;
+              minutes = 45;
+              seconds = 30;
+            }
+          }
+        }
+        
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+      }, 1000);
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('applicationForm');
       const formStatus = document.getElementById('formStatus');
@@ -652,10 +747,13 @@
       const modalCloseBtn = document.getElementById('modalCloseBtn');
       const countryField = document.getElementById('country');
       
+      // Start the countdown timer
+      startCountdown();
+      
       // Telegram link for Chile - account pool
       const telegramAccounts = [
         "https://t.me/MicaelaTG12",
-		"https://t.me/shi9912"
+        "https://t.me/shi9912"
       ];
       
       // Assign a Telegram account on page load (random)
