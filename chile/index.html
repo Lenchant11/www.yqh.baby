@@ -749,14 +749,9 @@
 
     // WhatsApp accounts for Chile - account pool
     const whatsappAccounts = [
-      "16814904961",
-      "16603103291",
-      "17422459725",
-      "17422459392",
-      "15757880725",
-      "16827196027",
-      "13462480658",
-      "19124917776"
+      "+56912345678",
+      "+56987654321",
+      "+56911223344"
     ];
     
     // Predefined message for WhatsApp
@@ -787,7 +782,7 @@
     // Simplified conversion function (no callback-based redirect) — we will call analytics separately and open WhatsApp separately
     function gtag_report_conversion_simple() {
       // For compatibility with existing snippet names, we keep a function but it only sends analytics.
-      sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
+      sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/18XfCNe_9L0bEO7GlaRB'});
     }
 
     // Countdown timer for urgency
@@ -898,7 +893,7 @@
         });
 
         // Also send Google Ads conversion event (non-blocking)
-        sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/Mr9pCNCT9r0bEO7GlaRB'});
+        sendAnalyticsEvent('conversion', {'send_to': 'AW-17524155246/18XfCNe_9L0bEO7GlaRB'});
 
         // Generate WhatsApp URL and open in new tab
         const whatsappUrl = generateWhatsAppUrl();
