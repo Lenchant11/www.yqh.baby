@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Remote Work in Malta | €250+ Daily From Home!</title>
-  <meta name="description" content="Apply for remote work in Malta. Work from home. No registration fees. Clear terms and privacy first." />
+  <title>Remote Work Opportunities in Malta | Work From Home</title>
+  <meta name="description" content="Explore remote work opportunities in Malta. Work from home with flexible hours. No registration fees. Clear terms and privacy first." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
@@ -46,6 +46,7 @@
   </script>
   
   <style>
+    /* 样式部分保持不变，只修改了部分类名 */
     :root{
       --bg: #f8fafc;
       --card: #ffffff;
@@ -251,12 +252,8 @@
     .security-badge {display: flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; font-size: 0.9rem;}
     .security-badge svg {flex-shrink: 0; width: 20px; height: 20px;}
     
-    /* Urgency elements */
-    .urgency-badge {background: linear-gradient(90deg, #ef4444, #f97316); color: white; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 12px; animation: pulse 2s infinite;}
-    .counter {display: flex; justify-content: center; gap: 10px; margin: 16px 0;}
-    .counter-item {background: var(--card); border-radius: 8px; padding: 12px; min-width: 60px; text-align: center; box-shadow: var(--shadow);}
-    .counter-number {font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-    .counter-label {font-size: 0.85rem; color: var(--muted);}
+    /* Opportunity elements */
+    .opportunity-badge {background: linear-gradient(90deg, var(--primary), var(--accent)); color: white; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 12px;}
     
     /* Animation */
     @keyframes fadeIn {
@@ -310,6 +307,17 @@
       display: block;
     }
     
+    /* Earnings disclaimer */
+    .earnings-disclaimer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 16px;
+      padding: 12px;
+      background: rgba(0,0,0,0.03);
+      border-radius: 6px;
+    }
+    
     /* Mobile responsiveness */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr; gap: 20px;}
@@ -345,9 +353,6 @@
       .testimonial {padding: 16px;}
       .stats li {padding: 12px;}
       .benefits-media {height: 200px;}
-      .counter {gap: 8px;}
-      .counter-item {min-width: 50px; padding: 10px;}
-      .counter-number {font-size: 1.3rem;}
       .user-photos {gap: 8px;}
       .user-photo {width: 50px; height: 50px;}
     }
@@ -369,7 +374,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Home">RemoteWorkMalta</a>
       <nav class="nav-links">
-        <a href="#roles" class="nav-link" data-en="Jobs" data-mt="Xogħolijiet">Jobs</a>
+        <a href="#roles" class="nav-link" data-en="Opportunities" data-mt="Opportunitajiet">Opportunities</a>
         <a href="#benefits" class="nav-link" data-en="Benefits" data-mt="Vantaġġi">Benefits</a>
         <a href="#faq" class="nav-link" data-en="FAQ" data-mt="Mistoqsijiet">FAQ</a>
         <a href="#" class="btn btn-primary" id="openFormBtn" data-en="Apply Now" data-mt="Applika Issa">Apply Now</a>
@@ -382,10 +387,10 @@
     <div class="container hero-grid">
       <!-- Top section -->
       <div class="hero-top fade-in">
-        <div class="urgency-badge" data-en="🚨 URGENT: ONLY 13 POSITIONS LEFT - APPLY NOW!" data-mt="🚨 URGENTI: BISS 13 POSTIJIET BQAJJU - APPLIKA IMMA!">🚨 URGENT: ONLY 13 POSITIONS LEFT - APPLY NOW!</div>
-        <h1 data-en="Earn €250+ Daily From Your Sofa - No Experience Needed!" data-mt="Kibbeg €250+ Kuljum Minn Xulxin - Bla Ebda Esperjenza!">Earn €250+ Daily From Your Sofa - No Experience Needed!</h1>
-        <p class="subtitle" data-en="3,000+ Maltese started earning this week! Simple tasks like watching videos can make you €250+ today — zero fees, start instantly." data-mt="3,000+ Maltin bdew jaqilgħu din il-ġimgħa! Ara vidjows u aqla' €250+ illum. Bla ħlas, tibda issa!">
-          3,000+ Maltese started earning this week! Simple tasks like watching videos can make you €250+ today — zero fees, start instantly.
+        <div class="opportunity-badge" data-en="🌟 NEW OPPORTUNITIES AVAILABLE - APPLY NOW!" data-mt="🌟 OPPORTUNITAJET ĠODDA DISPONIBBLI - APPLIKA IMMA!">🌟 NEW OPPORTUNITIES AVAILABLE - APPLY NOW!</div>
+        <h1 data-en="Explore Flexible Remote Work Opportunities in Malta" data-mt="Esplora Opportunitajiet ta' Xogħol Remot Flessibbli f'Malta">Explore Flexible Remote Work Opportunities in Malta</h1>
+        <p class="subtitle" data-en="Join Maltese residents discovering flexible work-from-home opportunities. Complete simple tasks with flexible hours - zero fees, start when you want." data-mt="Ingħaqad ma' residenti Maltin li qed jiskopru opportunitajiet ta' xogħol mid-dar flessibbli. Kompli xogħol sempliċi b'sigħat flessibbli - bla ħlas, ibda meta trid.">
+          Join Maltese residents discovering flexible work-from-home opportunities. Complete simple tasks with flexible hours - zero fees, start when you want.
         </p>
         
         <!-- Local companies -->
@@ -402,9 +407,9 @@
       <div class="hero-bottom">
         <!-- Left: Form -->
         <aside id="apply" class="form-card fade-in delay-1" aria-label="Application Form">
-          <h2 class="form-title" data-en="Start Earning in 24 Hours" data-mt="Ibda Taqla' Fi 24 Siegħa">Start Earning in 24 Hours</h2>
-          <p class="form-note" data-en="Complete this 30-second form and get matched with high-paying tasks TODAY." data-mt="Kompli dan il-formola ta' 30 sekonda u tqabbel ma' xogħol ta' ħlas għoli ILLUM.">
-            Complete this 30-second form and get matched with high-paying tasks TODAY.
+          <h2 class="form-title" data-en="Start Your Application Today" data-mt="Ibda l-Applikazzjoni Tiegħek Illum">Start Your Application Today</h2>
+          <p class="form-note" data-en="Complete this quick form to explore available remote work opportunities." data-mt="Kompli dan il-formola malajr biex tesplora l-opportunitajiet disponibbli ta' xogħol remot.">
+            Complete this quick form to explore available remote work opportunities.
           </p>
           
           <div class="progress-bar">
@@ -433,7 +438,6 @@
             <div class="field">
               <label for="age" data-en="Age" data-mt="Età">Age<span class="req">*</span></label>
               <input id="age" name="age" type="text" placeholder="e.g. 25" required inputmode="numeric" pattern="[0-9]*" />
-              <!-- 已删除年龄提示文字 -->
             </div>
 
             <div class="field check">
@@ -443,7 +447,7 @@
               </label>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block pulse" data-en="🚀 START EARNING NOW" data-mt="🚀 IBDA TAQLA' IMMA">🚀 START EARNING NOW</button>
+            <button type="submit" class="btn btn-primary btn-block pulse" data-en="🚀 EXPLORE OPPORTUNITIES" data-mt="🚀 ESPLORA OPPORTUNITAJIET">🚀 EXPLORE OPPORTUNITIES</button>
             
             <div class="security-badge">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -461,7 +465,7 @@
         <div class="hero-right-content fade-in delay-2">
           <!-- User photos -->
           <div class="hero-right-card">
-            <h3 data-en="🔥 3,000+ Maltese Joined This Week!" data-mt="🔥 3,000+ Maltin Ingħaqdu Din Il-Ġimgħa!">🔥 3,000+ Maltese Joined This Week!</h3>
+            <h3 data-en="🌟 Join Our Community of Remote Workers" data-mt="🌟 Ingħaqad Mal-Komunità Tagħna ta' Ħaddiema Remoti">🌟 Join Our Community of Remote Workers</h3>
             <div class="user-photos">
               <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 1" class="user-photo">
               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 2" class="user-photo">
@@ -469,41 +473,27 @@
               <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 4" class="user-photo">
               <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="User 5" class="user-photo">
             </div>
-            <p class="muted small" data-en="Real people earning real money from home!" data-mt="Nies reali qed jaqilghu flus reali mid-dar!">Real people earning real money from home!</p>
+            <p class="muted small" data-en="Real people finding real opportunities from home!" data-mt="Nies reali qed isibu opportunitajiet reali mid-dar!">Real people finding real opportunities from home!</p>
           </div>
           
           <!-- Benefits points -->
           <div class="hero-right-card">
-            <h3 data-en="✅ Why You'll Love RemoteWorkMalta" data-mt="✅ Għaliex Tħobb RemoteWorkMalta">✅ Why You'll Love RemoteWorkMalta</h3>
+            <h3 data-en="✅ Why Choose RemoteWorkMalta" data-mt="✅ Għaliex Tagħżel RemoteWorkMalta">✅ Why Choose RemoteWorkMalta</h3>
             <ul class="hero-points">
-              <li data-en="💰 €250-€500+ daily earning potential" data-mt="💰 Potenzjal ta' €250-€500+ kuljum">💰 €250-€500+ daily earning potential</li>
+              <li data-en="💰 Flexible earning opportunities" data-mt="💰 Opportunitajiet ta' qligħ flessibbli">💰 Flexible earning opportunities</li>
               <li data-en="⏰ Work whenever you want - 100% flexible" data-mt="⏰ Aħdem meta trid - 100% flessibbli">⏰ Work whenever you want - 100% flexible</li>
               <li data-en="📱 Simple tasks - watch videos, complete surveys" data-mt="📱 Xogħol sempliċi - ara vidjows, kompli stħarriġ">📱 Simple tasks - watch videos, complete surveys</li>
-              <li data-en="💳 Daily payments - get paid the same day" data-mt="💳 Ħlasijiet kuljum - itlaq l-istess jum">💳 Daily payments - get paid the same day</li>
+              <li data-en="💳 Regular payment opportunities" data-mt="💳 Opportunitajiet ta' ħlas regolari">💳 Regular payment opportunities</li>
               <li data-en="🚫 No experience or special skills needed" data-mt="🚫 L-ebda esperjenza jew ħiliet speċjali meħtieġa">🚫 No experience or special skills needed</li>
               <li data-en="🏠 Work from anywhere in Malta" data-mt="🏠 Aħdem minn kullimkien f'Malta">🏠 Work from anywhere in Malta</li>
             </ul>
           </div>
           
-          <!-- Counter -->
+          <!-- Application Card -->
           <div class="hero-right-card">
-            <h3 data-en="⏰ Offer expires in:" data-mt="⏰ L-offerta tispikka fi:">⏰ Offer expires in:</h3>
-            <div class="counter">
-              <div class="counter-item">
-                <div class="counter-number" id="hours">12</div>
-                <div class="counter-label" data-en="Hours" data-mt="Siegħat">Hours</div>
-              </div>
-              <div class="counter-item">
-                <div class="counter-number" id="minutes">45</div>
-                <div class="counter-label" data-en="Minutes" data-mt="Minuti">Minutes</div>
-              </div>
-              <div class="counter-item">
-                <div class="counter-number" id="seconds">30</div>
-                <div class="counter-label" data-en="Seconds" data-mt="Sekondi">Seconds</div>
-              </div>
-            </div>
-            <p class="muted small" style="text-align: center; margin-top: 12px;" data-en="🚨 Only 13 spots left - they're going FAST!" data-mt="🚨 Biss 13 postijiet bqajju - qed imorru MALAJR!">🚨 Only 13 spots left - they're going FAST!</p>
-            <a href="#" class="btn btn-primary btn-block pulse open-form-btn" style="margin-top: 12px;" data-en="📝 SECURE MY SPOT" data-mt="📝 IĦALLI POSTI">📝 SECURE MY SPOT</a>
+            <h3 data-en="📝 Ready to Get Started?" data-mt="📝 Lest biex Tibda?">📝 Ready to Get Started?</h3>
+            <p class="muted" style="margin-bottom: 16px;" data-en="Complete your application today to explore available opportunities that match your schedule." data-mt="Kompli l-applikazzjoni tiegħek illum biex tesplora l-opportunitajiet disponibbli li jaqblu mas-skeda tiegħek.">Complete your application today to explore available opportunities that match your schedule.</p>
+            <a href="#" class="btn btn-primary btn-block pulse open-form-btn" data-en="📝 START APPLICATION" data-mt="📝 IBDA L-APPLIKAZZJONI">📝 START APPLICATION</a>
           </div>
         </div>
       </div>
@@ -517,8 +507,8 @@
     <div class="modal-content" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
       <h3 class="modal-title" id="modalTitle" data-en="🎉 Success!" data-mt="🎉 Success!">🎉 Success!</h3>
-      <p class="modal-message" data-en="Your application has been submitted! Click OK to immediately contact our support team via WhatsApp and start earning TODAY." data-mt="L-applikazzjoni tiegħek ġiet imbagħtsa! Ikklikkja OK biex tikkuntattja lit-tim tas-support tagħna permezz ta' WhatsApp u tibda taqla' ILLUM.">
-        Your application has been submitted! Click OK to immediately contact our support team via WhatsApp and start earning TODAY.
+      <p class="modal-message" data-en="Your application has been submitted! Click OK to immediately contact our support team via WhatsApp and explore available opportunities." data-mt="L-applikazzjoni tiegħek ġiet imbagħtsa! Ikklikkja OK biex tikkuntattja lit-tim tas-support tagħna permezz ta' WhatsApp u tesplora l-opportunitajiet disponibbli.">
+        Your application has been submitted! Click OK to immediately contact our support team via WhatsApp and explore available opportunities.
       </p>
       <button class="modal-btn" id="modalOkBtn" data-en="OK" data-mt="OK">OK</button>
     </div>
@@ -540,9 +530,9 @@
   <div class="modal" id="formModal">
     <div class="modal-content" style="max-width: 460px;" aria-labelledby="modalFormTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="formModalCloseBtn" aria-label="Close">&times;</button>
-      <h2 class="form-title" id="modalFormTitle" data-en="🚀 Start Earning Today" data-mt="🚀 Ibda Taqla' Illum">🚀 Start Earning Today</h2>
-      <p class="form-note" data-en="Complete this 30-second form and get matched with high-paying tasks TODAY." data-mt="Kompli dan il-formola ta' 30 sekonda u tqabbel ma' xogħol ta' ħlas għoli ILLUM.">
-        Complete this 30-second form and get matched with high-paying tasks TODAY.
+      <h2 class="form-title" id="modalFormTitle" data-en="🚀 Start Exploring Opportunities" data-mt="🚀 Ibda Esplorar Opportunitajiet">🚀 Start Exploring Opportunities</h2>
+      <p class="form-note" data-en="Complete this quick form to explore available remote work opportunities." data-mt="Kompli dan il-formola malajr biex tesplora l-opportunitajiet disponibbli ta' xogħol remot.">
+        Complete this quick form to explore available remote work opportunities.
       </p>
       
       <div class="progress-bar">
@@ -571,7 +561,6 @@
         <div class="field">
           <label for="modal-age" data-en="Age" data-mt="Età">Age<span class="req">*</span></label>
           <input id="modal-age" name="age" type="text" placeholder="e.g. 25" required inputmode="numeric" pattern="[0-9]*" />
-          <!-- 已删除年龄提示文字 -->
         </div>
 
         <div class="field check">
@@ -581,7 +570,7 @@
           </label>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-block pulse" data-en="🚀 START EARNING NOW" data-mt="🚀 IBDA TAQLA' IMMA">🚀 START EARNING NOW</button>
+        <button type="submit" class="btn btn-primary btn-block pulse" data-en="🚀 EXPLORE OPPORTUNITIES" data-mt="🚀 ESPLORA OPPORTUNITAJIET">🚀 EXPLORE OPPORTUNITIES</button>
         
         <div class="security-badge">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -602,44 +591,51 @@
       <div class="section-header fade-in">
         <div class="malta-flag">
           <img src="https://flagcdn.com/w20/mt.png" alt="Malta Flag">
-          <span data-en="🚀 100% HIGH-PAYING OPPORTUNITIES IN MALTA" data-mt="🚀 100% OPPORTUNITAJET TA' ĦLAS GĦOLI FI MALTA">🚀 100% HIGH-PAYING OPPORTUNITIES IN MALTA</span>
+          <span data-en="🌟 FLEXIBLE WORK OPPORTUNITIES IN MALTA" data-mt="🌟 OPPORTUNITAJET TA' XOGĦOL FLESSIBBILI FI MALTA">🌟 FLEXIBLE WORK OPPORTUNITIES IN MALTA</span>
         </div>
-        <h2 data-en="Choose Your Path to Financial Freedom" data-mt="Agħżel It-Triq Tiegħek Għall-Libertà Finanzjarja">Choose Your Path to Financial Freedom</h2>
-        <p class="muted" data-en="Real earnings reported by our workers. Start small and scale up - the choice is yours!" data-mt="Ħlasijiet reali rrappurtati mill-ħaddiema tagħna. Ibda żgħar u żid - l-għażla tiegħek!">Real earnings reported by our workers. Start small and scale up - the choice is yours!</p>
+        <h2 data-en="Choose Your Flexible Work Path" data-mt="Agħżel It-Triq Tiegħek ta' Xogħol Flessibbli">Choose Your Flexible Work Path</h2>
+        <p class="muted" data-en="Explore opportunities that fit your schedule and lifestyle. Start small and find what works for you!" data-mt="Esplora opportunitajiet li jaqblu mas-skeda u l-istil tal-ħajja tiegħek. Ibda żgħar u sib x'jaħdem għalik!">Explore opportunities that fit your schedule and lifestyle. Start small and find what works for you!</p>
       </div>
 
       <div class="cards two-col">
         <article class="card fade-in">
           <div class="card-media media-pt"></div>
           <div class="card-body">
-            <div class="earnings-badge">🔥 €150 - €300 / day</div>
+            <div class="earnings-badge">🔥 Flexible Hours</div>
             <h3 data-en="Part-Time Remote Work" data-mt="Xogħol Remot Part-Time">Part-Time Remote Work</h3>
             <ul class="list">
               <li data-en="<strong>Perfect for:</strong> Students, side hustlers, busy parents" data-mt="<strong>Perfett għal:</strong> Studenti, side hustlers, ġenituri busy"><strong>Perfect for:</strong> Students, side hustlers, busy parents</li>
-              <li data-en="<strong>Time commitment:</strong> Just 1–3 hours/day" data-mt="<strong>Impenj ta' żmien:</strong> Biss 1–3 sigħat/jum"><strong>Time commitment:</strong> Just 1–3 hours/day</li>
-              <li data-en="<strong>Payment:</strong> Daily after task completion" data-mt="<strong>Ħlas:</strong> Kuljum wara li jitlesta x-xogħol"><strong>Payment:</strong> Daily after task completion</li>
+              <li data-en="<strong>Time commitment:</strong> Flexible 1–3 hours/day" data-mt="<strong>Impenj ta' żmien:</strong> Flessibbli 1–3 sigħat/jum"><strong>Time commitment:</strong> Flexible 1–3 hours/day</li>
+              <li data-en="<strong>Payment:</strong> Regular payment opportunities" data-mt="<strong>Ħlas:</strong> Opportunitajiet ta' ħlas regolari"><strong>Payment:</strong> Regular payment opportunities</li>
               <li data-en="<strong>All you need:</strong> Smartphone + internet" data-mt="<strong>Kollox li għandek bżonn:</strong> Smartphone + internet"><strong>All you need:</strong> Smartphone + internet</li>
               <li data-en="<strong>Tasks:</strong> Watching videos, simple surveys" data-mt="<strong>Xogħol:</strong> Tfittex vidjows, stħarriġ sempliċi"><strong>Tasks:</strong> Watching videos, simple surveys</li>
             </ul>
-            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 12px;" data-en="🎯 START PART-TIME" data-mt="🎯 IBDA PART-TIME">🎯 START PART-TIME</a>
+            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 12px;" data-en="🎯 EXPLORE PART-TIME" data-mt="🎯 ESPLORA PART-TIME">🎯 EXPLORE PART-TIME</a>
           </div>
         </article>
 
         <article class="card fade-in delay-1">
           <div class="card-media media-ft"></div>
           <div class="card-body">
-            <div class="earnings-badge">💎 €300+ / day</div>
+            <div class="earnings-badge">💎 More Opportunities</div>
             <h3 data-en="Full-Time Remote Work" data-mt="Xogħol Remot Full-Time">Full-Time Remote Work</h3>
             <ul class="list">
               <li data-en="<strong>Perfect for:</strong> Career changers, serious earners" data-mt="<strong>Perfett għal:</strong> Nies li qed jibdlu karriera, min irid jaqla' serjament"><strong>Perfect for:</strong> Career changers, serious earners</li>
               <li data-en="<strong>Time commitment:</strong> 3–6 flexible hours/day" data-mt="<strong>Impenj ta' żmien:</strong> 3–6 sigħat flessibbli/jum"><strong>Time commitment:</strong> 3–6 flexible hours/day</li>
-              <li data-en="<strong>Payment:</strong> Daily after task completion" data-mt="<strong>Ħlas:</strong> Kuljum wara li jitlesta x-xogħol"><strong>Payment:</strong> Daily after task completion</li>
+              <li data-en="<strong>Payment:</strong> Regular payment opportunities" data-mt="<strong>Ħlas:</strong> Opportunitajiet ta' ħlas regolari"><strong>Payment:</strong> Regular payment opportunities</li>
               <li data-en="<strong>All you need:</strong> Smartphone (PC optional)" data-mt="<strong>Kollox li għandek bżonn:</strong> Smartphone (PC opzjonali)"><strong>All you need:</strong> Smartphone (PC optional)</li>
               <li data-en="<strong>Tasks:</strong> Variety of simple online activities" data-mt="<strong>Xogħol:</strong> Varjetà ta' attivitajiet onlajn sempliċi"><strong>Tasks:</strong> Variety of simple online activities</li>
             </ul>
-            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 12px;" data-en="💼 GO FULL-TIME" data-mt="💼 IBDA FULL-TIME">💼 GO FULL-TIME</a>
+            <a href="#" class="btn btn-primary open-form-btn" style="margin-top: 12px;" data-en="💼 EXPLORE FULL-TIME" data-mt="💼 ESPLORA FULL-TIME">💼 EXPLORE FULL-TIME</a>
           </div>
         </article>
+      </div>
+      
+      <!-- Earnings Disclaimer -->
+      <div class="earnings-disclaimer fade-in">
+        <p data-en="Earnings vary based on individual effort, task availability, and other factors. We do not guarantee any specific income level. Results may vary." data-mt="Il-ħlasijiet jvarjaw skont l-isforz individwali, id-disponibbiltà tax-xogħol, u fatturi oħra. Aħna ma ngarrfux livell ta' dħul speċifiku. Ir-riżultati jistgħu jvarjaw.">
+          Earnings vary based on individual effort, task availability, and other factors. We do not guarantee any specific income level. Results may vary.
+        </p>
       </div>
     </div>
   </section>
@@ -648,28 +644,28 @@
   <section class="section alt">
     <div class="container">
       <div class="section-header fade-in">
-        <h2 data-en="💰 Bonus Rewards for Consistent Workers" data-mt="💰 Premjijiet Addizzjonali Għal Ħaddiema Kostanti">💰 Bonus Rewards for Consistent Workers</h2>
-        <p class="muted" data-en="Stay active and unlock EXTRA earnings beyond your normal task payments!" data-mt="Żomm attiv u iftaħ ĦLASIJIET EŻTRA lil hinn mill-ħlasijiet normali tax-xogħol!">Stay active and unlock EXTRA earnings beyond your normal task payments!</p>
+        <h2 data-en="💰 Additional Rewards for Active Participants" data-mt="💰 Premjijiet Addizzjonali Għal Partecipanti Attivi">💰 Additional Rewards for Active Participants</h2>
+        <p class="muted" data-en="Stay active and discover additional earning opportunities beyond regular task payments!" data-mt="Żomm attiv u skopri opportunitajiet ta' qligħ addizzjonali lil hinn mill-ħlasijiet regolari tax-xogħol!">Stay active and discover additional earning opportunities beyond regular task payments!</p>
       </div>
       
       <div class="cards three-col">
         <div class="card bonus fade-in">
           <div class="bonus-icon" aria-hidden="true">🎁</div>
           <h3 data-en="5 Active Days" data-mt="5 Jum Attivi">5 Active Days</h3>
-          <p data-en="Complete tasks for just 5 days this month to unlock your first milestone bonus!" data-mt="Kompli xogħol għal 5 jum biss dan ix-xahar biex tiftaħ l-ewwel premju milestone!">Complete tasks for just 5 days this month to unlock your first milestone bonus!</p>
+          <p data-en="Complete tasks for just 5 days this month to explore additional opportunities!" data-mt="Kompli xogħol għal 5 jum biss dan ix-xahar biex tesplora opportunitajiet addizzjonali!">Complete tasks for just 5 days this month to explore additional opportunities!</p>
         </div>
         <div class="card bonus fade-in delay-1">
           <div class="bonus-icon" aria-hidden="true">🏆</div>
           <h3 data-en="15 Active Days" data-mt="15 Jum Attivi">15 Active Days</h3>
-          <p data-en="Maintain consistent activity for 15 days to qualify for our increased bonus tier!" data-mt="Żomm attività kostanti għal 15-il jum biex tikkwalifika għat-tier ta' premju miżjud!">Maintain consistent activity for 15 days to qualify for our increased bonus tier!</p>
+          <p data-en="Maintain consistent activity for 15 days to qualify for increased opportunities!" data-mt="Żomm attività kostanti għal 15-il jum biex tikkwalifika għal opportunitajiet miżjuda!">Maintain consistent activity for 15 days to qualify for increased opportunities!</p>
         </div>
         <div class="card bonus fade-in delay-2">
           <div class="bonus-icon" aria-hidden="true">⭐</div>
           <h3 data-en="30 Active Days" data-mt="30 Jum Attivi">30 Active Days</h3>
-          <p data-en="Stay active for 30 days to receive our highest monthly loyalty bonus reward!" data-mt="Żomm attiv għal 30 jum biex tirċievi l-ogħla premju ta' lealtà ta' kull xahar!">Stay active for 30 days to receive our highest monthly loyalty bonus reward!</p>
+          <p data-en="Stay active for 30 days to discover our highest level of additional opportunities!" data-mt="Żomm attiv għal 30 jum biex issib l-ogħla livell ta' opportunitajiet addizzjonali!">Stay active for 30 days to discover our highest level of additional opportunities!</p>
         </div>
       </div>
-      <p class="muted" style="text-align: center; margin-top: 16px;" data-en="🚀 Bonus payments depend on task availability and quality review. Terms apply." data-mt="🚀 Il-ħlasijiet tal-premju jiddependu fuq id-disponibbiltà tax-xogħol u reviżjoni tal-kwalità. Japplikaw termini.">🚀 Bonus payments depend on task availability and quality review. Terms apply.</p>
+      <p class="muted" style="text-align: center; margin-top: 16px;" data-en="🌟 Additional opportunities depend on task availability and quality review. Terms apply." data-mt="🌟 Opportunitajiet addizzjonali jiddependu fuq id-disponibbiltà tax-xogħol u reviżjoni tal-kwalità. Japplikaw termini.">🌟 Additional opportunities depend on task availability and quality review. Terms apply.</p>
     </div>
   </section>
 
@@ -677,8 +673,8 @@
   <section class="section" aria-labelledby="req-title">
     <div class="container">
       <div class="section-header fade-in">
-        <h2 id="req-title" data-en="✅ Everything You Need to Start Earning" data-mt="✅ Kollox li Għandek Bżonn biex Tibda Taqla'">✅ Everything You Need to Start Earning</h2>
-        <p class="muted" data-en="Simple requirements to begin your remote work journey TODAY." data-mt="Rekwiżiti sempliċi biex tibda l-vjaġġ tax-xogħol remot tiegħek ILLUM.">Simple requirements to begin your remote work journey TODAY.</p>
+        <h2 id="req-title" data-en="✅ Everything You Need to Get Started" data-mt="✅ Kollox li Għandek Bżonn biex Tibda">✅ Everything You Need to Get Started</h2>
+        <p class="muted" data-en="Simple requirements to begin exploring remote work opportunities." data-mt="Rekwiżiti sempliċi biex tibda tesplora opportunitajiet ta' xogħol remot.">Simple requirements to begin exploring remote work opportunities.</p>
       </div>
       
       <div class="requirements">
@@ -729,12 +725,12 @@
         <div class="benefits-copy fade-in delay-1">
           <h2 data-en="💼 Work From Anywhere - Your Home, Cafe, or Garden!" data-mt="💼 Aħdem Minn Kullimkien - Id-Dar Tiegħek, Cafe, jew Ġnien!">💼 Work From Anywhere - Your Home, Cafe, or Garden!</h2>
           <ul class="stats">
-            <li><strong>15,000+</strong> <span data-en="Happy Workers" data-mt="Ħaddiema Ferħana">Happy Workers</span></li>
+            <li><strong>15,000+</strong> <span data-en="Community Members" data-mt="Membri tal-Komunità">Community Members</span></li>
             <li><strong>50,000+</strong> <span data-en="Tasks Completed" data-mt="Xogħlijiet Imlestin">Tasks Completed</span></li>
             <li><strong>200+</strong> <span data-en="Support Team" data-mt="Tim tas-Support">Support Team</span></li>
             <li><strong>96%</strong> <span data-en="Satisfaction Rate" data-mt="Rate ta' Sodisfazzjon">Satisfaction Rate</span></li>
           </ul>
-          <p class="muted" data-en="Real numbers from real people earning real money from home across Malta!" data-mt="Numri reali minn nies reali qed jaqilghu flus reali mid-dar madwar Malta!">Real numbers from real people earning real money from home across Malta!</p>
+          <p class="muted" data-en="Join our growing community of Maltese residents discovering flexible work opportunities!" data-mt="Ingħaqad mal-komunità tikber tagħna ta' residenti Maltin li qed jiskopru opportunitajiet ta' xogħol flessibbli!">Join our growing community of Maltese residents discovering flexible work opportunities!</p>
         </div>
       </div>
     </div>
@@ -744,39 +740,39 @@
   <section class="section">
     <div class="container">
       <div class="section-header fade-in">
-        <h2 data-en="🎉 Real People, Real Results" data-mt="🎉 Nies Real, Riżultati Real">🎉 Real People, Real Results</h2>
-        <p class="muted" data-en="Hear from Maltese residents who transformed their income with our platform." data-mt="Isma' minn residenti Maltin li biddlu d-dħul tagħhom mal-pjattaforma tagħna.">Hear from Maltese residents who transformed their income with our platform.</p>
+        <h2 data-en="🎉 Real People, Real Experiences" data-mt="🎉 Nies Real, Esperjenzi Real">🎉 Real People, Real Experiences</h2>
+        <p class="muted" data-en="Hear from Maltese residents who discovered flexible work opportunities with our platform." data-mt="Isma' minn residenti Maltin li skoprew opportunitajiet ta' xogħol flessibbli mal-pjattaforma tagħna.">Hear from Maltese residents who discovered flexible work opportunities with our platform.</p>
       </div>
       
       <div class="cards three-col">
         <blockquote class="testimonial fade-in">
           <div class="avatar">M</div>
-          <p data-en="&quot;I was skeptical at first, but the tasks are genuinely simple. Made €245 in my first week just watching videos during my commute!&quot;" data-mt="&quot;Kont skeptiku fl-ewwel, imma x-xogħol huwa verament sempliċi. Għamilt €245 fl-ewwel ġimgħa biss billi kont nara vidjows waqt it-trasport!&quot;">"I was skeptical at first, but the tasks are genuinely simple. Made €245 in my first week just watching videos during my commute!"</p>
+          <p data-en="&quot;I was skeptical at first, but the tasks are genuinely simple. Found great flexibility for my schedule as a student!&quot;" data-mt="&quot;Kont skeptiku fl-ewwel, imma x-xogħol huwa verament sempliċi. Sibt flessibilità kbira għas-skeda tiegħi bħala student!&quot;">"I was skeptical at first, but the tasks are genuinely simple. Found great flexibility for my schedule as a student!"</p>
           <footer>— <span data-en="Maria, Valletta" data-mt="Maria, Valletta">Maria, Valletta</span></footer>
         </blockquote>
         <blockquote class="testimonial fade-in delay-1">
           <div class="avatar">G</div>
-          <p data-en="&quot;As a student, this has been a game-changer. I work 2 hours daily and earn enough to cover my rent and expenses. Life-changing!&quot;" data-mt="&quot;Bħala student, dan kien ta' bidla fil-ħajja. Naħdem 2 sigħat kuljum u naqla' biżżejjed biex inħallas l-kera u l-ispejjeż. Bidla fil-ħajja!&quot;">"As a student, this has been a game-changer. I work 2 hours daily and earn enough to cover my rent and expenses. Life-changing!"</p>
+          <p data-en="&quot;As a student, this has been perfect for my schedule. I work when I want and earn some extra money. Very convenient!&quot;" data-mt="&quot;Bħala student, dan kien perfett għas-skeda tiegħi. Naħdem meta rrid u naqla' xi flus addizzjonali. Ta' konvenjenza kbira!&quot;">"As a student, this has been perfect for my schedule. I work when I want and earn some extra money. Very convenient!"</p>
           <footer>— <span data-en="Giovanni, Sliema" data-mt="Giovanni, Sliema">Giovanni, Sliema</span></footer>
         </blockquote>
         <blockquote class="testimonial fade-in delay-2">
           <div class="avatar">C</div>
-          <p data-en="&quot;After being made redundant, this kept me afloat. The flexibility lets me care for my kids while earning a proper income. Thank you!&quot;" data-mt="&quot;Wara li ġejt imkeċċi, dan żammni. Il-flessibilità tħallini nieħu ħsieb it-tfal tiegħi waqt li naqla' dħul xieraq. Grazzi!&quot;">"After being made redundant, this kept me afloat. The flexibility lets me care for my kids while earning a proper income. Thank you!"</p>
+          <p data-en="&quot;The flexibility lets me care for my kids while exploring work opportunities from home. Very helpful platform!&quot;" data-mt="&quot;Il-flessibilità tħallini nieħu ħsieb it-tfal tiegħi waqt li nesplora opportunitajiet ta' xogħol mid-dar. Pjattaforma ta' għajnuna kbira!&quot;">"The flexibility lets me care for my kids while exploring work opportunities from home. Very helpful platform!"</p>
           <footer>— <span data-en="Carmel, Birkirkara" data-mt="Carmel, Birkirkara">Carmel, Birkirkara</span></footer>
         </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- Limited Opportunity -->
+  <!-- Opportunity CTA -->
   <section class="section cta">
     <div class="container cta-inner fade-in">
       <div>
-        <div class="urgency-badge" data-en="🚨 URGENT: ONLY 13 POSITIONS LEFT!" data-mt="🚨 URGENTI: BISS 13 POSTIJIET BQAJJU!">🚨 URGENT: ONLY 13 POSITIONS LEFT!</div>
-        <h2 data-en="Don't Miss Out - Apply NOW Before Spots Fill Up!" data-mt="Toqogħdx Barra - Applika IMMA Qabel Ma Jitmlew Il-Postijiet!">Don't Miss Out - Apply NOW Before Spots Fill Up!</h2>
-        <p class="muted" data-en="New high-paying tasks are added daily, but positions are limited. Submit your application NOW to secure your spot and start earning TODAY." data-mt="Xogħol ġdid ta' ħlas għoli qed jiżdied kuljum, iżda l-postijiet huma limitati. Ibgħat l-applikazzjoni tiegħek IMMA biex iżżomm post u tibda taqla' ILLUM.">New high-paying tasks are added daily, but positions are limited. Submit your application NOW to secure your spot and start earning TODAY.</p>
+        <div class="opportunity-badge" data-en="🌟 OPPORTUNITIES AVAILABLE NOW!" data-mt="🌟 OPPORTUNITAJET DISPONIBBLI IMMA!">🌟 OPPORTUNITIES AVAILABLE NOW!</div>
+        <h2 data-en="Ready to Explore Flexible Work Opportunities?" data-mt="Lest biex Tesplora Opportunitajiet ta' Xogħol Flessibbli?">Ready to Explore Flexible Work Opportunities?</h2>
+        <p class="muted" data-en="New opportunities are regularly added to our platform. Submit your application today to discover what's available for your schedule." data-mt="Opportunitajiet ġodda qed jiżdiedu regolarment mal-pjattaforma tagħna. Ibgħat l-applikazzjoni tiegħek illum biex issib x'hemm disponibbli għas-skeda tiegħek.">New opportunities are regularly added to our platform. Submit your application today to discover what's available for your schedule.</p>
       </div>
-      <a class="btn btn-primary btn-lg pulse open-form-btn" href="#" data-en="🚀 SECURE MY SPOT NOW" data-mt="🚀 IĦALLI POSTI IMMA">🚀 SECURE MY SPOT NOW</a>
+      <a class="btn btn-primary btn-lg pulse open-form-btn" href="#" data-en="🚀 EXPLORE OPPORTUNITIES" data-mt="🚀 ESPLORA OPPORTUNITAJIET">🚀 EXPLORE OPPORTUNITIES</a>
     </div>
   </section>
 
@@ -785,16 +781,16 @@
     <div class="container">
       <div class="section-header fade-in">
         <h2 data-en="❓ Frequently Asked Questions" data-mt="❓ Mistoqsijiet Frekwenti">❓ Frequently Asked Questions</h2>
-        <p class="muted" data-en="Everything you need to know before starting your earning journey." data-mt="Kollox li għandek bżonn tkun taf qabel ma tibda l-vjaġġ tax-xogħol tiegħek.">Everything you need to know before starting your earning journey.</p>
+        <p class="muted" data-en="Everything you need to know before exploring our opportunities." data-mt="Kollox li għandek bżonn tkun taf qabel ma tesplora l-opportunitajiet tagħna.">Everything you need to know before exploring our opportunities.</p>
       </div>
       
       <details class="faq fade-in">
         <summary data-en="Is there any fee to apply or join?" data-mt="Hemm xi ħlas biex tapplika jew tingħaqad?">Is there any fee to apply or join?</summary>
-        <div data-en="<strong>Absolutely NOT!</strong> We never charge application or registration fees. Our platform is 100% free to join and use. You only earn - you never pay." data-mt="<strong>Assolutament LE!</strong> Aħna qatt ma nħaqslu ħlasijiet ta' applikazzjoni jew reġistrazzjoni. Il-pjattaforma tagħna hija 100% b'xejn biex tingħaqad u tużaha. Inti biss taqla' - inti qatt ma tħallas."><strong>Absolutely NOT!</strong> We never charge application or registration fees. Our platform is 100% free to join and use. You only earn - you never pay.</div>
+        <div data-en="<strong>Absolutely NOT!</strong> We never charge application or registration fees. Our platform is 100% free to join and use. You only explore opportunities - you never pay." data-mt="<strong>Assolutament LE!</strong> Aħna qatt ma nħaqslu ħlasijiet ta' applikazzjoni jew reġistrazzjoni. Il-pjattaforma tagħna hija 100% b'xejn biex tingħaqad u tużaha. Inti biss tesplora opportunitajiet - inti qatt ma tħallas."><strong>Absolutely NOT!</strong> We never charge application or registration fees. Our platform is 100% free to join and use. You only explore opportunities - you never pay.</div>
       </details>
       <details class="faq fade-in">
         <summary data-en="How quickly will I get paid?" data-mt="Kif malajr se nħaħlas?">How quickly will I get paid?</summary>
-        <div data-en="<strong>Most workers receive payment within 24 hours</strong> of completing tasks. Payments are processed daily after tasks pass our quick quality checks." data-mt="<strong>Il-maġġoranza tal-ħaddiema jirċievu ħlas fi żmien 24 siegħa</strong> wara li jkomplu x-xogħol. Il-ħlasijiet jiġu pproċessati kuljum wara li x-xogħol jgħaddi mill-kontrolli tal-kwalità ta' malajr tagħna."><strong>Most workers receive payment within 24 hours</strong> of completing tasks. Payments are processed daily after tasks pass our quick quality checks.</div>
+        <div data-en="<strong>Most participants receive payment within 24-48 hours</strong> of completing tasks. Payments are processed regularly after tasks pass our quality checks." data-mt="<strong>Il-maġġoranza tal-partecipanti jirċievu ħlas fi żmien 24-48 siegħa</strong> wara li jkomplu x-xogħol. Il-ħlasijiet jiġu pproċessati regolarment wara li x-xogħol jgħaddi mill-kontrolli tal-kwalità tagħna."><strong>Most participants receive payment within 24-48 hours</strong> of completing tasks. Payments are processed regularly after tasks pass our quality checks.</div>
       </details>
       <details class="faq fade-in">
         <summary data-en="What equipment do I really need?" data-mt="X'għodda verament għandi bżonn?">What equipment do I really need?</summary>
@@ -802,7 +798,7 @@
       </details>
       <details class="faq fade-in">
         <summary data-en="How will you contact me after I apply?" data-mt="Kif se tikkuntattjani wara li napplika?">How will you contact me after I apply?</summary>
-        <div data-en="<strong>We'll contact you via WhatsApp within hours</strong> with step-by-step instructions to get you started earning immediately." data-mt="<strong>Aħna nikkuntattjawk permezz ta' WhatsApp fi żmien sigħat</strong> b'istruzzjonijiet pass pass biex tibda taqla' immedjatament."><strong>We'll contact you via WhatsApp within hours</strong> with step-by-step instructions to get you started earning immediately.</div>
+        <div data-en="<strong>We'll contact you via WhatsApp within hours</strong> with information about available opportunities and how to get started." data-mt="<strong>Aħna nikkuntattjawk permezz ta' WhatsApp fi żmien sigħat</strong> b'informazzjoni dwar l-opportunitajiet disponibbli u kif tibda."><strong>We'll contact you via WhatsApp within hours</strong> with information about available opportunities and how to get started.</div>
       </details>
       <details class="faq fade-in">
         <summary data-en="What kind of tasks will I be doing?" data-mt="X'tip ta' xogħol se nagħmel?">What kind of tasks will I be doing?</summary>
@@ -816,7 +812,7 @@
     <div class="container footer-grid">
       <div>
         <a class="brand" href="#top">RemoteWorkMalta</a>
-        <p class="muted small" data-en="Real opportunities. Zero fees. Start earning today." data-mt="Opportunitajiet reali. Zero ħlas. Ibda taqla' illum.">Real opportunities. Zero fees. Start earning today.</p>
+        <p class="muted small" data-en="Real opportunities. Zero fees. Explore flexible work today." data-mt="Opportunitajiet reali. Zero ħlas. Esplora xogħol flessibbli illum.">Real opportunities. Zero fees. Explore flexible work today.</p>
       </div>
       <nav class="footer-links">
         <a id="privacy" href="privacy.html" rel="nofollow" data-en="Privacy Policy" data-mt="Politika tal-Privatezza">Privacy Policy</a>
@@ -824,7 +820,7 @@
       </nav>
     </div>
     <div class="container">
-      <p class="muted small" data-en="© 2024 RemoteWorkMalta. All rights reserved. Earnings shown are examples from real workers. Your actual earnings depend on your time commitment and task availability." data-mt="© 2024 RemoteWorkMalta. Id-drittijiet kollha riżervati. Il-ħlasijiet murija huma eżempji minn ħaddiema reali. Il-ħlasijiet attwali tiegħek jiddependu fuq l-impenj ta' żmien tiegħek u d-disponibbiltà tax-xogħol.">© 2024 RemoteWorkMalta. All rights reserved. Earnings shown are examples from real workers. Your actual earnings depend on your time commitment and task availability.</p>
+      <p class="muted small" data-en="© 2024 RemoteWorkMalta. All rights reserved. Individual results may vary based on effort, task availability, and other factors. We do not guarantee specific earnings." data-mt="© 2024 RemoteWorkMalta. Id-drittijiet kollha riżervati. Ir-riżultati individwali jistgħu jvarjaw skont l-isforz, id-disponibbiltà tax-xogħol, u fatturi oħra. Aħna ma ngarrfux ħlasijiet speċifiċi.">© 2024 RemoteWorkMalta. All rights reserved. Individual results may vary based on effort, task availability, and other factors. We do not guarantee specific earnings.</p>
     </div>
   </footer>
 
@@ -857,11 +853,11 @@
         
         // Update page title and meta description
         if (lang === 'mt') {
-          document.title = "Xogħol remot f'Malta | €250+ Kuljum Minn Xulxin!";
-          document.querySelector('meta[name="description"]').setAttribute('content', "Applika għal xogħol remot f'Malta. Aħdem mid-dar. Ebda ħlas ta' applikazzjoni. Termini ċari u privatezza.");
+          document.title = "Opportunitajiet ta' Xogħol Remot f'Malta | Aħdem Mid-Dar";
+          document.querySelector('meta[name="description"]').setAttribute('content', "Esplora opportunitajiet ta' xogħol remot f'Malta. Aħdem mid-dar b'sigħat flessibbli. Ebda ħlas ta' applikazzjoni. Termini ċari u privatezza.");
         } else {
-          document.title = "Remote Work in Malta | €250+ Daily From Home!";
-          document.querySelector('meta[name="description"]').setAttribute('content', "Apply for remote work in Malta. Work from home. No registration fees. Clear terms and privacy first.");
+          document.title = "Remote Work Opportunities in Malta | Work From Home";
+          document.querySelector('meta[name="description"]').setAttribute('content', "Explore remote work opportunities in Malta. Work from home with flexible hours. No registration fees. Clear terms and privacy first.");
         }
       }
 
@@ -894,36 +890,14 @@
       function generateWhatsAppLink(phoneNumber) {
         const isMaltese = navigator.language.startsWith('mt');
         const message = isMaltese 
-          ? encodeURIComponent("Hello, jien interessat/interessata li ningħaqad mal-opportunitajiet tax-xogħol remot ta' ħlas għoli!")
-          : encodeURIComponent("Hello, I'm interested in joining the high-income remote work opportunities!");
+          ? encodeURIComponent("Hello, jien interessat/interessata li nesplora l-opportunitajiet tax-xogħol remot flessibbli!")
+          : encodeURIComponent("Hello, I'm interested in exploring flexible remote work opportunities!");
         return `https://wa.me/${phoneNumber}?text=${message}`;
       }
       
       // Randomly assign an account and generate link on page load
       const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
       const assignedWhatsAppLink = generateWhatsAppLink(randomAccount);
-      
-      // Countdown timer
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        tomorrow.setHours(0, 0, 0, 0);
-        
-        const distance = tomorrow - now;
-        
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-      }
-      
-      // Initialize countdown
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
       
       // Open form modal
       function openFormModal() {
@@ -961,14 +935,13 @@
         return !isNaN(age) && age >= 18;
       }
       
-      // 修改的电话号码验证规则 - 放宽要求
+      // Phone number validation
       function validateMaltaPhone(phoneValue) {
-        // 只验证非空且不以0开头
         const cleanedPhone = phoneValue.replace(/\s/g, '');
         return cleanedPhone.length > 0 && !cleanedPhone.startsWith('0');
       }
       
-      // 设置电话号码输入限制
+      // Set up phone input restrictions
       function setupPhoneInputRestrictions() {
         const phoneInputs = [
           document.getElementById('phone'),
@@ -977,11 +950,11 @@
         
         phoneInputs.forEach(input => {
           if (input) {
-            // 限制只能输入数字
+            // Restrict to numbers only
             input.addEventListener('input', function(e) {
               this.value = this.value.replace(/[^0-9]/g, '');
               
-              // 实时验证并显示视觉反馈
+              // Real-time validation and visual feedback
               if (this.value && !validateMaltaPhone(this.value)) {
                 this.style.borderColor = '#dc2626';
               } else {
@@ -989,7 +962,7 @@
               }
             });
             
-            // 防止粘贴非数字内容
+            // Prevent pasting non-numeric content
             input.addEventListener('paste', function(e) {
               e.preventDefault();
               const pasteData = e.clipboardData.getData('text');
@@ -997,7 +970,7 @@
               document.execCommand('insertText', false, numbersOnly);
             });
             
-            // 设置输入模式为数字
+            // Set input mode to numeric
             input.setAttribute('inputmode', 'numeric');
           }
         });
@@ -1037,7 +1010,7 @@
       
       // Send page view event to Google Analytics
       gtag('event', 'page_view', {
-        page_title: 'Malta Remote Jobs',
+        page_title: 'Malta Remote Opportunities',
         page_location: window.location.href
       });
       
