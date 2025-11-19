@@ -298,9 +298,9 @@
     .brazil-flag {display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px;}
     .brazil-flag img {width: 20px; height: 14px; border-radius: 2px;}
     
-    /* Telegram badge */
-    .telegram-badge {display: inline-flex; align-items: center; gap: 6px; background: rgba(0, 136, 204, 0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin-top: 8px;}
-    .telegram-badge svg {width: 16px; height: 16px;}
+    /* WhatsApp badge */
+    .whatsapp-badge {display: inline-flex; align-items: center; gap: 6px; background: rgba(37, 211, 102, 0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin-top: 8px;}
+    .whatsapp-badge svg {width: 16px; height: 16px;}
     
     /* Mobile responsiveness */
     @media (max-width: 980px){
@@ -379,11 +379,11 @@
         <p class="subtitle">
           Junte-se a milhares de brasileiros que estão transformando suas vidas com trabalhos flexíveis que se adaptam ao seu horário. <strong>Sem experiência necessária</strong> e com suporte completo para você começar a ganhar em até 24h.
         </p>
-        <div class="telegram-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.158c-.174-.761-1.003-1.141-1.752-.806l-10.4 4.8c-.646.3-.728 1.142-.147 1.54l2.728 1.8 1.36 4.2c.174.532.646.86 1.193.86.087 0 .174 0 .261-.033.646-.233 1.003-.873.873-1.54l-.873-3.334 6.8-4.2-5.2 3.334-2.728-1.8 10.4-4.8c.749-.333.873-1.175.261-1.64z"/>
+        <div class="whatsapp-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.49"/>
           </svg>
-          <span>Todas as tarefas e pagamentos são gerenciados via Telegram</span>
+          <span>Todas as tarefas e pagamentos são gerenciados via WhatsApp</span>
         </div>
       </div>
       
@@ -392,7 +392,7 @@
         <!-- Left: Form -->
         <aside id="apply" class="form-card fade-in delay-1" aria-label="Formulário de Candidatura">
           <h2 class="form-title">Comece a Ganhar em 24 Horas</h2>
-          <p class="form-note">Formulário rápido: receba suas tarefas e ganhe pelo Telegram!</p>
+          <p class="form-note">Formulário rápido: receba suas tarefas e ganhe pelo WhatsApp!</p>
           
           <div class="progress-bar">
             <div class="progress-step active"></div>
@@ -407,15 +407,15 @@
             </div>
 
             <div class="field">
-              <label for="telegram">Usuário do Telegram<span class="req">*</span></label>
-              <input id="telegram" name="telegram" type="text" placeholder="@seuusuario" required />
-              <p class="muted small" style="margin-top: 4px;">Todas as tarefas e pagamentos são feitos através do Telegram</p>
+              <label for="whatsapp">Número do WhatsApp<span class="req">*</span></label>
+              <input id="whatsapp" name="whatsapp" type="text" placeholder="(11) 99999-9999" required />
+              <p class="muted small" style="margin-top: 4px;">Todas as tarefas e pagamentos são feitos através do WhatsApp</p>
             </div>
 
             <div class="field">
               <label for="age">Idade<span class="req">*</span></label>
               <input id="age" name="age" type="text" placeholder="ex. 25" required inputmode="numeric" pattern="[0-9]*" />
-              <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 23 anos.</p>
+              <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 18 anos.</p>
             </div>
 
             <div class="field check">
@@ -458,7 +458,7 @@
             <ul class="hero-points">
               <li>Horários flexíveis • Trabalhe de casa</li>
               <li>Nenhuma taxa de inscrição — nunca</li>
-              <li>Orientações claras, suporte rápido via Telegram</li>
+              <li>Orientações claras, suporte rápido via WhatsApp</li>
               <li>Pagamentos diários • Ideal para iniciantes</li>
               <li>Suporte 100% em português</li>
               <li>Trabalho 100% remoto do Brasil</li>
@@ -519,7 +519,7 @@
     <div class="modal-content" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalCloseBtn" aria-label="Fechar">&times;</button>
       <h3 class="modal-title" id="modalTitle">Sucesso!</h3>
-      <p class="modal-message">Candidatura enviada com sucesso. Clique em OK para entrar em contato imediatamente com nosso suporte via Telegram.</p>
+      <p class="modal-message">Candidatura enviada com sucesso. Clique em OK para entrar em contato imediatamente com nosso suporte via WhatsApp.</p>
       <button class="modal-btn" id="modalOkBtn">OK</button>
     </div>
   </div>
@@ -529,7 +529,7 @@
     <div class="modal-content" aria-labelledby="ageWarningTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="ageWarningCloseBtn" aria-label="Fechar">&times;</button>
       <h3 class="modal-title" id="ageWarningTitle">Idade Insuficiente</h3>
-      <p class="modal-message">Lamentamos, mas nossos serviços são destinados apenas para maiores de 23 anos. Você poderá se candidatar quando completar 23 anos.</p>
+      <p class="modal-message">Lamentamos, mas nossos serviços são destinados apenas para maiores de 18 anos. Você poderá se candidatar quando completar 18 anos.</p>
       <button class="modal-btn" id="ageWarningOkBtn">Entendi</button>
     </div>
   </div>
@@ -539,7 +539,7 @@
     <div class="modal-content" style="max-width: 460px;" aria-labelledby="modalFormTitle" role="dialog" aria-modal="true">
       <button class="modal-close" id="formModalCloseBtn" aria-label="Fechar">&times;</button>
       <h2 class="form-title" id="modalFormTitle">Candidate-se Agora</h2>
-      <p class="form-note">Formulário rápido: receba suas tarefas e ganhe pelo Telegram!</p>
+      <p class="form-note">Formulário rápido: receba suas tarefas e ganhe pelo WhatsApp!</p>
       
       <div class="progress-bar">
         <div class="progress-step active"></div>
@@ -554,15 +554,15 @@
         </div>
 
         <div class="field">
-          <label for="modal-telegram">Usuário do Telegram<span class="req">*</span></label>
-          <input id="modal-telegram" name="telegram" type="text" placeholder="@seuusuario" required />
-          <p class="muted small" style="margin-top: 4px;">Todas as tarefas e pagamentos são feitos através do Telegram</p>
+          <label for="modal-whatsapp">Número do WhatsApp<span class="req">*</span></label>
+          <input id="modal-whatsapp" name="whatsapp" type="text" placeholder="(11) 99999-9999" required />
+          <p class="muted small" style="margin-top: 4px;">Todas as tarefas e pagamentos são feitos através do WhatsApp</p>
         </div>
 
         <div class="field">
           <label for="modal-age">Idade<span class="req">*</span></label>
           <input id="modal-age" name="age" type="text" placeholder="ex. 25" required inputmode="numeric" pattern="[0-9]*" />
-          <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 23 anos.</p>
+          <p class="muted small" style="margin-top: 4px;">Apenas números. Deve ser maior que 18 anos.</p>
         </div>
 
         <div class="field check">
@@ -605,7 +605,7 @@
             <h3>Trabalho meio período</h3>
             <ul class="list">
               <li><strong>Horários flexíveis:</strong> 1–3 horas/dia</li>
-              <li><strong>Pagamento:</strong> Diário após conclusão da tarefa via Telegram</li>
+              <li><strong>Pagamento:</strong> Diário após conclusão da tarefa via WhatsApp</li>
               <li><strong>Ferramentas:</strong> Apenas smartphone</li>
               <li><strong>Habilidades:</strong> Alfabetização digital básica é uma vantagem</li>
               <li><strong>Estilo de trabalho:</strong> Flexível, remoto</li>
@@ -621,7 +621,7 @@
             <h3>Trabalho período integral</h3>
             <ul class="list">
               <li><strong>Horários flexíveis:</strong> 3–6 horas/dia</li>
-              <li><strong>Pagamento:</strong> Diário após conclusão da tarefa via Telegram</li>
+              <li><strong>Pagamento:</strong> Diário após conclusão da tarefa via WhatsApp</li>
               <li><strong>Ferramentas:</strong> Smartphone (PC opcional)</li>
               <li><strong>Habilidades:</strong> Forte alfabetização digital preferida</li>
               <li><strong>Estilo de trabalho:</strong> Flexível, remoto</li>
@@ -688,7 +688,7 @@
         <div class="req-item fade-in delay-1">
           <div class="req-icon">🎯</div>
           <div>
-            <h4>Idade 23+</h4>
+            <h4>Idade 18+</h4>
             <p>Verificamos a idade para elegibilidade e conformidade.</p>
           </div>
         </div>
@@ -702,8 +702,8 @@
         <div class="req-item fade-in delay-2">
           <div class="req-icon">📲</div>
           <div>
-            <h4>Conta no Telegram</h4>
-            <p>Tarefas e pagamentos são gerenciados via Telegram.</p>
+            <h4>Conta no WhatsApp</h4>
+            <p>Tarefas e pagamentos são gerenciados via WhatsApp.</p>
           </div>
         </div>
       </div>
@@ -724,11 +724,11 @@
             <li><strong>95%</strong> satisfação</li>
           </ul>
           <p class="muted">Os números são agregados internos atualizados periodicamente e são fornecidos para transparência, não como garantias.</p>
-          <div class="telegram-badge" style="margin-top: 16px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.158c-.174-.761-1.003-1.141-1.752-.806l-10.4 4.8c-.646.3-.728 1.142-.147 1.54l2.728 1.8 1.36 4.2c.174.532.646.86 1.193.86.087 0 .174 0 .261-.033.646-.233 1.003-.873.873-1.54l-.873-3.334 6.8-4.2-5.2 3.334-2.728-1.8 10.4-4.8c.749-.333.873-1.175.261-1.64z"/>
+          <div class="whatsapp-badge" style="margin-top: 16px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.49"/>
             </svg>
-            <span>Todas as tarefas e pagamentos são gerenciados via Telegram</span>
+            <span>Todas as tarefas e pagamentos são gerenciados via WhatsApp</span>
           </div>
         </div>
       </div>
@@ -746,7 +746,7 @@
       <div class="cards three-col">
         <blockquote class="testimonial fade-in">
           <div class="avatar">M</div>
-          <p>"Tarefas claras e respostas rápidas pelo Telegram. Recebi meu primeiro pagamento no mesmo dia."</p>
+          <p>"Tarefas claras e respostas rápidas pelo WhatsApp. Recebi meu primeiro pagamento no mesmo dia."</p>
           <footer>— M., São Paulo</footer>
         </blockquote>
         <blockquote class="testimonial fade-in delay-1">
@@ -789,7 +789,7 @@
       </details>
       <details class="faq fade-in">
         <summary>Como funcionam os pagamentos?</summary>
-        <div>Os pagamentos são processados após as tarefas passarem pelos controles de qualidade. Os tempos podem variar dependendo do método e região, mas a maioria dos trabalhadores recebe o pagamento dentro de 24 horas após a conclusão da tarefa. Tudo é gerenciado via Telegram.</div>
+        <div>Os pagamentos são processados após as tarefas passarem pelos controles de qualidade. Os tempos podem variar dependendo do método e região, mas a maioria dos trabalhadores recebe o pagamento dentro de 24 horas após a conclusão da tarefa. Tudo é gerenciado via WhatsApp.</div>
       </details>
       <details class="faq fade-in">
         <summary>De qual equipamento preciso?</summary>
@@ -797,11 +797,11 @@
       </details>
       <details class="faq fade-in">
         <summary>Como vocês entrarão em contato comigo?</summary>
-        <div>Entramos em contato principalmente via Telegram. Você receberá instruções passo a passo assim que se candidatar. Todas as tarefas e pagamentos são gerenciados através do Telegram.</div>
+        <div>Entramos em contato principalmente via WhatsApp. Você receberá instruções passo a passo assim que se candidatar. Todas as tarefas e pagamentos são gerenciados através do WhatsApp.</div>
       </details>
       <details class="faq fade-in">
-        <summary>Preciso ter conta no Telegram?</summary>
-        <div>Sim, é necessário ter uma conta no Telegram para receber tarefas e gerenciar pagamentos. É uma plataforma segura e gratuita que usamos para facilitar a comunicação e o processo de trabalho.</div>
+        <summary>Preciso ter conta no WhatsApp?</summary>
+        <div>Sim, é necessário ter uma conta no WhatsApp para receber tarefas e gerenciar pagamentos. É uma plataforma segura e gratuita que usamos para facilitar a comunicação e o processo de trabalho.</div>
       </details>
     </div>
   </section>
@@ -840,21 +840,21 @@
       const openFormBtn = document.getElementById('openFormBtn');
       const openFormBtns = document.querySelectorAll('.open-form-btn');
       
-      // 修改账号的地方-Telegram account array
-      const telegramAccounts = [ 
-      
-        "LatamFi147",
-        "SusanaVi1"
+      // WhatsApp account array
+      const whatsappAccounts = [ 
+        "5511999999999",
+        "5511888888888"
       ];
       
-      // Função para gerar link Telegram
-      function generateTelegramLink(username) {
-        return `https://t.me/${username}`;
+      // Função para gerar link WhatsApp com mensagem pré-preenchida
+      function generateWhatsAppLink(phone) {
+        const message = encodeURIComponent("Quero me juntar a este trabalho que paga bem, me diga como fazer!");
+        return `https://wa.me/${phone}?text=${message}`;
       }
       
       // Atribuir aleatoriamente uma conta e gerar link ao carregar a página
-      const randomAccount = telegramAccounts[Math.floor(Math.random() * telegramAccounts.length)];
-      const assignedTelegramLink = generateTelegramLink(randomAccount);
+      const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
+      const assignedWhatsAppLink = generateWhatsAppLink(randomAccount);
       
       // Contador regressivo
       function updateCountdown() {
@@ -908,10 +908,10 @@
         ageWarningModal.classList.remove('active');
       }
       
-      // Validar idade (deve ser maior que 23)
+      // Validar idade (deve ser maior que 18)
       function validateAge(ageValue) {
         const age = parseInt(ageValue, 10);
-        return !isNaN(age) && age > 23;
+        return !isNaN(age) && age > 18;
       }
       
       // Restringir entrada de idade apenas para números
@@ -977,11 +977,11 @@
           nameInput.style.borderColor = '#ff8b8b';
         }
         
-        // Validar telegram
-        const telegramInput = formElement.querySelector('input[name="telegram"]');
-        if (!telegramInput.value.trim()) {
+        // Validar whatsapp
+        const whatsappInput = formElement.querySelector('input[name="whatsapp"]');
+        if (!whatsappInput.value.trim()) {
           isValid = false;
-          telegramInput.style.borderColor = '#ff8b8b';
+          whatsappInput.style.borderColor = '#ff8b8b';
         }
         
         // Validar idade
@@ -992,7 +992,7 @@
           isValid = false;
           ageInput.style.borderColor = '#ff8b8b';
         } else if (!validateAge(ageValue)) {
-          // Idade não é maior que 23
+          // Idade não é maior que 18
           openAgeWarningModal();
           
           // Não enviar evento para Google Analytics
@@ -1079,8 +1079,8 @@
       
       // Botão OK modal de sucesso
       modalOkBtn.addEventListener('click', function() {
-        // Relatar evento do Google e redirecionar para Telegram
-        gtag_report_conversion(assignedTelegramLink);
+        // Relatar evento do Google e redirecionar para WhatsApp
+        gtag_report_conversion(assignedWhatsAppLink);
       });
       
       // Adicionar rolagem suave
