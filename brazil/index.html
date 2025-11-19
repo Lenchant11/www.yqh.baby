@@ -31,14 +31,14 @@
       gtag('event', 'conversion', {
         'send_to': 'AW-17524155246/KHZ2COz-_7IbEO7GlaRB',
         'event_callback': callback,
-        'value': 0.8,
+        'value': 1.0,
         'currency': 'USD'
       });
       
       // Enviar evento adicional de lead para melhor rastreamento
       gtag('event', 'generate_lead', {
         'currency': 'USD',
-        'value': 0.8
+        'value': 1.0
       });
       
       return false;
@@ -847,15 +847,13 @@
         "5511777777777"
       ];
       
-      // Função para gerar link WhatsApp com mensagem pré-preenchida
+      // 从客服账号数组中随机选择一个账号
       function generateWhatsAppLink() {
-        // 从客服账号数组中随机选择一个账号
         const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
         const message = encodeURIComponent("Olá! Gostaria de me juntar a este trabalho que paga bem. Por favor, me diga como posso começar!");
         return `https://wa.me/${randomAccount}?text=${message}`;
       }
       
-      // 全局变量存储生成的WhatsApp链接
       let assignedWhatsAppLink = generateWhatsAppLink();
       
       // Contador regressivo
