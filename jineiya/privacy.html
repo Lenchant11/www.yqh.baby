@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - TravailGuinée</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 几内亚主题颜色 */
+        :root{
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --muted: #64748b;
+            --text: #1e293b;
+            --white: #ffffff;
+            --primary: #CE1126; /* 几内亚国旗红色 */
+            --primary-600: #a50d1e;
+            --primary-300: #e88d99;
+            --accent: #FCD116; /* 几内亚国旗黄色 */
+            --accent-light: #f5d780;
+            --green: #009A49; /* 几内亚国旗绿色 */
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --ring: 0 0 0 3px rgba(206, 17, 38, 0.25);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+            --shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 8px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        *{box-sizing:border-box}
+        html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.5; font-size: 16px;}
+        img{max-width:100%;display:block}
+        a{color:var(--text);text-decoration:none}
+        a:hover{text-decoration:underline}
+        .container{width:min(1120px,94%);margin-inline:auto}
+
+        .nav{position:sticky;top:0;z-index:50;background:rgba(248, 250, 252, 0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06); box-shadow: 0 1px 3px rgba(0,0,0,0.05);}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+        .brand{font-weight:800;letter-spacing:.3px;font-size:1.3rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:8px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
+        .btn-primary{background: var(--primary);color:white; box-shadow: var(--shadow);}
+        .btn-primary:hover{background:var(--primary-600); transform: translateY(-2px); box-shadow: var(--shadow-lg);}
+        
+        .hero{position:relative;padding:50px 0 30px; overflow: hidden; background: linear-gradient(135deg, #fde8e8 0%, #fef7f0 50%, #fff9e6 100%);}
+        .hero-content{max-width: 800px; margin: 0 auto; text-align: center;}
+        
+        h1{font-size:38px;margin:0 0 12px; line-height: 1.2; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        h2{font-size:30px; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        h3{font-size:24px; font-weight: 700; color: var(--primary);}
+        
+        .content-section{padding:50px 0}
+        .content-card{background:var(--card);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);padding:30px; box-shadow: var(--shadow);}
+        
+        .muted{color:var(--muted); line-height: 1.6;}
+        .small{font-size:0.88rem}
+        
+        .footer{border-top:1px solid rgba(0,0,0,.08);padding:32px 0 20px;background:#f1f5f9}
+        .footer-grid{display:flex;justify-content:space-between;gap:16px;align-items:flex-start; margin-bottom: 20px;}
+        .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+        
+        /* Guinea elements */
+        .guinea-flag {display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; padding: 6px 12px; background: rgba(0,0,0,0.05); border-radius: 20px;}
+        .guinea-flag img {width: 24px; height: 14px; border-radius: 2px;}
+        
+        /* Policy sections */
+        .policy-section {margin-bottom: 30px;}
+        .policy-section h3 {margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.1);}
+        
+        /* Last updated badge */
+        .update-badge {background: linear-gradient(90deg, var(--primary), var(--accent)); color: white; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 12px;}
+        
+        /* Mobile responsiveness */
+        @media (max-width: 980px){
+            h1 {font-size: 32px;}
+            h2 {font-size: 28px;}
+            .content-section {padding: 40px 0;}
+        }
+        
+        @media (max-width: 640px) {
+            .btn {padding: 8px 16px; font-size: 0.92rem;}
+            .footer-grid {flex-direction: column; gap: 16px;}
+            .footer-links {flex-direction: column; gap: 8px;}
+            .hero {padding: 40px 0 20px;}
+            h1 {font-size: 28px;}
+            h2 {font-size: 26px;}
+            .content-section {padding: 32px 0;}
+            .content-card {padding: 20px;}
+        }
+        
+        @media (max-width: 480px) {
+            h1 {font-size: 24px;}
+            h2 {font-size: 22px;}
+            .brand {font-size: 1.2rem;}
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Nav -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html" aria-label="Accueil">TravailGuinée</a>
+            <a href="index.html" class="btn btn-primary">Retour à l'Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="guinea-flag">
+                <img src="https://flagcdn.com/w20/gn.png" alt="Drapeau Guinée">
+                <span>POLITIQUE DE CONFIDENTIALITÉ</span>
+            </div>
+            <h1>Politique de Confidentialité</h1>
+            <p class="muted">Nous nous engageons à protéger votre vie privée et la sécurité de vos données personnelles.</p>
+            <div class="update-badge">Dernière mise à jour : 15 janvier 2024</div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-card">
+                <div class="policy-section">
+                    <h2>Introduction</h2>
+                    <p>Chez TravailGuinée, nous accordons une grande importance à la protection de vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons, partageons et protégeons vos informations lorsque vous utilisez notre plateforme de recherche d'opportunités de travail à distance.</p>
+                    <p>En utilisant nos services, vous acceptez les pratiques décrites dans cette politique. Nous vous encourageons à lire attentivement cette politique pour comprendre nos pratiques concernant vos données.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>1. Informations que nous collectons</h3>
+                    <p>Nous collectons les types d'informations suivants :</p>
+                    <ul>
+                        <li><strong>Informations d'identification personnelle :</strong> Nom complet, numéro de téléphone, adresse e-mail, âge</li>
+                        <li><strong>Informations de contact :</strong> Numéro WhatsApp pour la communication</li>
+                        <li><strong>Informations techniques :</strong> Adresse IP, type de navigateur, appareil utilisé, pages visitées</li>
+                        <li><strong>Informations sur l'utilisation :</strong> Comment vous interagissez avec notre plateforme</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>2. Comment nous utilisons vos informations</h3>
+                    <p>Nous utilisons vos informations personnelles pour :</p>
+                    <ul>
+                        <li>Vous mettre en relation avec des opportunités de travail à distance adaptées</li>
+                        <li>Vous fournir un support client et répondre à vos questions</li>
+                        <li>Améliorer nos services et développer de nouvelles fonctionnalités</li>
+                        <li>Vous envoyer des communications importantes concernant nos services</li>
+                        <li>Respecter nos obligations légales et réglementaires</li>
+                        <li>Prévenir la fraude et assurer la sécurité de notre plateforme</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>3. Partage de vos informations</h3>
+                    <p>Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers. Nous pouvons partager vos informations dans les circonstances limitées suivantes :</p>
+                    <ul>
+                        <li><strong>Avec votre consentement :</strong> Lorsque vous nous donnez explicitement votre autorisation</li>
+                        <li><strong>Prestataires de services :</strong> Avec des tiers qui nous aident à fournir nos services (hébergement, analyse, support client)</li>
+                        <li><strong>Obligations légales :</strong> Lorsque requis par la loi ou pour répondre à une procédure légale</li>
+                        <li><strong>Protection de nos droits :</strong> Pour protéger nos droits, notre propriété ou notre sécurité, ainsi que ceux de nos utilisateurs</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>4. Conservation des données</h3>
+                    <p>Nous conservons vos données personnelles aussi longtemps que nécessaire pour fournir nos services et respecter nos obligations légales. Lorsque nous n'avons plus besoin de vos données, nous les supprimons de manière sécurisée.</p>
+                    <p>Vous pouvez demander la suppression de vos données à tout moment en nous contactant via les coordonnées fournies ci-dessous.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>5. Sécurité des données</h3>
+                    <p>Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, modification, divulgation ou destruction. Ces mesures incluent :</p>
+                    <ul>
+                        <li>Chiffrement des données sensibles</li>
+                        <li>Contrôles d'accès restrictifs</li>
+                        <li>Surveillance régulière de nos systèmes</li>
+                        <li>Formation de notre personnel sur la protection des données</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>6. Vos droits</h3>
+                    <p>Conformément à la législation applicable en Guinée, vous disposez des droits suivants concernant vos données personnelles :</p>
+                    <ul>
+                        <li><strong>Droit d'accès :</strong> Demander quelles informations nous détenons sur vous</li>
+                        <li><strong>Droit de rectification :</strong> Corriger des informations inexactes ou incomplètes</li>
+                        <li><strong>Droit à l'effacement :</strong> Demander la suppression de vos données personnelles</li>
+                        <li><strong>Droit d'opposition :</strong> Vous opposer au traitement de vos données</li>
+                        <li><strong>Droit à la portabilité :</strong> Recevoir vos données dans un format structuré</li>
+                    </ul>
+                    <p>Pour exercer ces droits, veuillez nous contacter à l'adresse indiquée ci-dessous.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>7. Cookies et technologies similaires</h3>
+                    <p>Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience sur notre site, analyser le trafic et personnaliser le contenu. Vous pouvez contrôler l'utilisation des cookies via les paramètres de votre navigateur.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>8. Modifications de cette politique</h3>
+                    <p>Nous pouvons mettre à jour cette politique de confidentialité occasionnellement pour refléter les changements dans nos pratiques ou pour d'autres raisons opérationnelles, légales ou réglementaires. Nous vous informerons de tout changement important en publiant la nouvelle politique sur notre site avec une date de mise à jour révisée.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h3>9. Nous contacter</h3>
+                    <p>Si vous avez des questions concernant cette politique de confidentialité ou nos pratiques en matière de données, veuillez nous contacter :</p>
+                    <ul>
+                        <li><strong>Par WhatsApp :</strong> +224 XXX XXX XXX</li>
+                        <li><strong>Par email :</strong> privacy@travailguinee.gn</li>
+                        <li><strong>Adresse :</strong> Conakry, Guinée</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3>10. Loi applicable</h3>
+                    <p>Cette politique de confidentialité est régie par les lois de la République de Guinée. Tout litige relatif à cette politique sera soumis à la juridiction exclusive des tribunaux de Conakry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="brand" href="index.html">TravailGuinée</a>
+                <p class="muted small">Opportunités de travail à distance pour les Guinéens.</p>
+            </div>
+            <nav class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="privacy.html">Politique de Confidentialité</a>
+                <a href="userterms.html">Conditions d'Utilisation</a>
+            </nav>
+        </div>
+        <div class="container">
+            <p class="muted small">© 2024 TravailGuinée. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
