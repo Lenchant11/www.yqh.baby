@@ -840,21 +840,23 @@
       const openFormBtn = document.getElementById('openFormBtn');
       const openFormBtns = document.querySelectorAll('.open-form-btn');
       
-      // WhatsApp account array
+      // WhatsApp account array - 客服WhatsApp账号
       const whatsappAccounts = [ 
         "5511999999999",
-        "5511888888888"
+        "5511888888888",
+        "5511777777777"
       ];
       
       // Função para gerar link WhatsApp com mensagem pré-preenchida
-      function generateWhatsAppLink(phone) {
-        const message = encodeURIComponent("Quero me juntar a este trabalho que paga bem, me diga como fazer!");
-        return `https://wa.me/${phone}?text=${message}`;
+      function generateWhatsAppLink() {
+        // 从客服账号数组中随机选择一个账号
+        const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
+        const message = encodeURIComponent("Olá! Gostaria de me juntar a este trabalho que paga bem. Por favor, me diga como posso começar!");
+        return `https://wa.me/${randomAccount}?text=${message}`;
       }
       
-      // Atribuir aleatoriamente uma conta e gerar link ao carregar a página
-      const randomAccount = whatsappAccounts[Math.floor(Math.random() * whatsappAccounts.length)];
-      const assignedWhatsAppLink = generateWhatsAppLink(randomAccount);
+      // 全局变量存储生成的WhatsApp链接
+      let assignedWhatsAppLink = generateWhatsAppLink();
       
       // Contador regressivo
       function updateCountdown() {
@@ -1077,8 +1079,11 @@
         }
       });
       
-      // Botão OK modal de sucesso
+      // Botão OK modal de sucesso - 重定向到客服WhatsApp
       modalOkBtn.addEventListener('click', function() {
+        // 每次点击时重新生成链接，确保随机分配
+        assignedWhatsAppLink = generateWhatsAppLink();
+        
         // Relatar evento do Google e redirecionar para WhatsApp
         gtag_report_conversion(assignedWhatsAppLink);
       });
