@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions d'Utilisation - TravailMaroc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 摩洛哥主题颜色 - 红色和绿色 */
+        :root{
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --muted: #64748b;
+            --text: #1e293b;
+            --white: #ffffff;
+            --primary: #C1272D; /* 摩洛哥国旗红色 */
+            --primary-600: #9a1f24;
+            --primary-300: #e88d99;
+            --accent: #006233; /* 摩洛哥国旗绿色 */
+            --accent-light: #80b398;
+            --green: #006233;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --ring: 0 0 0 3px rgba(193, 39, 45, 0.25);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+            --shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 8px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        *{box-sizing:border-box}
+        html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.5; font-size: 16px;}
+        img{max-width:100%;display:block}
+        a{color:var(--text);text-decoration:none}
+        a:hover{text-decoration:underline}
+        .container{width:min(1120px,94%);margin-inline:auto}
+
+        .nav{position:sticky;top:0;z-index:50;background:rgba(248, 250, 252, 0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06); box-shadow: 0 1px 3px rgba(0,0,0,0.05);}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+        .brand{font-weight:800;letter-spacing:.3px;font-size:1.3rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:8px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
+        .btn-primary{background: var(--primary);color:white; box-shadow: var(--shadow);}
+        .btn-primary:hover{background:var(--primary-600); transform: translateY(-2px); box-shadow: var(--shadow-lg);}
+        
+        .hero{position:relative;padding:50px 0 30px; overflow: hidden; background: linear-gradient(135deg, #fde8e8 0%, #f0f9f0 50%, #e8f4f8 100%);}
+        .hero-content{max-width: 800px; margin: 0 auto; text-align: center;}
+        
+        h1{font-size:38px;margin:0 0 12px; line-height: 1.2; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        h2{font-size:30px; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        h3{font-size:24px; font-weight: 700; color: var(--primary);}
+        
+        .content-section{padding:50px 0}
+        .content-card{background:var(--card);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);padding:30px; box-shadow: var(--shadow);}
+        
+        .muted{color:var(--muted); line-height: 1.6;}
+        .small{font-size:0.88rem}
+        
+        .footer{border-top:1px solid rgba(0,0,0,.08);padding:32px 0 20px;background:#f1f5f9}
+        .footer-grid{display:flex;justify-content:space-between;gap:16px;align-items:flex-start; margin-bottom: 20px;}
+        .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+        
+        /* Morocco elements */
+        .morocco-flag {display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; padding: 6px 12px; background: rgba(0,0,0,0.05); border-radius: 20px;}
+        .morocco-flag img {width: 24px; height: 14px; border-radius: 2px;}
+        
+        /* Terms sections */
+        .terms-section {margin-bottom: 30px;}
+        .terms-section h3 {margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.1);}
+        
+        /* Important notice */
+        .important-notice {background: linear-gradient(90deg, var(--primary), var(--accent)); color: white; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 12px;}
+        
+        /* Warning box */
+        .warning-box {background: rgba(0, 98, 51, 0.1); border: 1px solid var(--accent); border-radius: 8px; padding: 16px; margin: 20px 0;}
+        .warning-box h4 {color: var(--accent); margin-top: 0;}
+        
+        /* Highlight box */
+        .highlight-box {background: rgba(193, 39, 45, 0.05); border: 1px solid var(--primary); border-radius: 8px; padding: 16px; margin: 20px 0;}
+        .highlight-box h4 {color: var(--primary); margin-top: 0;}
+        
+        /* Mobile responsiveness */
+        @media (max-width: 980px){
+            h1 {font-size: 32px;}
+            h2 {font-size: 28px;}
+            .content-section {padding: 40px 0;}
+        }
+        
+        @media (max-width: 640px) {
+            .btn {padding: 8px 16px; font-size: 0.92rem;}
+            .footer-grid {flex-direction: column; gap: 16px;}
+            .footer-links {flex-direction: column; gap: 8px;}
+            .hero {padding: 40px 0 20px;}
+            h1 {font-size: 28px;}
+            h2 {font-size: 26px;}
+            .content-section {padding: 32px 0;}
+            .content-card {padding: 20px;}
+        }
+        
+        @media (max-width: 480px) {
+            h1 {font-size: 24px;}
+            h2 {font-size: 22px;}
+            .brand {font-size: 1.2rem;}
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Nav -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html" aria-label="Accueil">TravailMaroc</a>
+            <a href="index.html" class="btn btn-primary">Retour à l'Accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="morocco-flag">
+                <img src="https://flagcdn.com/w20/ma.png" alt="Drapeau Maroc">
+                <span>CONDITIONS D'UTILISATION</span>
+            </div>
+            <h1>Conditions d'Utilisation</h1>
+            <p class="muted">Veuillez lire attentivement ces conditions avant d'utiliser nos services.</p>
+            <div class="important-notice">Dernière mise à jour : 15 janvier 2024</div>
+        </div>
+    </section>
+
+    <!-- Terms of Service Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-card">
+                <div class="warning-box">
+                    <h4>⚠️ AVIS IMPORTANT</h4>
+                    <p>En utilisant notre plateforme TravailMaroc, vous acceptez d'être lié par ces conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🚫 AUCUN FRAIS D'INSCRIPTION</h4>
+                    <p>L'accès à notre plateforme et l'inscription sont entièrement gratuits. Nous ne facturons jamais de frais de candidature, d'inscription ou de commission sur vos revenus.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2>1. Acceptation des Conditions</h2>
+                    <p>En accédant et en utilisant la plateforme TravailMaroc, vous acceptez d'être lié par les présentes conditions d'utilisation, toutes les lois et réglementations applicables au Royaume du Maroc, et vous convenez que vous êtes responsable du respect des lois locales applicables.</p>
+                    <p>Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser ou accéder à nos services.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>2. Description du Service</h3>
+                    <p>TravailMaroc est une plateforme qui met en relation des chercheurs d'emploi au Maroc avec des opportunités de travail à distance. Notre service comprend :</p>
+                    <ul>
+                        <li>La présentation d'opportunités de travail flexibles adaptées au marché marocain</li>
+                        <li>La facilitation de la communication entre chercheurs d'emploi et employeurs</li>
+                        <li>Le support et l'assistance aux utilisateurs marocains</li>
+                        <li>La vérification des opportunités publiées pour assurer leur légitimité</li>
+                        <li>L'orientation vers des formations en ligne pour développer vos compétences</li>
+                    </ul>
+                    <p><strong>Note importante :</strong> TravailMaroc agit comme intermédiaire et ne garantit pas l'obtention d'un emploi ou des revenus spécifiques. Les opportunités dépendent de votre profil et des besoins du marché.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>3. Éligibilité</h3>
+                    <p>Pour utiliser nos services, vous devez :</p>
+                    <ul>
+                        <li>Être âgé d'au moins 18 ans</li>
+                        <li>Être résident au Maroc ou avoir la nationalité marocaine</li>
+                        <li>Fournir des informations exactes, complètes et véridiques</li>
+                        <li>Avoir un numéro de téléphone marocain valide et actif</li>
+                        <li>Disposer d'un accès à internet et d'un smartphone ou ordinateur</li>
+                        <li>Avoir une adresse email valide</li>
+                    </ul>
+                    <p>Nous nous réservons le droit de vérifier votre éligibilité à tout moment.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>4. Inscription et Compte</h3>
+                    <p>Pour accéder à certains services, vous devrez créer un compte. Vous acceptez de :</p>
+                    <ul>
+                        <li>Fournir des informations exactes, complètes et à jour</li>
+                        <li>Maintenir la sécurité de votre compte et de votre mot de passe</li>
+                        <li>Être responsable de toutes les activités sur votre compte</li>
+                        <li>Nous informer immédiatement de toute utilisation non autorisée</li>
+                        <li>Ne pas créer de compte pour quelqu'un d'autre sans autorisation</li>
+                        <li>Ne pas avoir plus d'un compte actif à la fois</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>5. Frais et Paiements</h3>
+                    <p><strong>Absolument aucun frais d'inscription :</strong> L'accès à notre plateforme et l'inscription sont entièrement gratuits.</p>
+                    <p>Les modalités de paiement pour les travaux effectués sont déterminées directement entre le travailleur et l'employeur. TravailMaroc :</p>
+                    <ul>
+                        <li>Ne facture aucune commission sur les revenus générés</li>
+                        <li>N'intervient pas dans les négociations financières</li>
+                        <li>Ne garantit pas les délais de paiement des employeurs</li>
+                        <li>Recommande de formaliser les accords de paiement par écrit</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>6. Propriété Intellectuelle</h3>
+                    <p>Tous les droits de propriété intellectuelle relatifs à la plateforme TravailMaroc, y compris mais sans s'y limiter, le contenu, les logos, les graphismes, le code source et les bases de données, sont la propriété exclusive de TravailMaroc.</p>
+                    <p>Vous vous engagez à ne pas :</p>
+                    <ul>
+                        <li>Copier, modifier, distribuer ou vendre notre contenu sans autorisation</li>
+                        <li>Utiliser nos marques, logos ou tout élément protégé sans autorisation écrite</li>
+                        <li>Accéder à notre plateforme de manière non autorisée ou utiliser des robots</li>
+                        <li>Reverse engineer, décompiler ou désassembler notre technologie</li>
+                        <li>Créer des œuvres dérivées basées sur notre plateforme</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>7. Contenu des Utilisateurs</h3>
+                    <p>En soumettant du contenu sur notre plateforme, vous nous accordez une licence mondiale, non exclusive, gratuite et transférable pour utiliser, reproduire, distribuer et afficher ce contenu dans le cadre de nos services.</p>
+                    <p>Vous garantissez que :</p>
+                    <ul>
+                        <li>Vous disposez de tous les droits nécessaires sur le contenu que vous soumettez</li>
+                        <li>Votre contenu ne viole aucun droit de propriété intellectuelle</li>
+                        <li>Votre contenu est exact et véridique</li>
+                        <li>Votre contenu respecte les lois marocaines en vigueur</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>8. Comportement Interdit</h3>
+                    <p>Vous vous engagez à ne pas :</p>
+                    <ul>
+                        <li>Utiliser la plateforme à des fins illégales ou frauduleuses</li>
+                        <li>Harceler, intimider, menacer ou discriminer d'autres utilisateurs</li>
+                        <li>Diffuser des virus, logiciels malveillants ou code nuisible</li>
+                        <li>Tenter d'accéder à des comptes, systèmes ou données d'autres utilisateurs</li>
+                        <li>Fournir de fausses informations ou usurper l'identité d'autrui</li>
+                        <li>Utiliser des bots, scripts automatisés ou autres moyens non autorisés</li>
+                        <li>Publier du contenu diffamatoire, obscène ou illégal</li>
+                        <li>Violer les droits de propriété intellectuelle de tiers</li>
+                        <li>Contourner les mesures de sécurité de notre plateforme</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>9. Limitation de Responsabilité</h3>
+                    <p>TravailMaroc ne pourra être tenu responsable :</p>
+                    <ul>
+                        <li>Des décisions d'embauche ou de non-embauche des employeurs</li>
+                        <li>De la qualité, ponctualité ou légalité du travail fourni par les travailleurs</li>
+                        <li>Des retards, erreurs ou problèmes de paiement entre parties</li>
+                        <li>Des pertes de données, interruptions de service ou bugs techniques</li>
+                        <li>Des dommages indirects, consécutifs ou spéciaux</li>
+                        <li>Des pertes d'opportunités commerciales ou de revenus</li>
+                        <li>Des litiges entre utilisateurs et employeurs</li>
+                    </ul>
+                    <p>Dans la mesure maximale permise par la loi marocaine, notre responsabilité totale envers vous pour toute réclamation est limitée à 1 000 DH.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>10. Avertissement sur les Revenus</h3>
+                    <p><strong>AVIS IMPORTANT :</strong> Les résultats et revenus mentionnés sur notre plateforme sont fournis à titre indicatif seulement. Les revenus réels varient considérablement en fonction :</p>
+                    <ul>
+                        <li>De l'effort individuel, du temps investi et de la régularité</li>
+                        <li>Des compétences, de l'expérience et de la formation</li>
+                        <li>De la disponibilité et du type de tâches disponibles</li>
+                        <li>Des conditions du marché et de la concurrence</li>
+                        <li>De la demande spécifique pour vos compétences</li>
+                        <li>Des performances individuelles et de la qualité du travail</li>
+                    </ul>
+                    <p>Nous ne garantissons aucun niveau de revenu spécifique. Les témoignages de réussite présentés ne sont pas nécessairement typiques et vos résultats peuvent varier.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>11. Résiliation</h3>
+                    <p>Nous nous réservons le droit de résilier ou suspendre votre accès à nos services :</p>
+                    <ul>
+                        <li>En cas de violation des présentes conditions d'utilisation</li>
+                        <li>Pour des raisons de sécurité ou de protection des autres utilisateurs</li>
+                        <li>Pour respecter des obligations légales ou réglementaires</li>
+                        <li>En cas d'activité frauduleuse, abusive ou illégale</li>
+                        <li>Si vous fournissez des informations fausses ou incomplètes</li>
+                        <li>En cas d'inactivité prolongée (plus de 6 mois)</li>
+                    </ul>
+                    <p>Vous pouvez résilier votre compte à tout moment en nous contactant.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>12. Modifications des Conditions</h3>
+                    <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications prendront effet dès leur publication sur notre plateforme.</p>
+                    <p>Nous vous informerons des changements importants par email ou via une notification sur notre plateforme. Il est de votre responsabilité de consulter régulièrement ces conditions.</p>
+                    <p>En continuant à utiliser nos services après la publication des modifications, vous acceptez les nouvelles conditions.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>13. Loi Applicable et Juridiction</h3>
+                    <p>Ces conditions sont régies par les lois du Royaume du Maroc. Tout litige relatif à ces conditions sera soumis à la juridiction exclusive des tribunaux de Casablanca.</p>
+                    <p>Conformément à la loi marocaine, nous nous engageons à rechercher une solution amiable avant toute action en justice.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>14. Nous Contacter</h3>
+                    <p>Pour toute question concernant ces conditions d'utilisation :</p>
+                    <ul>
+                        <li><strong>WhatsApp :</strong> +212 XXX XXX XXX</li>
+                        <li><strong>Email :</strong> service@yqh.baby</li>
+                        <li><strong>Adresse :</strong> Casablanca, Maroc</li>
+                        <li><strong>Heures de support :</strong> Lundi - Vendredi, 9h - 18h</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>15. Dispositions Générales</h3>
+                    <p>Si une disposition de ces conditions est jugée invalide ou inapplicable, les autres dispositions resteront pleinement en vigueur.</p>
+                    <p>Notre incapacité à faire respecter une disposition ne constitue pas une renonciation à ce droit.</p>
+                    <p>Ces conditions constituent l'accord complet entre vous et TravailMaroc concernant votre utilisation de nos services.</p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>📝 CONSEIL JURIDIQUE</h4>
+                    <p>Si vous avez des doutes concernant ces conditions ou vos droits en tant qu'utilisateur, nous vous recommandons de consulter un avocat spécialisé en droit du travail et en commerce électronique au Maroc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="brand" href="index.html">TravailMaroc</a>
+                <p class="muted small">Opportunités de travail à distance pour les Marocains.</p>
+            </div>
+            <nav class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="privacy.html">Politique de Confidentialité</a>
+                <a href="userterms.html">Conditions d'Utilisation</a>
+            </nav>
+        </div>
+        <div class="container">
+            <p class="muted small">© 2024 TravailMaroc. Tous droits réservés. Conforme à la législation marocaine en vigueur.</p>
+        </div>
+    </footer>
+</body>
+</html>
