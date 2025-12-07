@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Polityka Prywatności | VirtualCareerPL</title>
+  <meta name="description" content="Polityka Prywatności VirtualCareerPL - jak chronimy i przetwarzamy Twoje dane osobowe." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-dark: #1a365d;
+      --primary-main: #2d4a8c;
+      --primary-light: #4a6bc5;
+      --accent: #00a8a8;
+      --accent-light: #4dd0d0;
+      --success: #27ae60;
+      --warning: #f39c12;
+      --error: #e74c3c;
+      --gray-900: #1a202c;
+      --gray-700: #4a5568;
+      --gray-500: #718096;
+      --gray-300: #cbd5e0;
+      --gray-100: #f7fafc;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--gray-900);
+      background: linear-gradient(135deg, #f8fafd 0%, #f0f7ff 100%);
+      line-height: 1.6;
+      font-size: 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--primary-dark);
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .main-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(45, 74, 140, 0.1);
+      box-shadow: var(--shadow-sm);
+      padding: 16px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: var(--primary-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-main);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .back-button:hover {
+      background: var(--gray-100);
+      transform: translateX(-4px);
+    }
+
+    /* Main Content */
+    .privacy-content {
+      flex: 1;
+      padding: 80px 0;
+    }
+
+    .privacy-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .privacy-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+    }
+
+    .last-updated {
+      color: var(--gray-500);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    .privacy-container {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 60px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(45, 74, 140, 0.1);
+    }
+
+    /* Privacy Sections */
+    .privacy-section {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary-main);
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent-light);
+    }
+
+    .section-content {
+      color: var(--gray-700);
+    }
+
+    .section-content p {
+      margin-bottom: 16px;
+    }
+
+    .section-content ul,
+    .section-content ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-content li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(0, 168, 168, 0.05) 0%, rgba(45, 74, 140, 0.05) 100%);
+      border: 1px solid rgba(0, 168, 168, 0.2);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .highlight-box strong {
+      color: var(--primary-dark);
+    }
+
+    /* Data Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .data-table th {
+      background: var(--primary-dark);
+      color: white;
+      text-align: left;
+      padding: 16px;
+      font-weight: 600;
+    }
+
+    .data-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    .data-table tr:nth-child(even) {
+      background: var(--gray-100);
+    }
+
+    .data-table tr:hover {
+      background: rgba(0, 168, 168, 0.05);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: linear-gradient(135deg, var(--primary-main), var(--primary-dark));
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 40px;
+    }
+
+    .contact-title {
+      color: white;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Footer */
+    .main-footer {
+      background: var(--primary-dark);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+      margin-bottom: 30px;
+    }
+
+    .footer-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .footer-text {
+      opacity: 0.8;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      text-align: center;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .privacy-container {
+        padding: 40px;
+      }
+
+      .privacy-title {
+        font-size: 2.5rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .privacy-content {
+        padding: 60px 0;
+      }
+
+      .privacy-title {
+        font-size: 2rem;
+      }
+
+      .privacy-container {
+        padding: 30px 20px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .contact-info {
+        padding: 30px 20px;
+      }
+
+      .data-table {
+        font-size: 0.9rem;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .privacy-title {
+        font-size: 1.8rem;
+      }
+
+      .privacy-header {
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .contact-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .main-header,
+      .back-button,
+      .main-footer {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .privacy-content {
+        padding: 0;
+      }
+
+      .privacy-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">📱</span>
+        VirtualCareer<span style="color: var(--accent);">PL</span>
+      </a>
+      <a href="index.html" class="back-button">
+        ← Powrót do strony głównej
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="privacy-content">
+    <div class="container">
+      <div class="privacy-header">
+        <h1 class="privacy-title">Polityka Prywatności</h1>
+        <div class="last-updated">
+          Ostatnia aktualizacja: 15 grudnia 2024 r.
+        </div>
+      </div>
+
+      <div class="privacy-container">
+        <!-- Introduction -->
+        <section class="privacy-section">
+          <h2 class="section-title">1. Wprowadzenie</h2>
+          <div class="section-content">
+            <p>
+              Witamy w VirtualCareerPL. Szanujemy Twoją prywatność i zobowiązujemy się do ochrony 
+              Twoich danych osobowych. Niniejsza Polityka Prywatności wyjaśnia, w jaki sposób zbieramy, 
+              używamy, ujawniamy i chronimy Twoje dane osobowe, gdy korzystasz z naszej platformy.
+            </p>
+            <p>
+              Platforma VirtualCareerPL (dalej "Platforma" lub "My") świadczy usługi pracy wirtualnej 
+              na terenie Polski. Korzystając z naszej Platformy, powierzasz nam swoje dane osobowe, 
+              a my traktujemy tę odpowiedzialność z najwyższą powagą.
+            </p>
+          </div>
+        </section>
+
+        <!-- Data Collection -->
+        <section class="privacy-section">
+          <h2 class="section-title">2. Jakie dane zbieramy</h2>
+          <div class="section-content">
+            <p>
+              Zbieramy następujące kategorie danych osobowych:
+            </p>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Kategoria danych</th>
+                  <th>Przykłady</th>
+                  <th>Cel przetwarzania</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dane identyfikacyjne</td>
+                  <td>Imię i nazwisko, wiek</td>
+                  <td>Weryfikacja użytkownika, spełnienie wymogów wiekowych</td>
+                </tr>
+                <tr>
+                  <td>Dane kontaktowe</td>
+                  <td>Numer telefonu (WhatsApp), e-mail (opcjonalnie)</td>
+                  <td>Komunikacja dotycząca zadań, wsparcie techniczne</td>
+                </tr>
+                <tr>
+                  <td>Dane dotyczące pracy</td>
+                  <td>Wykonane zadania, czas pracy, jakość wykonania</td>
+                  <td>Naliczanie wynagrodzenia, optymalizacja Platformy</td>
+                </tr>
+                <tr>
+                  <td>Dane techniczne</td>
+                  <td>Adres IP, typ przeglądarki, urządzenie</td>
+                  <td>Bezpieczeństwo Platformy, analiza ruchu</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="highlight-box">
+              <p><strong>Ważne:</strong> Nie zbieramy wrażliwych danych osobowych, takich jak:</p>
+              <ul>
+                <li>Dane dotyczące zdrowia</li>
+                <li>Informacje o przekonaniach religijnych lub politycznych</li>
+                <li>Dane biometryczne</li>
+                <li>Dane dotyczące wyroków skazujących i naruszeń prawa</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Data Usage -->
+        <section class="privacy-section">
+          <h2 class="section-title">3. Jak wykorzystujemy Twoje dane</h2>
+          <div class="section-content">
+            <p>
+              Twoje dane osobowe są przetwarzane w następujących celach:
+            </p>
+            <ol>
+              <li>
+                <strong>Świadczenie usług:</strong> Aby umożliwić Ci korzystanie z Platformy, 
+                przypisywać zadania i dokonywać wypłat.
+              </li>
+              <li>
+                <strong>Komunikacja:</strong> Aby informować Cię o nowych zadaniach, zmianach 
+                w regulaminie lub ważnych aktualizacjach Platformy.
+              </li>
+              <li>
+                <strong>Bezpieczeństwo:</strong> Aby chronić Platformę przed oszustwami, 
+                nadużyciami i nieautoryzowanym dostępem.
+              </li>
+              <li>
+                <strong>Poprawa usług:</strong> Aby analizować sposób korzystania z Platformy 
+                i wprowadzać ulepszenia.
+              </li>
+              <li>
+                <strong>Wymogi prawne:</strong> Aby spełniać obowiązki nałożone przez 
+                obowiązujące przepisy prawa.
+              </li>
+            </ol>
+
+            <div class="highlight-box">
+              <p>
+                <strong>Podstawa prawna przetwarzania:</strong><br>
+                Przetwarzamy Twoje dane na podstawie:
+              </p>
+              <ul>
+                <li>Twojej zgody (art. 6 ust. 1 lit. a RODO)</li>
+                <li>Konieczności wykonania umowy (art. 6 ust. 1 lit. b RODO)</li>
+                <li>Naszego prawnie uzasadnionego interesu (art. 6 ust. 1 lit. f RODO)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Data Sharing -->
+        <section class="privacy-section">
+          <h2 class="section-title">4. Z kim dzielimy się danymi</h2>
+          <div class="section-content">
+            <p>
+              Twoje dane mogą być udostępniane następującym kategoriom odbiorców:
+            </p>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Odbiorca</th>
+                  <th>Cel udostępnienia</th>
+                  <th>Ochrona danych</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dostawcy usług IT</td>
+                  <td>Hosting, utrzymanie Platformy, analityka</td>
+                  <td>Umowy powierzenia zgodne z RODO</td>
+                </tr>
+                <tr>
+                  <td>Partnerzy płatniczy</td>
+                  <td>Przetwarzanie wypłat</td>
+                  <td>Szyfrowane połączenia, zgodność z PCI DSS</td>
+                </tr>
+                <tr>
+                  <td>Organy ścigania</td>
+                  <td>Tylko na żądanie prawne</td>
+                  <td>Wymagana podstawa prawna</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p style="margin-top: 20px;">
+              <strong>Zasada minimalizacji:</strong> Udostępniamy tylko te dane, które są 
+              niezbędne do realizacji określonego celu. Nigdy nie sprzedajemy Twoich danych 
+              osobom trzecim w celach marketingowych.
+            </p>
+          </div>
+        </section>
+
+        <!-- Data Retention -->
+        <section class="privacy-section">
+          <h2 class="section-title">5. Jak długo przechowujemy dane</h2>
+          <div class="section-content">
+            <p>
+              Przechowujemy Twoje dane osobowe tylko przez okres niezbędny do realizacji celów, 
+              dla których zostały zebrane, z uwzględnieniem wymogów prawnych.
+            </p>
+
+            <div class="highlight-box">
+              <p><strong>Okresy przechowywania:</strong></p>
+              <ul>
+                <li>
+                  <strong>Dane konta użytkownika:</strong> Przechowujemy przez okres aktywności 
+                  konta plus 3 lata od ostatniej aktywności
+                </li>
+                <li>
+                  <strong>Dane transakcyjne:</strong> Przechowujemy przez 5 lat zgodnie 
+                  z wymogami podatkowymi
+                </li>
+                <li>
+                  <strong>Logi systemowe:</strong> Przechowujemy przez 12 miesięcy w celach 
+                  bezpieczeństwa
+                </li>
+                <li>
+                  <strong>Dane kontaktowe nieaktywnych użytkowników:</strong> Usuwane po 36 miesiącach 
+                  braku aktywności
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              Po upływie okresów przechowywania dane są bezpiecznie usuwane lub anonimizowane.
+            </p>
+          </div>
+        </section>
+
+        <!-- User Rights -->
+        <section class="privacy-section">
+          <h2 class="section-title">6. Twoje prawa</h2>
+          <div class="section-content">
+            <p>
+              Zgodnie z RODO masz następujące prawa dotyczące swoich danych osobowych:
+            </p>
+
+            <ol>
+              <li>
+                <strong>Prawo dostępu:</strong> Możesz żądać kopii swoich danych osobowych.
+              </li>
+              <li>
+                <strong>Prawo do sprostowania:</strong> Możesz żądać poprawienia 
+                nieprawidłowych danych.
+              </li>
+              <li>
+                <strong>Prawo do usunięcia:</strong> Możesz żądać usunięcia swoich danych 
+                w określonych sytuacjach.
+              </li>
+              <li>
+                <strong>Prawo do ograniczenia przetwarzania:</strong> Możesz żądać 
+                ograniczenia przetwarzania w określonych sytuacjach.
+              </li>
+              <li>
+                <strong>Prawo do przenoszenia danych:</strong> Możesz żądać przekazania 
+                danych w formacie strukturalnym.
+              </li>
+              <li>
+                <strong>Prawo do sprzeciwu:</strong> Możesz sprzeciwić się przetwarzaniu 
+                w określonych sytuacjach.
+              </li>
+              <li>
+                <strong>Prawo do cofnięcia zgody:</strong> W dowolnym momencie możesz 
+                cofnąć zgodę na przetwarzanie.
+              </li>
+            </ol>
+
+            <p style="margin-top: 20px;">
+              Aby skorzystać z tych praw, skontaktuj się z nami za pośrednictwem 
+              formularza kontaktowego poniżej.
+            </p>
+          </div>
+        </section>
+
+        <!-- Security -->
+        <section class="privacy-section">
+          <h2 class="section-title">7. Bezpieczeństwo danych</h2>
+          <div class="section-content">
+            <p>
+              Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony 
+              Twoich danych osobowy przed nieautoryzowanym dostępem, utratą, zniszczeniem 
+              lub zmianą.
+            </p>
+
+            <div class="highlight-box">
+              <p><strong>Środki bezpieczeństwa:</strong></p>
+              <ul>
+                <li>Szyfrowanie danych w transmisji (SSL/TLS)</li>
+                <li>Szyfrowanie danych przechowywanych</li>
+                <li>Regularne testy penetracyjne</li>
+                <li>Systemy wykrywania i zapobiegania włamaniom</li>
+                <li>Dwuskładnikowe uwierzytelnianie dla pracowników</li>
+                <li>Regularne kopie zapasowe</li>
+              </ul>
+            </div>
+
+            <p>
+              Mimo naszych najlepszych starań, żaden system nie jest w 100% bezpieczny. 
+              W przypadku naruszenia ochrony danych, które może skutkować wysokim ryzykiem 
+              naruszenia praw lub wolności, poinformujemy Cię zgodnie z wymogami prawnymi.
+            </p>
+          </div>
+        </section>
+
+        <!-- International Transfers -->
+        <section class="privacy-section">
+          <h2 class="section-title">8. Transfery międzynarodowe</h2>
+          <div class="section-content">
+            <p>
+              VirtualCareerPL działa głównie na terenie Polski i przetwarza dane w Polsce. 
+              Jednak niektóre z naszych dostawców usług mogą przetwarzać dane poza Europejskim 
+              Obszarem Gospodarczym.
+            </p>
+
+            <p>
+              W przypadku takich transferów zapewniamy odpowiednie zabezpieczenia, w tym:
+            </p>
+            <ul>
+              <li>Decyzje o adekwatności Komisji Europejskiej</li>
+              <li>Standardowe klauzule umowne zatwierdzone przez Komisję Europejską</li>
+              <li>Certyfikaty Privacy Shield (dla dostawców z USA)</li>
+            </ul>
+
+            <p>
+              Szczegółowe informacje o transferach międzynarodowych są dostępne na żądanie.
+            </p>
+          </div>
+        </section>
+
+        <!-- Cookies -->
+        <section class="privacy-section">
+          <h2 class="section-title">9. Pliki cookies i podobne technologie</h2>
+          <div class="section-content">
+            <p>
+              Używamy plików cookies i podobnych technologii do:
+            </p>
+            <ul>
+              <li>Zapewnienia poprawnego działania Platformy</li>
+              <li>Zapamiętania Twoich preferencji</li>
+              <li>Analizowania ruchu na Platformie</li>
+              <li>Zabezpieczania Platformy przed nadużyciami</li>
+            </ul>
+
+            <p>
+              Możesz zarządzać ustawieniami cookies w swojej przeglądarce. 
+              Pamiętaj, że wyłączenie niektórych cookies może wpłynąć na funkcjonalność Platformy.
+            </p>
+          </div>
+        </section>
+
+        <!-- Changes to Policy -->
+        <section class="privacy-section">
+          <h2 class="section-title">10. Zmiany w Polityce Prywatności</h2>
+          <div class="section-content">
+            <p>
+              Możemy okresowo aktualizować niniejszą Politykę Prywatności. 
+              O wszelkich istotnych zmianach poinformujemy Cię za pośrednictwem:
+            </p>
+            <ul>
+              <li>Ogłoszenia na Platformie</li>
+              <li>Wiadomości e-mail (jeśli podałeś adres e-mail)</li>
+              <li>Komunikatu w aplikacji WhatsApp</li>
+            </ul>
+
+            <p>
+              Zachęcamy do regularnego przeglądania tej strony, aby być na bieżąco z naszą 
+              polityką prywatności. Data ostatniej aktualizacji znajduje się na górze tej strony.
+            </p>
+          </div>
+        </section>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h3 class="contact-title">Kontakt w sprawach ochrony danych</h3>
+          <p style="margin-bottom: 24px; opacity: 0.9;">
+            Jeśli masz jakiekolwiek pytania dotyczące tej Polityki Prywatności 
+            lub chcesz skorzystać ze swoich praw, skontaktuj się z nami:
+          </p>
+          
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon">📧</span>
+              <span>E-mail: dane@virtualcareer.pl</span>
+            </li>
+            <li>
+              <span class="contact-icon">📱</span>
+              <span>WhatsApp: +48 123 456 789 (tylko w sprawach prywatności)</span>
+            </li>
+            <li>
+              <span class="contact-icon">🏢</span>
+              <span>Adres korespondencyjny: ul. Wirtualna 15, 00-001 Warszawa, Polska</span>
+            </li>
+          </ul>
+
+          <p style="margin-top: 24px; opacity: 0.8; font-size: 0.95rem;">
+            Masz również prawo wniesienia skargi do organu nadzorczego - 
+            Prezesa Urzędu Ochrony Danych Osobowych.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="index.html" class="footer-brand">VirtualCareerPL</a>
+          <p class="footer-text">
+            Platforma profesjonalnej pracy wirtualnej dla polskich specjalistów. 
+            Łączymy elastyczność z profesjonalizmem, zapewniając godziwe wynagrodzenie 
+            i pełne wsparcie operacyjne.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: white; margin-bottom: 20px; font-size: 1.1rem;">Dokumenty</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Strona główna</a>
+            <a href="terms.html" class="footer-link" rel="nofollow">Regulamin Platformy</a>
+            <a href="privacy.html" class="footer-link" rel="nofollow">Polityka Prywatności</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2024 VirtualCareerPL. Wszelkie prawa zastrzeżone.<br>
+        Dokument ten został przygotowany z najwyższą starannością i jest regularnie aktualizowany.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Simple smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Print button functionality (optional)
+      const printButton = document.createElement('button');
+      printButton.innerHTML = '🖨️ Wydrukuj tę stronę';
+      printButton.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--primary-main);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: var(--radius-md);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+      `;
+      
+      printButton.addEventListener('mouseover', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = 'var(--shadow-lg)';
+      });
+      
+      printButton.addEventListener('mouseout', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'var(--shadow-md)';
+      });
+      
+      printButton.addEventListener('click', function() {
+        window.print();
+      });
+      
+      document.body.appendChild(printButton);
+    });
+  </script>
+</body>
+</html>
