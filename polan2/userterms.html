@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Regulamin Platformy | VirtualCareerPL</title>
+  <meta name="description" content="Regulamin użytkowania platformy VirtualCareerPL - zasady współpracy i korzystania z usług." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-dark: #1a365d;
+      --primary-main: #2d4a8c;
+      --primary-light: #4a6bc5;
+      --accent: #00a8a8;
+      --accent-light: #4dd0d0;
+      --success: #27ae60;
+      --warning: #f39c12;
+      --error: #e74c3c;
+      --gray-900: #1a202c;
+      --gray-700: #4a5568;
+      --gray-500: #718096;
+      --gray-300: #cbd5e0;
+      --gray-100: #f7fafc;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--gray-900);
+      background: linear-gradient(135deg, #f8fafd 0%, #f0f7ff 100%);
+      line-height: 1.6;
+      font-size: 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--primary-dark);
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .main-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(45, 74, 140, 0.1);
+      box-shadow: var(--shadow-sm);
+      padding: 16px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: var(--primary-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-main);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .back-button:hover {
+      background: var(--gray-100);
+      transform: translateX(-4px);
+    }
+
+    /* Main Content */
+    .terms-content {
+      flex: 1;
+      padding: 80px 0;
+    }
+
+    .terms-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .terms-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+    }
+
+    .last-updated {
+      color: var(--gray-500);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    .terms-container {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 60px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(45, 74, 140, 0.1);
+    }
+
+    /* Terms Sections */
+    .terms-section {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary-main);
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent-light);
+    }
+
+    .section-subtitle {
+      font-size: 1.3rem;
+      color: var(--primary-main);
+      margin: 30px 0 15px;
+      font-weight: 600;
+    }
+
+    .section-content {
+      color: var(--gray-700);
+    }
+
+    .section-content p {
+      margin-bottom: 16px;
+    }
+
+    .section-content ul,
+    .section-content ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-content li {
+      margin-bottom: 12px;
+      padding-left: 8px;
+    }
+
+    /* Important Boxes */
+    .important-box {
+      background: linear-gradient(135deg, rgba(39, 174, 96, 0.05) 0%, rgba(0, 168, 168, 0.05) 100%);
+      border: 1px solid rgba(39, 174, 96, 0.2);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin: 24px 0;
+      position: relative;
+    }
+
+    .important-box:before {
+      content: "ℹ️";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.2rem;
+    }
+
+    .important-box-content {
+      margin-left: 30px;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(243, 156, 18, 0.05) 0%, rgba(231, 76, 60, 0.05) 100%);
+      border: 1px solid rgba(243, 156, 18, 0.3);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin: 24px 0;
+      position: relative;
+    }
+
+    .warning-box:before {
+      content: "⚠️";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.2rem;
+    }
+
+    .warning-box-content {
+      margin-left: 30px;
+    }
+
+    /* Definition Lists */
+    .definition-list {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .definition-list dt {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 20px;
+    }
+
+    .definition-list dd {
+      margin-left: 20px;
+      color: var(--gray-700);
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 3px solid var(--accent-light);
+    }
+
+    /* Table Styles */
+    .terms-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .terms-table th {
+      background: var(--primary-main);
+      color: white;
+      text-align: left;
+      padding: 16px;
+      font-weight: 600;
+    }
+
+    .terms-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    .terms-table tr:nth-child(even) {
+      background: var(--gray-100);
+    }
+
+    .terms-table tr:hover {
+      background: rgba(0, 168, 168, 0.05);
+    }
+
+    /* Numbered Sections */
+    .numbered-section {
+      counter-increment: section-counter;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .numbered-section:before {
+      content: counter(section-counter) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    /* Acceptance Section */
+    .acceptance-section {
+      background: linear-gradient(135deg, var(--primary-main), var(--primary-dark));
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 60px;
+    }
+
+    .acceptance-title {
+      color: white;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .acceptance-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    .acceptance-checkbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .acceptance-checkbox input {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent-light);
+    }
+
+    .acceptance-checkbox label {
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .main-footer {
+      background: var(--primary-dark);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+      margin-bottom: 30px;
+    }
+
+    .footer-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .footer-text {
+      opacity: 0.8;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      text-align: center;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Toggle Sections */
+    .toggle-section {
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .toggle-header {
+      padding: 20px;
+      background: var(--gray-100);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--primary-dark);
+      transition: var(--transition);
+    }
+
+    .toggle-header:hover {
+      background: var(--gray-200);
+    }
+
+    .toggle-icon {
+      transition: var(--transition);
+    }
+
+    .toggle-section.active .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .toggle-content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .toggle-section.active .toggle-content {
+      padding: 20px;
+      max-height: 2000px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .terms-container {
+        padding: 40px;
+      }
+
+      .terms-title {
+        font-size: 2.5rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .terms-content {
+        padding: 60px 0;
+      }
+
+      .terms-title {
+        font-size: 2rem;
+      }
+
+      .terms-container {
+        padding: 30px 20px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .acceptance-section {
+        padding: 30px 20px;
+      }
+
+      .terms-table {
+        font-size: 0.9rem;
+      }
+
+      .terms-table th,
+      .terms-table td {
+        padding: 12px;
+      }
+
+      .numbered-section {
+        padding-left: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .terms-title {
+        font-size: 1.8rem;
+      }
+
+      .terms-header {
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .acceptance-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .main-header,
+      .back-button,
+      .acceptance-section,
+      .main-footer {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .terms-content {
+        padding: 0;
+      }
+
+      .terms-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">📱</span>
+        VirtualCareer<span style="color: var(--accent);">PL</span>
+      </a>
+      <a href="index.html" class="back-button">
+        ← Powrót do strony głównej
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="terms-content">
+    <div class="container">
+      <div class="terms-header">
+        <h1 class="terms-title">Regulamin Platformy</h1>
+        <div class="last-updated">
+          Ostatnia aktualizacja: 15 grudnia 2024 r. | Wersja: 2.0
+        </div>
+      </div>
+
+      <div class="terms-container">
+        <!-- Introduction -->
+        <section class="terms-section">
+          <h2 class="section-title">§1. Postanowienia Ogólne</h2>
+          <div class="section-content">
+            <p>
+              1.1. Niniejszy Regulamin określa zasady korzystania z platformy VirtualCareerPL 
+              (dalej "Platforma"), będącej własnością [Nazwa Spółki], z siedzibą w Warszawie, 
+              wpisanej do rejestru przedsiębiorców pod numerem KRS [numer].
+            </p>
+            
+            <p>
+              1.2. Platforma umożliwia użytkownikom (dalej "Użytkownicy" lub "Wykonawcy") 
+              wykonywanie zadań online w zamian za wynagrodzenie, zgodnie z zasadami określonymi 
+              w niniejszym Regulaminie.
+            </p>
+            
+            <p>
+              1.3. Korzystanie z Platformy jest równoznaczne z akceptacją wszystkich postanowień 
+              niniejszego Regulaminu. W przypadku braku akceptacji Regulaminu, prosimy o 
+              niekorzystanie z Platformy.
+            </p>
+          </div>
+        </section>
+
+        <!-- Definitions -->
+        <section class="terms-section">
+          <h2 class="section-title">§2. Definicje</h2>
+          <div class="section-content">
+            <dl class="definition-list">
+              <dt>Platforma</dt>
+              <dd>System online VirtualCareerPL dostępny pod adresem [adres strony] oraz w formie aplikacji mobilnej, umożliwiający łączenie Wykonawców z Zadaniami.</dd>
+              
+              <dt>Użytkownik/Wykonawca</dt>
+              <dd>Osoba fizyczna, która założyła konto na Platformie i wykonuje Zadania zgodnie z Regulaminem.</dd>
+              
+              <dt>Zadanie</dt>
+              <dd>Pojedyncza czynność online przydzielona Wykonawcy do wykonania poprzez Platformę.</dd>
+              
+              <dt>Wynagrodzenie</dt>
+              <dd>Kwota pieniężna wypłacana Wykonawcy za prawidłowe wykonanie Zadania.</dd>
+              
+              <dt>Konto Użytkownika</dt>
+              <dd>Indywidualne konto stworzone przez Użytkownika na Platformie, zawierające dane osobowe, historię zadań i saldo.</dd>
+            </dl>
+          </div>
+        </section>
+
+        <!-- Registration -->
+        <section class="terms-section">
+          <h2 class="section-title">§3. Rejestracja i Warunki Uczestnictwa</h2>
+          <div class="section-content">
+            <div class="numbered-section">
+              <h3 class="section-subtitle">3.1. Wymagania wiekowe</h3>
+              <p>
+                Użytkownik Platformy musi mieć ukończone 18 lat. Rejestracja osób niepełnoletnich 
+                jest zabroniona i stanowi naruszenie Regulaminu.
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">3.2. Proces rejestracji</h3>
+              <p>
+                Rejestracja odbywa się poprzez wypełnienie formularza dostępnego na stronie 
+                głównej Platformy. Wymagane jest podanie:
+              </p>
+              <ul>
+                <li>Imienia i nazwiska</li>
+                <li>Numeru telefonu komórkowego (WhatsApp)</li>
+                <li>Właściwego wieku</li>
+                <li>Akceptacji Polityki Prywatności i Regulaminu</li>
+              </ul>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">3.3. Weryfikacja</h3>
+              <p>
+                Platforma zastrzega sobie prawo do weryfikacji podanych danych, w tym wieku 
+                użytkownika. Podanie nieprawdziwych danych może skutkować natychmiastowym 
+                usunięciem konta.
+              </p>
+            </div>
+
+            <div class="important-box">
+              <div class="important-box-content">
+                <p><strong>Bezpłatna rejestracja:</strong> Rejestracja na Platformie jest całkowicie 
+                bezpłatna. VirtualCareerPL nigdy nie pobiera opłat za założenie konta, dostęp 
+                do zadań czy wypłatę zarobków.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Platform Operation -->
+        <section class="terms-section">
+          <h2 class="section-title">§4. Zasady Działania Platformy</h2>
+          <div class="section-content">
+            <div class="numbered-section">
+              <h3 class="section-subtitle">4.1. Rodzaje zadań</h3>
+              <p>
+                Platforma oferuje różnorodne zadania online, w tym między innymi:
+              </p>
+              <ul>
+                <li>Przeglądanie i ocena treści internetowych</li>
+                <li>Wypełnianie ankiet i formularzy</li>
+                <li>Testowanie aplikacji i stron internetowych</li>
+                <li>Proste zadania wprowadzania danych</li>
+                <li>Inne czynności cyfrowe określone w instrukcji zadania</li>
+              </ul>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">4.2. Dostępność zadań</h3>
+              <p>
+                Dostępność zadań zależy od:
+              </p>
+              <ul>
+                <li>Regionu geograficznego (wyłącznie Polska)</li>
+                <li>Profilu użytkownika i historii wykonania</li>
+                <li>Pory dnia i dnia tygodnia</li>
+                <li>Aktualnych potrzeb partnerów Platformy</li>
+              </ul>
+              <p>
+                Platforma nie gwarantuje stałej dostępności określonej liczby zadań.
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">4.3. Jakość wykonania</h3>
+              <p>
+                Każde zadanie podlega kontroli jakości. Wynagrodzenie jest wypłacane tylko za 
+                zadania wykonane zgodnie z instrukcją. Platforma zastrzega sobie prawo do 
+                odrzucenia źle wykonanych zadań bez wypłaty wynagrodzenia.
+              </p>
+            </div>
+
+            <table class="terms-table">
+              <thead>
+                <tr>
+                  <th>Typ współpracy</th>
+                  <th>Przewidywany czas</th>
+                  <th>System wynagradzania</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Elastyczna</td>
+                  <td>2-4 godziny/dzień</td>
+                  <td>Stawka za zadanie</td>
+                </tr>
+                <tr>
+                  <td>Intensywna</td>
+                  <td>4-6 godzin/dzień</td>
+                  <td>Stawka za zadanie + bonusy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Earnings and Payments -->
+        <section class="terms-section">
+          <h2 class="section-title">§5. Wynagrodzenie i Wypłaty</h2>
+          <div class="section-content">
+            <div class="numbered-section">
+              <h3 class="section-subtitle">5.1. Zasady naliczania</h3>
+              <p>
+                Wynagrodzenie jest naliczane indywidualnie dla każdego zadania na podstawie:
+              </p>
+              <ul>
+                <li>Złożoności zadania</li>
+                <li>Czasu wymaganego do wykonania</li>
+                <li>Wymagań dotyczących jakości</li>
+                <li>Dostępności danego typu zadań</li>
+              </ul>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">5.2. Minimalna wypłata</h3>
+              <p>
+                Minimalna kwota wypłaty wynosi 50 PLN. Po osiągnięciu tego progu użytkownik 
+                może złożyć wniosek o wypłatę.
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">5.3. Czas wypłat</h3>
+              <p>
+                Wypłaty są realizowane w ciągu 24 godzin roboczych od zatwierdzenia wniosku 
+                o wypłatę, pod warunkiem prawidłowego wykonania wszystkich zadań.
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">5.4. Metody wypłat</h3>
+              <p>
+                Platforma oferuje następujące metody wypłat:
+              </p>
+              <ul>
+                <li>Przelew bankowy na polskie konto</li>
+                <li>Płatności elektroniczne (Blik, PayPal)</li>
+                <li>Karty podarunkowe (określonych sieci)</li>
+              </ul>
+            </div>
+
+            <div class="warning-box">
+              <div class="warning-box-content">
+                <p><strong>Oświadczenie dotyczące zarobków:</strong> Przedstawiane widełki zarobków 
+                (np. 1500-3000 PLN/miesiąc) mają charakter informacyjny i przykładowy. 
+                Nie stanowią gwarancji ani obietnicy osiągnięcia określonego dochodu. 
+                Rzeczywiste zarobki zależą od wielu czynników, w tym zaangażowania użytkownika, 
+                dostępności zadań i jakości wykonania.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- User Obligations -->
+        <section class="terms-section">
+          <h2 class="section-title">§6. Obowiązki Użytkownika</h2>
+          
+          <div class="toggle-section">
+            <div class="toggle-header">
+              <span>6.1. Zasady korzystania z Platformy</span>
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="toggle-content">
+              <ul>
+                <li>Korzystanie z Platformy w sposób zgodny z prawem i dobrymi obyczajami</li>
+                <li>Przestrzeganie instrukcji dotyczących poszczególnych zadań</li>
+                <li>Nieudostępnianie konta osobom trzecim</li>
+                <li>Niekorzystanie z automatycznych skryptów ani botów</li>
+                <li>Niepróbowanie obejścia zabezpieczeń Platformy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="toggle-section">
+            <div class="toggle-header">
+              <span>6.2. Zakazane działania</span>
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="toggle-content">
+              <ul>
+                <li>Tworzenie wielu kont przez jedną osobę</li>
+                <li>Podawanie nieprawdziwych informacji podczas rejestracji</li>
+                <li>Wykonywanie zadań w sposób niezgodny z instrukcją</li>
+                <li>Próby manipulacji systemem wynagradzania</li>
+                <li>Udostępnianie poufnych informacji o zadaniach osobom trzecim</li>
+                <li>Wykorzystywanie Platformy do celów niezgodnych z prawem</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Platform Rights -->
+        <section class="terms-section">
+          <h2 class="section-title">§7. Uprawnienia Platformy</h2>
+          <div class="section-content">
+            <div class="numbered-section">
+              <p>
+                7.1. Platforma zastrzega sobie prawo do:
+              </p>
+              <ul>
+                <li>Modyfikacji oferowanych zadań i stawek wynagrodzenia</li>
+                <li>Tymczasowego lub stałego zawieszenia dostępu do Platformy</li>
+                <li>Usunięcia konta użytkownika w przypadku naruszenia Regulaminu</li>
+                <li>Wprowadzania zmian w Regulaminie</li>
+                <li>Weryfikacji tożsamości użytkowników</li>
+              </ul>
+            </div>
+
+            <div class="numbered-section">
+              <p>
+                7.2. Platforma może zawiesić lub usunąć konto użytkownika w przypadku:
+              </p>
+              <ul>
+                <li>Naruszenia postanowień Regulaminu</li>
+                <li>Podejrzenia oszustwa lub nadużycia</li>
+                <li>Długotrwałej nieaktywności (powyżej 90 dni)</li>
+                <li>Otrzymania skarg dotyczących jakości pracy</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Liability -->
+        <section class="terms-section">
+          <h2 class="section-title">§8. Odpowiedzialność</h2>
+          <div class="section-content">
+            <div class="numbered-section">
+              <h3 class="section-subtitle">8.1. Odpowiedzialność Platformy</h3>
+              <p>
+                Platforma VirtualCareerPL nie ponosi odpowiedzialności za:
+              </p>
+              <ul>
+                <li>Błędy popełnione przez użytkowników podczas wykonywania zadań</li>
+                <li>Przerwy techniczne spowodowane czynnikami zewnętrznymi</li>
+                <li>Straty wynikające z nieprzestrzegania instrukcji</li>
+                <li>Ograniczenia w dostępie do Platformy z przyczyn niezależnych</li>
+              </ul>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">8.2. Ograniczenie odpowiedzialności</h3>
+              <p>
+                Maksymalna odpowiedzialność Platformy wobec użytkownika jest ograniczona 
+                do kwoty wynagrodzenia wypłaconego użytkownikowi w ciągu ostatnich 30 dni.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Term and Termination -->
+        <section class="terms-section">
+          <h2 class="section-title">§9. Czas trwania i rozwiązanie umowy</h2>
+          <div class="section-content">
+            <div class="numbered-section">
+              <p>
+                9.1. Współpraca z Platformą trwa od momentu zaakceptowania Regulaminu 
+                do czasu rozwiązania przez jedną ze stron.
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <p>
+                9.2. Użytkownik może w każdej chwili zrezygnować z Platformy, wysyłając 
+                odpowiednie żądanie na adres [adres e-mail].
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <p>
+                9.3. W przypadku rozwiązania współpracy, użytkownik ma prawo do wypłaty 
+                wszystkich zarobionych środków, które zostały zatwierdzone przez system.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Changes to Terms -->
+        <section class="terms-section">
+          <h2 class="section-title">§10. Zmiany Regulaminu</h2>
+          <div class="section-content">
+            <div class="numbered-section">
+              <p>
+                10.1. Platforma zastrzega sobie prawo do zmiany Regulaminu. 
+                O wszelkich zmianach użytkownicy zostaną poinformowani poprzez:
+              </p>
+              <ul>
+                <li>Ogłoszenie na stronie głównej Platformy</li>
+                <li>Wiadomość e-mail (jeśli podany)</li>
+                <li>Komunikat w systemie powiadomień Platformy</li>
+              </ul>
+            </div>
+
+            <div class="numbered-section">
+              <p>
+                10.2. Kontynuowanie korzystania z Platformy po wprowadzeniu zmian do 
+                Regulaminu jest równoznaczne z ich akceptacją.
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <p>
+                10.3. W przypadku braku akceptacji zmian, użytkownik ma prawo do 
+                rozwiązania umowy w terminie 14 dni od dnia wprowadzenia zmian.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Final Provisions -->
+        <section class="terms-section">
+          <h2 class="section-title">§11. Postanowienia końcowe</h2>
+          <div class="section-content">
+            <div class="numbered-section">
+              <h3 class="section-subtitle">11.1. Prawo właściwe</h3>
+              <p>
+                Regulamin oraz wszelkie sprawy związane z korzystaniem z Platformy 
+                podlegają prawu polskiemu.
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">11.2. Rozstrzyganie sporów</h3>
+              <p>
+                Wszelkie spory wynikające z korzystania z Platformy będą rozstrzygane 
+                przez sąd właściwy dla siedziby Platformy, chyba że obowiązujące 
+                przepisy prawa stanowią inaczej.
+              </p>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">11.3. Kontakt</h3>
+              <p>
+                W sprawach dotyczących Regulaminu prosimy o kontakt:
+              </p>
+              <ul>
+                <li>E-mail: regulamin@virtualcareer.pl</li>
+                <li>Adres: [Adres korespondencyjny]</li>
+                <li>Telefon: [+48 123 456 789] (godziny pracy: 9:00-17:00)</li>
+              </ul>
+            </div>
+
+            <div class="numbered-section">
+              <h3 class="section-subtitle">11.4. Integralność dokumentów</h3>
+              <p>
+                Niniejszy Regulamin stanowi integralną całość z <a href="privacy.html">Polityką Prywatności</a>. 
+                W przypadku sprzeczności między dokumentami, pierwszeństwo mają postanowienia 
+                szczegółowe.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Acceptance Section -->
+        <div class="acceptance-section">
+          <h3 class="acceptance-title">Potwierdzenie Zapoznania się z Regulaminem</h3>
+          <div class="acceptance-content">
+            <p>
+              Oświadczam, że zapoznałem/am się z treścią niniejszego Regulaminu Platformy 
+              VirtualCareerPL i akceptuję wszystkie jego postanowienia.
+            </p>
+            
+            <div class="acceptance-checkbox">
+              <input type="checkbox" id="termsAcceptance">
+              <label for="termsAcceptance">Akceptuję Regulamin Platformy</label>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+              Akceptacja Regulaminu jest wymagana do korzystania z Platformy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="index.html" class="footer-brand">VirtualCareerPL</a>
+          <p class="footer-text">
+            Platforma profesjonalnej pracy wirtualnej dla polskich specjalistów. 
+            Łączymy elastyczność z profesjonalizmem, zapewniając godziwe wynagrodzenie 
+            i pełne wsparcie operacyjne.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: white; margin-bottom: 20px; font-size: 1.1rem;">Dokumenty</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Strona główna</a>
+            <a href="privacy.html" class="footer-link" rel="nofollow">Polityka Prywatności</a>
+            <a href="userterms.html" class="footer-link" rel="nofollow">Regulamin Platformy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2024 VirtualCareerPL. Wszelkie prawa zastrzeżone.<br>
+        Dokument obowiązujący od 15 grudnia 2024 r.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle sections functionality
+      const toggleHeaders = document.querySelectorAll('.toggle-header');
+      
+      toggleHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const section = this.parentElement;
+          section.classList.toggle('active');
+        });
+      });
+
+      // Print button functionality
+      const printButton = document.createElement('button');
+      printButton.innerHTML = '🖨️ Wydrukuj Regulamin';
+      printButton.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--primary-main);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: var(--radius-md);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+      `;
+      
+      printButton.addEventListener('mouseover', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = 'var(--shadow-lg)';
+      });
+      
+      printButton.addEventListener('mouseout', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'var(--shadow-md)';
+      });
+      
+      printButton.addEventListener('click', function() {
+        window.print();
+      });
+      
+      document.body.appendChild(printButton);
+
+      // Acceptance checkbox functionality
+      const acceptanceCheckbox = document.getElementById('termsAcceptance');
+      if (acceptanceCheckbox) {
+        acceptanceCheckbox.addEventListener('change', function() {
+          if (this.checked) {
+            localStorage.setItem('termsAccepted', 'true');
+            alert('Dziękujemy za akceptację Regulaminu!');
+          }
+        });
+      }
+
+      // Check if terms were already accepted
+      if (localStorage.getItem('termsAccepted') === 'true') {
+        const acceptanceSection = document.querySelector('.acceptance-section');
+        if (acceptanceSection) {
+          acceptanceSection.style.display = 'none';
+        }
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Expand all toggle sections button
+      const expandAllButton = document.createElement('button');
+      expandAllButton.innerHTML = '📖 Rozwiń wszystkie sekcje';
+      expandAllButton.style.cssText = `
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: var(--radius-md);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+        font-size: 0.9rem;
+      `;
+      
+      expandAllButton.addEventListener('mouseover', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = 'var(--shadow-lg)';
+      });
+      
+      expandAllButton.addEventListener('mouseout', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'var(--shadow-md)';
+      });
+      
+      expandAllButton.addEventListener('click', function() {
+        const allSections = document.querySelectorAll('.toggle-section');
+        const isExpanding = !allSections[0]?.classList.contains('active');
+        
+        allSections.forEach(section => {
+          if (isExpanding) {
+            section.classList.add('active');
+            this.innerHTML = '📕 Zwiń wszystkie sekcje';
+          } else {
+            section.classList.remove('active');
+            this.innerHTML = '📖 Rozwiń wszystkie sekcje';
+          }
+        });
+      });
+      
+      document.body.appendChild(expandAllButton);
+    });
+  </script>
+</body>
+</html>
