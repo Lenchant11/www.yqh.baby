@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tietosuoja, Vastuuvapaus & Käyttöehdot | EtätyöSuomi</title>
+  <meta name="description" content="EtätyöSuomi - Tietosuojakäytäntö, Vastuuvapauslauseke ja Käyttöehdot. Tutustu palvelumme ehtoihin ja tietosuojaan." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+  /* 保持与主页面一致的样式 */
+  :root{
+    --bg:#0c1220;
+    --card:#152136;
+    --muted:#a8b1bd;
+    --text:#e9ecf0;
+    --white:#ffffff;
+    --primary:#4a6cfa;
+    --primary-600:#3a5be8;
+    --primary-300:#6c89ff;
+    --accent:#19c37d;
+    --secondary:#8c61ff;
+    --ring: 0 0 0 3px rgba(74, 108, 250, 0.25);
+    --radius:12px;
+    --transition: all 0.3s ease;
+    --highlight: #ffd700;
+    --cta-primary: #0056b3;
+    --cta-primary-600: #003d82;
+    --cta-primary-300: #4a8cff;
+    --title-glow: #003580;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#090e19;color:var(--text);font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;line-height:1.6; font-size: 15px;}
+  img{max-width:100%;display:block}
+  a{color:var(--text);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{width:min(1120px,92%);margin-inline:auto}
+
+  .nav{position:sticky;top:0;z-index:50;background:rgba(9,14,25,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+  .brand{font-weight:800;letter-spacing:.3px;font-size:1.2rem;color: var(--primary-300);}
+  .nav-links{display:flex;gap:16px;align-items:center}
+  .nav-link{opacity:.85; transition: var(--transition); font-size: 0.95rem;}
+  .nav-link:hover{opacity:1; color: var(--primary-300);}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:10px;border:0;font-weight:600;cursor:pointer;transition:var(--transition); font-size: 0.95rem;}
+  .btn-primary{background:var(--cta-primary);color:#ffffff !important; box-shadow: 0 4px 12px rgba(0, 86, 179, 0.4); font-weight: 700;}
+  .btn-primary:hover{background:var(--cta-primary-600); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 86, 179, 0.6);}
+  
+  .section{padding:60px 0}
+  h1{margin:0 0 14px;font-size:38px; font-weight: 800; line-height: 1.2;}
+  h2{margin:0 0 20px;font-size:32px; font-weight: 800;}
+  h3{margin:0 0 16px;font-size:24px; font-weight: 700;}
+  h4{margin:0 0 12px;font-size:18px; font-weight: 600;}
+  .muted{color:var(--muted); line-height: 1.5;}
+  .small{font-size:0.88rem}
+  
+  /* 选项卡样式 */
+  .tabs-container {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+  }
+  
+  .tabs-header {
+    display: flex;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  
+  .tab-btn {
+    flex: 1;
+    padding: 18px 24px;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .tab-btn:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.05);
+  }
+  
+  .tab-btn.active {
+    color: var(--primary-300);
+    background: rgba(74, 108, 250, 0.1);
+  }
+  
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary);
+  }
+  
+  .tab-content {
+    display: none;
+    padding: 30px;
+    max-height: 600px;
+    overflow-y: auto;
+  }
+  
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* 内容样式 */
+  .content-section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  
+  .content-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .list {
+    padding-left: 20px;
+    margin: 16px 0;
+  }
+  
+  .list li {
+    margin-bottom: 10px;
+    color: var(--muted);
+  }
+  
+  .highlight-box {
+    background: rgba(25, 195, 125, 0.1);
+    border: 1px solid rgba(25, 195, 125, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .warning-box {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .info-box {
+    background: rgba(74, 108, 250, 0.1);
+    border: 1px solid rgba(74, 108, 250, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .update-date {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  
+  /* 锚点链接样式 */
+  .anchor-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 30px;
+    padding: 20px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+  }
+  
+  .anchor-link {
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: var(--transition);
+  }
+  
+  .anchor-link:hover {
+    background: rgba(74, 108, 250, 0.2);
+    color: var(--primary-300);
+    text-decoration: none;
+  }
+  
+  .back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .footer{border-top:1px solid rgba(255,255,255,.08);padding:32px 0 20px;background:#080c15}
+  .footer-grid{display:flex;justify-content:space-between;gap:18px;align-items:flex-start; margin-bottom: 20px;}
+  .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+  
+  /* 响应式设计 */
+  @media (max-width: 980px){
+    .tabs-header {
+      flex-direction: column;
+    }
+    
+    .tab-btn {
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    
+    .tab-btn.active::after {
+      height: 100%;
+      width: 3px;
+      bottom: auto;
+      top: 0;
+    }
+    
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    .section { padding: 50px 0; }
+  }
+  
+  @media (max-width: 640px) {
+    .tab-content {
+      padding: 20px;
+      max-height: none;
+      overflow-y: visible;
+    }
+    
+    .anchor-links {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    h1 { font-size: 28px; }
+    h2 { font-size: 26px; }
+    .section { padding: 40px 0; }
+    
+    .nav-link:not(.btn) {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 { font-size: 26px; }
+    h2 { font-size: 24px; }
+    .brand { font-size: 1.1rem; }
+    .nav-link { font-size: 0.9rem; }
+    .btn { font-size: 0.9rem; }
+    
+    .tab-btn {
+      padding: 14px 18px;
+      font-size: 0.95rem;
+    }
+  }
+  </style>
+</head>
+<body>
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Etusivu">EtätyöSuomi</a>
+      <nav class="nav-links">
+        <a href="index.html#roles" class="nav-link">Ansaintamahdollisuudet</a>
+        <a href="index.html#benefits" class="nav-link">Edut</a>
+        <a href="index.html#faq" class="nav-link">UKK</a>
+        <a href="index.html#apply" class="btn btn-primary">Hae Nyt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container">
+      <h1>Tietosuoja, Vastuuvapaus & Käyttöehdot</h1>
+      <p class="muted">Tutustu palvelumme ehtoihin, tietosuojaan ja vastuuvapauslausekkeisiin. Päivitetty viimeksi <span class="update-date">15.03.2024</span></p>
+      
+      <!-- 锚点链接 -->
+      <div class="anchor-links">
+        <a href="#privacy" class="anchor-link">Tietosuojakäytäntö</a>
+        <a href="#disclaimer" class="anchor-link">Vastuuvapauslauseke</a>
+        <a href="#terms" class="anchor-link">Käyttöehdot</a>
+        <a href="#contact" class="anchor-link">Yhteystiedot</a>
+      </div>
+      
+      <!-- 选项卡容器 -->
+      <div class="tabs-container">
+        <!-- 选项卡标题 -->
+        <div class="tabs-header">
+          <button class="tab-btn active" data-tab="privacy">Tietosuojakäytäntö</button>
+          <button class="tab-btn" data-tab="disclaimer">Vastuuvapauslauseke</button>
+          <button class="tab-btn" data-tab="terms">Käyttöehdot</button>
+        </div>
+        
+        <!-- 选项卡内容 -->
+        <!-- 隐私政策 -->
+        <div id="privacy-tab" class="tab-content active">
+          <div class="content-section" id="privacy">
+            <h2>Tietosuojakäytäntö</h2>
+            <p>Tämä tietosuojakäytäntö kuvaa, miten keräämme, käytämme ja suojaamme henkilötietojasi EtätyöSuomi-palvelussa.</p>
+            
+            <div class="highlight-box">
+              <h4>📱 Tietojen kerääminen</h4>
+              <p>Keräämme vain välttämättömät tiedot palvelumme tarjoamiseksi:</p>
+              <ul class="list">
+                <li><strong>Nimi:</strong> Koko nimesi henkilöllisyyden vahvistamiseksi</li>
+                <li><strong>WhatsApp-numero:</strong> Yhteydenpitoa ja ohjeita varten</li>
+                <li><strong>Ikä:</strong> Varmistamme, että olet vähintään 20-vuotias</li>
+                <li><strong>Teknisiä tietoja:</strong> IP-osoite, selaintyyppi, laitteen tiedot</li>
+              </ul>
+            </div>
+            
+            <h3>Tietojen käyttötarkoitukset</h3>
+            <p>Käytämme tietojasi seuraaviin tarkoituksiin:</p>
+            <ul class="list">
+              <li>Mahdollisten etätyömahdollisuuksien esittelyyn</li>
+              <li>Yhteydenpidon ylläpitämiseen WhatsAppin kautta</li>
+              <li>Palvelun kehittämiseen ja parantamiseen</li>
+              <li>Lakien ja määräysten noudattamiseen</li>
+            </ul>
+            
+            <h3>Tietojen jakaminen</h3>
+            <p>Emme jaa henkilötietojasi kolmansille osapuolille, paitsi:</p>
+            <ul class="list">
+              <li>Kun laki sitä edellyttää</li>
+              <li>Kumppaniyrityksillemme tarjotaksemme työmahdollisuuksia</li>
+              <li>Palveluntarjoajillemme, jotka auttavat palvelumme toiminnassa</li>
+            </ul>
+            
+            <div class="warning-box">
+              <h4>⚠️ Tietojen suojaus</h4>
+              <p>Käytämme kaupallisen tason salausmenetelmiä tietojesi suojaamiseksi. Tietojasi säilytetään vain niin kauan kuin se on tarpeen palvelun tarjoamiseksi.</p>
+            </div>
+            
+            <h3>Evästeet (Cookies)</h3>
+            <p>Käytämme evästeitä parantaaksemme käyttökokemustasi ja analysoidaksemme liikennettä. Voit hallita evästeitä selaimen asetuksissa.</p>
+            
+            <h3>Oikeutesi</h3>
+            <p>Sinulla on oikeus:</p>
+            <ul class="list">
+              <li>Saada tietoja keräämistämme tiedoistasi</li>
+              <li>Pyytää tietojesi korjaamista tai poistamista</li>
+              <li>Rajoittaa tietojesi käsittelyä</li>
+              <li>Vastustaa tietojesi käsittelyä</li>
+              <li>Siirtää tietosi toiseen palveluntarjoajaan</li>
+            </ul>
+            
+            <p>Ota yhteyttä, jos haluat käyttää näitä oikeuksiasi.</p>
+          </div>
+          
+          <a href="#" class="back-to-top">Takaisin ylös ↑</a>
+        </div>
+        
+        <!-- 免责声明 -->
+        <div id="disclaimer-tab" class="tab-content">
+          <div class="content-section" id="disclaimer">
+            <h2>Vastuuvapauslauseke</h2>
+            <p>Tämä vastuuvapauslauseke koskee EtätyöSuomi-palvelun käyttöä ja tarjoamia työmahdollisuuksia.</p>
+            
+            <div class="warning-box">
+              <h4>⚠️ Tärkeää huomioitavaa</h4>
+              <p>EtätyöSuomi on välittäjäpalvelu, joka yhdistää hakijoita ja työnantajia. Emme ole työnantaja, emmekä takaa työpaikkoja tai tuloja.</p>
+            </div>
+            
+            <h3>Tulotakuiden puuttuminen</h3>
+            <p>Sivustollamme esitetyt tulot ja ansaintamahdollisuudet ovat vain esimerkkejä ja arvioita. Todelliset tulosi riippuvat:</p>
+            <ul class="list">
+              <li>Valitsemistasi tehtävistä ja niiden saatavuudesta</li>
+              <li>Käyttämäsi ajan määrästä</li>
+              <li>Tehtävien suorituskyvystäsi</li>
+              <li>Alueellisista eroista ja kysynnästä</li>
+            </ul>
+            
+            <h3>Työmahdollisuuksien luonne</h3>
+            <p>Tarjoamme tietoa saatavilla olevista etätyömahdollisuuksista. Näihin voi kuulua:</p>
+            <ul class="list">
+              <li>Freelance-työtä eri aloilla</li>
+              <li>Lyhytaikaisia projekteja</li>
+              <li>Osittain etänä suoritettavia tehtäviä</li>
+              <li>Kokeilu- ja tutkimusohjelmia</li>
+            </ul>
+            
+            <p>Emme takaa työn jatkuvuutta, vähimmäismäärää tai laatua.</p>
+            
+            <h3>Kolmansien osapuolien palvelut</h3>
+            <p>Linkitämme kolmansien osapuolien palveluihin. Emme ole vastuussa näiden palvelujen:</p>
+            <ul class="list">
+              <li>Sisällöstä tai tarkkuudesta</li>
+              <li>Käytettävyydestä tai luotettavuudesta</li>
+              <li>Yksityisyydensuojan tasosta</li>
+              <li>Sopimusehdoista tai maksujärjestelyistä</li>
+            </ul>
+            
+            <h3>Käyttäjävelvollisuudet</h3>
+            <p>Käyttäjänä olet vastuussa:</p>
+            <ul class="list">
+              <li>Antamiesi tietojen oikeellisuudesta</li>
+              <li>Omien taitojesi rehellisestä arvioinnista</li>
+              <li>Sovellettavien lakien ja määräysten noudattamisesta</li>
+              <li>Työnantajien kanssa tehtyjen sopimusten noudattamisesta</li>
+            </ul>
+            
+            <div class="info-box">
+              <h4>💡 Suositus</h4>
+              <p>Ennen minkään työtehtävän aloittamista, lue huolellisesti kaikki sopimusehdot ja varmista, että ymmärrät tehtävän vaatimukset ja palkkausjärjestelmän.</p>
+            </div>
+          </div>
+          
+          <a href="#" class="back-to-top">Takaisin ylös ↑</a>
+        </div>
+        
+        <!-- 用户条款 -->
+        <div id="terms-tab" class="tab-content">
+          <div class="content-section" id="terms">
+            <h2>Käyttöehdot</h2>
+            <p>Tässä ovat palvelumme käyttöehdot. Käyttämällä EtätyöSuomi-palvelua hyväksyt nämä ehdot.</p>
+            
+            <h3>Palvelun käyttö</h3>
+            <p>Palvelumme käyttö edellyttää, että:</p>
+            <ul class="list">
+              <li>Olet vähintään 20-vuotias</li>
+              <li>Annoit oikeat ja täydelliset tiedot</li>
+              <li>Et käytä palvelua laittomiin tai epäeettisiin tarkoituksiin</li>
+              <li>Noudatat kaikkia sovellettavia lakeja ja määräyksiä</li>
+            </ul>
+            
+            <h3>Kielteinen käyttäytyminen</h3>
+            <p>Voimme keskeyttää tai estää pääsyä palveluumme, jos:</p>
+            <ul class="list">
+              <li>Annoit vääriä tietoja</li>
+              <li>Yrität huijata tai manipuloida järjestelmää</li>
+              <li>Rikot muiden käyttäjien oikeuksia</li>
+              <li>Lähetät roskapostia tai haitallista sisältöä</li>
+              <li>Rikot näitä käyttöehtoja</li>
+            </ul>
+            
+            <h3>Tekijänoikeudet</h3>
+            <p>Kaikki EtätyöSuomi-sivuston sisältö, mukaan lukien teksti, grafiikka, logo ja ohjelmointikoodi, on suojattu tekijänoikeuslailla. Et saa:</p>
+            <ul class="list">
+              <li>Kopioida, jakaa tai muokata sisältöä ilman lupaa</li>
+              <li>Käyttää brändiämme tai logoamme ilman lupaa</li>
+              <li>Yrittää kääntää tai poimia lähdekoodiamme</li>
+            </ul>
+            
+            <h3>Maksut ja palvelut</h3>
+            <p>Peruspalvelumme on ilmainen. Joissain tapauksissa saatamme tarjota maksullisia lisäpalveluita. Kaikista maksuista ilmoitetaan selkeästi etukäteen.</p>
+            
+            <div class="highlight-box">
+              <h4>💰 Ilmainen rekisteröityminen</h4>
+              <p>EtätyöSuomi on täysin ilmainen liittyä. Emme koskaan veloita rekisteröintimaksua tai hakumaksua. Kaikki peruspalvelut, mukaan lukien työmahdollisuuksien esittely ja ohjeistus, ovat ilmaisia.</p>
+            </div>
+            
+            <h3>Palvelun muutokset ja keskeytykset</h3>
+            <p>Pidätämme oikeuden:</p>
+            <ul class="list">
+              <li>Muuttaa palvelua milloin tahansa</li>
+              <li>Keskeyttää palvelun väliaikaisesti huoltoa varten</li>
+              <li>Päivittää näitä käyttöehtoja tarvittaessa</li>
+              <li>Lopettaa palvelun kokonaan</li>
+            </ul>
+            
+            <p>Ilmoitamme merkittävistä muutoksista sähköpostitse tai sivustollamme.</p>
+            
+            <h3>Sovellettava laki</h3>
+            <p>Näitä käyttöehtoja tulkitaan Suomen lain mukaisesti. Mahdolliset riidat ratkaistaan Suomen tuomioistuimissa.</p>
+            
+            <div class="content-section" id="contact">
+              <h3>Yhteystiedot</h3>
+              <p>Jos sinulla on kysyttävää näistä ehdoista, ota meihin yhteyttä:</p>
+              <ul class="list">
+                <li><strong>Sähköposti:</strong> tietosuoja@etatyosuomi.fi</li>
+                <li><strong>Osoite:</strong> EtätyöSuomi Finland, PL 123, 00100 Helsinki, Suomi</li>
+                <li><strong>Aika:</strong> Vastaanotamme viestejä arkisin 9-17</li>
+              </ul>
+            </div>
+          </div>
+          
+          <a href="#" class="back-to-top">Takaisin ylös ↑</a>
+        </div>
+      </div>
+      
+      <div class="info-box" style="margin-top: 30px;">
+        <h4>📝 Muistutus</h4>
+        <p>Nämä ehdot päivittyvät säännöllisesti. Suosittelemme tarkistamaan ne ajoittain. Jatkamalla palvelun käyttöä hyväksyt päivitetyt ehdot.</p>
+        <p><strong>Viimeisin päivitys:</strong> 15.03.2024</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">EtätyöSuomi Finland</a>
+        <p class="muted small">Läpinäkyvät mahdollisuudet. Ei taattua tulotasoa. Ei hakumaksua.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#privacy" class="footer-link">Tietosuojakäytäntö</a>
+        <a href="#disclaimer" class="footer-link">Vastuuvapauslauseke</a>
+        <a href="#terms" class="footer-link">Käyttöehdot</a>
+        <a href="index.html#apply" class="btn btn-primary">Hae Nyt</a>
+      </nav>
+    </div>
+    <div class="container">
+      <p class="muted small">© 2023-2024 EtätyöSuomi Finland. Kaikki oikeudet pidätetään. Näytetyt tulot ovat vain esimerkkejä eivätkä takuita. Todelliset tulosi riippuvat taidoistasi, ajastasi ja tehtävien saatavuudesta.</p>
+      <p class="muted small" style="margin-top: 8px;">Tämä sivu on osa EtätyöSuomi-verkostoa.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 选项卡功能
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          
+          // 移除所有激活状态
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          
+          // 添加当前激活状态
+          this.classList.add('active');
+          document.getElementById(`${tabId}-tab`).classList.add('active');
+          
+          // 更新URL哈希值
+          window.location.hash = tabId;
+        });
+      });
+      
+      // 根据URL哈希值激活对应选项卡
+      const hash = window.location.hash.substring(1);
+      if (hash && ['privacy', 'disclaimer', 'terms'].includes(hash)) {
+        const tabBtn = document.querySelector(`.tab-btn[data-tab="${hash}"]`);
+        if (tabBtn) {
+          tabBtn.click();
+        }
+      }
+      
+      // 锚点链接平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+          }
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            
+            // 如果是选项卡内的锚点，确保选项卡是激活状态
+            if (targetId === '#privacy' || targetId === '#disclaimer' || targetId === '#terms' || targetId === '#contact') {
+              const tabId = targetId === '#contact' ? 'terms' : targetId.substring(1);
+              const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+              if (tabBtn && !tabBtn.classList.contains('active')) {
+                tabBtn.click();
+                
+                // 等待选项卡切换完成后再滚动
+                setTimeout(() => {
+                  targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }, 100);
+                return;
+              }
+            }
+            
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // 回到顶部按钮
+      document.querySelectorAll('.back-to-top').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+      
+      // 导航到首页的申请按钮
+      document.querySelector('a[href="index.html#apply"]').addEventListener('click', function(e) {
+        if (window.location.pathname.endsWith('userterms.html')) {
+          e.preventDefault();
+          window.location.href = 'index.html#apply';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
